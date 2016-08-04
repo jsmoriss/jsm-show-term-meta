@@ -1,0 +1,101 @@
+=== JSM's Show Term Meta ===
+Plugin Name: JSM's Show Term Meta
+Plugin Slug: jsm-show-term-meta
+Contributors: jsmoriss
+Tags: term meta, custom fields, tools
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl.txt
+Requires At Least: 4.4
+Tested up to: 4.6
+Stable tag: 1.0.0-1
+
+Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
+
+== Description ==
+
+<strong>Wondering about the term meta your theme and/or plugins might be creating?</strong>
+
+<strong>Want to find the name of a specific term meta key?</strong>
+
+<strong>Need some help debugging your term meta?</strong>
+
+The JSM's Show Term Meta plugin displays all term meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of term editing pages (categories, tags, etc.).
+
+Term meta has been available since WordPress v4.4. Older plugins that support "*term meta*" may not use the WordPress term meta functions, preferring to use their own custom solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those plugins to request an update, which uses the WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge their custom term meta.
+
+= Available Filters =
+
+*jsm_stm_view_cap ( 'manage_options' )* &mdash; The current user must have these capabilities to view the "Term Meta" metabox (default: 'manage_options' ).</p>
+
+*jsm_stm_taxonomy ( true, $screen_base )* &mdash; Add the "Term Meta" metabox to the term editing page of this taxonomy (example: 'category').</p>
+
+*jsm_stm_term_meta ( $term_meta, $term_obj )* &mdash; The term meta array (unserialized) retrieved for display in the metabox.</p>
+
+*jsm_stm_skip_keys ( $array )* &mdash; An array of key name prefixes to ignore (default: empty array).</p>
+
+== Installation ==
+
+= Automated Install =
+
+1. Go to the wp-admin/ section of your website
+1. Select the *Plugins* menu item
+1. Select the *Add New* sub-menu item
+1. In the *Search* box, enter the plugin name
+1. Click the *Search Plugins* button
+1. Click the *Install Now* link for the plugin
+1. Click the *Activate Plugin* link
+
+= Semi-Automated Install =
+
+1. Download the plugin archive file
+1. Go to the wp-admin/ section of your website
+1. Select the *Plugins* menu item
+1. Select the *Add New* sub-menu item
+1. Click on *Upload* link (just under the Install Plugins page title)
+1. Click the *Browse...* button
+1. Navigate your local folders / directories and choose the zip file you downloaded previously
+1. Click on the *Install Now* button
+1. Click the *Activate Plugin* link
+
+== Frequently Asked Questions ==
+
+= Frequently Asked Questions =
+
+* None
+
+== Other Notes ==
+
+= Additional Documentation =
+
+* None
+
+== Screenshots ==
+
+01. The Term Meta metabox added to admin term editing pages.
+
+== Changelog ==
+
+= Repositories =
+
+* [GitHub](https://github.com/jsmoriss/jsm-show-term-meta)
+* [WordPress.org](https://wordpress.org/plugins/jsm-show-term-meta/developers/)
+
+= Changelog / Release Notes =
+
+**Version 1.0.0-1 (2016/08/04)**
+
+* *New Features*
+	* Initial release.
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
+== Upgrade Notice ==
+
+= 1.0.0-1 =
+
+(2016/08/04) Initial release.
+
