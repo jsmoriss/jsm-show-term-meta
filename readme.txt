@@ -2,7 +2,7 @@
 Plugin Name: JSM's Show Term Meta
 Plugin Slug: jsm-show-term-meta
 Contributors: jsmoriss
-Tags: term meta, custom fields, tools
+Tags: meta, term meta, custom fields, debug, tools
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 4.4

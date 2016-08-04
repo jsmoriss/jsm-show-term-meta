@@ -8,7 +8,7 @@
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.6</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="http://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>term meta, custom fields, tools</td></tr>
+<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>meta, term meta, custom fields, debug, tools</td></tr>
 </table>
 
 <h2>Description</h2>
