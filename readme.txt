@@ -21,7 +21,7 @@ Show all term meta (aka custom fields) keys and their unserialized values in a m
 
 The JSM's Show Term Meta plugin displays all term meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of term editing pages (categories, tags, etc.).
 
-Term meta has been available since WordPress v4.4. Older plugins that support "*term meta*" may not use the WordPress term meta functions, preferring to use their own custom solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those plugins to request an update, which uses the WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge their custom term meta.
+Term meta has been available since WordPress v4.4. Older plugins that support "*term meta*" may not use the WordPress term meta functions, preferring to use their own custom solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those plugins to request an update, which uses the WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge their custom "*term meta*".
 
 = Available Filters =
 
