@@ -29,13 +29,13 @@
 
 <h4>Developer Filters</h4>
 
-<p><em>jsm_stm_view_cap ( 'manage_options' )</em> &mdash; The current user must have these capabilities to view the "Term Meta" metabox (default: 'manage_options' ).</p></p>
+<p><em>'jsm_stm_view_cap' ( 'manage_options' )</em> &mdash; The current user must have these capabilities to view the "Term Meta" metabox (default: 'manage_options' ).</p></p>
 
-<p><em>jsm_stm_taxonomy ( true, $screen_base )</em> &mdash; Add the "Term Meta" metabox to the term editing page of this taxonomy (example: 'category').</p></p>
+<p><em>'jsm_stm_taxonomy' ( true, $screen_base )</em> &mdash; Add the "Term Meta" metabox to the term editing page of this taxonomy (example: 'category').</p></p>
 
-<p><em>jsm_stm_term_meta ( $term_meta, $term_obj )</em> &mdash; The term meta array (unserialized) retrieved for display in the metabox.</p></p>
+<p><em>'jsm_stm_term_meta' ( $term_meta, $term_obj )</em> &mdash; The term meta array (unserialized) retrieved for display in the metabox.</p></p>
 
-<p><em>jsm_stm_skip_keys ( $array )</em> &mdash; An array of key name prefixes to ignore (default: empty array).</p></p>
+<p><em>'jsm_stm_skip_keys' ( $array )</em> &mdash; An array of key name prefixes to ignore (default: empty array).</p></p>
 
 <h4>Related Plugins</h4>
 
