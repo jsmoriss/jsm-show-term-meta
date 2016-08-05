@@ -23,7 +23,11 @@
 
 <p>Term meta has been available since WordPress v4.4. Older plugins that support "<em>term meta</em>" may not use WordPress term meta functions, preferring to use their own custom solutions instead. This custom "<em>term meta</em>", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those plugins to request an update, which uses the WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge custom "<em>term meta</em>".</p>
 
-<h4>Available Filters</h4>
+<h4>Plugin Settings</h4>
+
+<p>There are no plugin settings - simply activate to add a metabox to all term editing pages.</p>
+
+<h4>Developer Filters</h4>
 
 <p><em>jsm_stm_view_cap ( 'manage_options' )</em> &mdash; The current user must have these capabilities to view the "Term Meta" metabox (default: 'manage_options' ).</p></p>
 

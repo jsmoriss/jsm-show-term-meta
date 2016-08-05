@@ -23,7 +23,11 @@ The JSM's Show Term Meta plugin displays all term meta (aka custom fields) keys 
 
 Term meta has been available since WordPress v4.4. Older plugins that support "*term meta*" may not use WordPress term meta functions, preferring to use their own custom solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those plugins to request an update, which uses the WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge custom "*term meta*".
 
-= Available Filters =
+= Plugin Settings =
+
+There are no plugin settings - simply activate to add a metabox to all term editing pages.
+
+= Developer Filters =
 
 *jsm_stm_view_cap ( 'manage_options' )* &mdash; The current user must have these capabilities to view the "Term Meta" metabox (default: 'manage_options' ).</p>
 
