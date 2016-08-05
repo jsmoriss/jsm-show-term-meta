@@ -33,6 +33,11 @@ Term meta has been available since WordPress v4.4. Older plugins that support "*
 
 *jsm_stm_skip_keys ( $array )* &mdash; An array of key name prefixes to ignore (default: empty array).</p>
 
+= Related Plugins =
+
+* [JSM's Show Post Meta](https://wordpress.org/plugins/jsm-show-post-meta/)
+* [JSM's Show User Meta](https://wordpress.org/plugins/jsm-show-user-meta/)
+
 == Installation ==
 
 = Automated Install =

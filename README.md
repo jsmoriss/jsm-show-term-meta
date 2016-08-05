@@ -33,6 +33,13 @@
 
 <p><em>jsm_stm_skip_keys ( $array )</em> &mdash; An array of key name prefixes to ignore (default: empty array).</p></p>
 
+<h4>Related Plugins</h4>
+
+<ul>
+<li><a href="https://wordpress.org/plugins/jsm-show-post-meta/">JSM's Show Post Meta</a></li>
+<li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Meta</a></li>
+</ul>
+
 
 <h2>Installation</h2>
 
