@@ -1,7 +1,10 @@
 <?php
 /*
  * Plugin Name: JSM's Show Term Meta
- * Plugin URI: http://wordpress.org/extend/plugins/jsm-show-term-meta/
+ * Text Domain: jsm-show-term-meta
+ * Domain Path: /languages
+ * Plugin URI: http://surniaulula.com/extend/plugins/jsm-show-term-meta/
+ * Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
  * Author: JS Morisset
  * Author URI: http://surniaulula.com/
  * License: GPLv3
@@ -19,9 +22,9 @@ class JSM_Show_Term_Meta {
 	public $view_cap;
 	public $tax_slug;
 
-	public static function instance() {
+	public static function &get_instance() {
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new JSM_Show_Term_Meta;
+			self::$instance = new self;
 			self::setup_actions();
 		}
 		return self::$instance;
@@ -132,7 +135,7 @@ class JSM_Show_Term_Meta {
 }
 
 function jsm_show_term_meta() {
-	return JSM_Show_Term_Meta::instance();
+	return JSM_Show_Term_Meta::get_instance();
 }
 
 add_action( 'plugins_loaded', 'jsm_show_term_meta' );
