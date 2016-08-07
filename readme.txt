@@ -1,10 +1,14 @@
 === JSM's Show Term Meta ===
 Plugin Name: JSM's Show Term Meta
 Plugin Slug: jsm-show-term-meta
-Contributors: jsmoriss
-Tags: meta, term meta, custom fields, debug, tools
+Text Domain: jsm-show-term-meta
+Domain Path: /languages
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
+Donate Link:
+Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
+Tags: meta, term meta, custom fields, debug, tools
+Contributors: jsmoriss
 Requires At Least: 4.4
 Tested up to: 4.6
 Stable tag: 1.0.0-1
