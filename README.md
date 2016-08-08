@@ -1,4 +1,4 @@
-<h1>JSM&#039;s Show Term Meta</h1>
+<h1>JSM&#039;s Show Term Meta on Term Editing Pages</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Term Meta</td></tr>
@@ -20,10 +20,10 @@
 <p><strong>Need some help debugging your term meta?</strong></p>
 
 <blockquote>
-The JSM's Show Term Meta plugin displays all term meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of term editing pages (categories, tags, etc.).
+<p>The JSM's Show Term Meta plugin displays all term meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of term editing pages (categories, tags, etc.).</p>
 </blockquote>
 
-<p>Term meta has been available since WordPress v4.4. Older plugins that support "<em>term meta</em>" may not use WordPress term meta functions, preferring to use their own custom solutions instead. This custom "<em>term meta</em>", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those plugins to request an update, which uses the WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge custom "<em>term meta</em>".</p>
+<p>Term meta has been available since WordPress v4.4. Older plugins that supported "<em>term meta</em>" before WordPress v4.4 may not use the current WordPress term meta functions &mdash; preferring to use their own custom "<em>term meta</em>" solutions instead. This custom "<em>term meta</em>", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "<em>term meta</em>". As an example, the <a href="https://wordpress.org/plugins/wordpress-seo/">Yoast SEO</a> plugin still does not use term meta functions, while <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> and the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization</a> plugins do.</p>
 
 <h4>Plugin Settings</h4>
 
