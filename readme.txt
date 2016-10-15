@@ -4,7 +4,7 @@ Plugin Slug: jsm-show-term-meta
 Text Domain: jsm-show-term-meta
 Domain Path: /languages
 License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl.txt
+License URI: https://www.gnu.org/licenses/gpl.txt
 Donate Link:
 Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
 Tags: meta, term meta, custom fields, debug, tools
