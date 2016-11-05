@@ -13,6 +13,27 @@
  * Requires At Least: 4.4
  * Tested Up To: 4.6.1
  * Version: 1.0.0-1
+ *
+ * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
+ *
+ *	{major}		Major code changes / re-writes or significant feature changes.
+ *	{minor}		New features / options were added or improved.
+ *	{bugfix}	Bugfixes or minor improvements.
+ *	{stage}{level}	dev < a (alpha) < b (beta) < rc (release candidate) < # (production).
+ *
+ * See PHP's version_compare() documentation at http://php.net/manual/en/function.version-compare.php.
+ * 
+ * This script is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 3 of the License, or (at your option) any later
+ * version.
+ * 
+ * This script is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ * PARTICULAR PURPOSE. See the GNU General Public License for more details at
+ * http://www.gnu.org/licenses/.
+ * 
+ * Copyright 2016 Jean-Sebastien Morisset (http://surniaulula.com/)
  */
 
 class JSM_Show_Term_Meta {
