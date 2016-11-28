@@ -11,7 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
  * Requires At Least: 4.4
- * Tested Up To: 4.6.1
+ * Tested Up To: 4.7
  * Version: 1.0.0-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
