@@ -31,7 +31,7 @@ Term meta has been available since WordPress v4.4. Older plugins that supported 
 
 = Plugin Settings =
 
-There are no plugin settings to update or adjust &mdash; simply activate to add a metabox to all term editing pages.
+There are no settings to update or adjust &mdash; simply install and activate the plugin to add a metabox on all term editing pages.
 
 = Developer Filters =
 
