@@ -18,7 +18,7 @@ msgid "JSM's Show Term Meta"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://surniaulula.com/extend/plugins/jsm-show-term-meta/"
+msgid "https://surniaulula.com/extend/plugins/jsm-show-term-meta/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -32,5 +32,5 @@ msgid "JS Morisset"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://surniaulula.com/"
+msgid "https://surniaulula.com/"
 msgstr ""

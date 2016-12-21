@@ -3,10 +3,10 @@
  * Plugin Name: JSM's Show Term Meta
  * Text Domain: jsm-show-term-meta
  * Domain Path: /languages
- * Plugin URI: http://surniaulula.com/extend/plugins/jsm-show-term-meta/
+ * Plugin URI: https://surniaulula.com/extend/plugins/jsm-show-term-meta/
  * Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
  * Author: JS Morisset
- * Author URI: http://surniaulula.com/
+ * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
@@ -33,7 +33,7 @@
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * http://www.gnu.org/licenses/.
  * 
- * Copyright 2016 Jean-Sebastien Morisset (http://surniaulula.com/)
+ * Copyright 2016 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 class JSM_Show_Term_Meta {
