@@ -33,7 +33,7 @@ Term meta has been available since WordPress v4.4. Older plugins that supported 
 
 = Developers =
 
-See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-term-meta/other_notes/) page for available filters.
+See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-term-meta/other_notes/) page for information on available filters.
 
 = Related Plugins =
 
