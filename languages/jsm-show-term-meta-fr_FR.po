@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-term-meta\n"
+"POT-Creation-Date: 2016-12-23 17:18+1100\n"
+"PO-Revision-Date: 2016-12-23 17:24+1100\n"
+"Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: jsm-show-term-meta.php:79
+msgid "%1$s requires WordPress version %2$s or higher and has been deactivated."
+msgstr "%1$s nécessite WordPress version %2$s ou supérieure et a été désactivé."
+
+#: jsm-show-term-meta.php:81
+msgid "Please upgrade WordPress before trying to reactivate the %1$s plugin."
+msgstr "Veuillez mettre à jour WordPress avant d'essayer de réactiver l'extension %1$s."
+
+#: jsm-show-term-meta.php:98
+msgid "Term Meta"
+msgstr "Méta de terme"
+
+#: jsm-show-term-meta.php:101
+msgid "Show Term Meta"
+msgstr "Show Term Meta"
+
+#: jsm-show-term-meta.php:142
+msgid "Key"
+msgstr "Clé"
+
+#: jsm-show-term-meta.php:143
+msgid "Value"
+msgstr "Valeur"
+
+#. Plugin Name of the plugin/theme
+msgid "JSM's Show Term Meta"
+msgstr "JSM's Show Term Meta"
+
+#. Plugin URI of the plugin/theme
+msgid "https://surniaulula.com/extend/plugins/jsm-show-term-meta/"
+msgstr "https://surniaulula.com/extend/plugins/jsm-show-term-meta/"
+
+#. Description of the plugin/theme
+msgid "Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages."
+msgstr "Afficher les clés et valeurs des métas de terme (aka champs personnalisés)  dans un metabox sur les pages d'édition."
+
+#. Author of the plugin/theme
+msgid "JS Morisset"
+msgstr "JS Morisset"
+
+#. Author URI of the plugin/theme
+msgid "https://surniaulula.com/"
+msgstr "https://surniaulula.com/"
