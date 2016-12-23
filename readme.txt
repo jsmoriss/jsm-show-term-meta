@@ -108,12 +108,12 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.0.1-dev1 (2016/12/23)**
+**Version 1.0.1-1 (2016/12/23)**
 
 * *New Features*
 	* None
 * *Improvements*
-	* None
+	* Added French translation of labels and notices.
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -132,7 +132,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 == Upgrade Notice ==
 
-= 1.0.1-dev1 =
+= 1.0.1-1 =
 
 (2016/12/23) Maintenance release - minor refactoring of code.
 
