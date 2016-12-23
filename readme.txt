@@ -23,25 +23,17 @@ Show all term meta (aka custom fields) keys and their unserialized values in a m
 
 <strong>Need some help debugging your term meta?</strong>
 
-<blockquote>
 <p>The JSM's Show Term Meta plugin displays all term meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of term editing pages (categories, tags, etc.).</p>
+
+Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use the new term meta functions, while the [WooCommerce](https://wordpress.org/plugins/woocommerce/) and [WordPress Social Sharing Optimization (WPSSO)](https://wordpress.org/plugins/wpsso/) plugins do.
+
+<blockquote>
+<p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use term meta functions, while [WooCommerce](https://wordpress.org/plugins/woocommerce/) and the [WordPress Social Sharing Optimization (WPSSO)](https://wordpress.org/plugins/wpsso/) plugins do.
+= Developers =
 
-= Plugin Settings =
-
-There are no settings to update or adjust &mdash; simply install and activate the plugin to add a metabox on all term editing pages.
-
-= Developer Filters =
-
-*'jsm_stm_view_cap' ( 'manage_options' )* &mdash; The current user must have these capabilities to view the "Term Meta" metabox (default: 'manage_options' ).</p>
-
-*'jsm_stm_taxonomy' ( true, $screen_base )* &mdash; Add the "Term Meta" metabox to the term editing page of this taxonomy (example: 'category').</p>
-
-*'jsm_stm_term_meta' ( $term_meta, $term_obj )* &mdash; The term meta array (unserialized) retrieved for display in the metabox.</p>
-
-*'jsm_stm_skip_keys' ( $array )* &mdash; An array of key name prefixes to ignore (default: empty array).</p>
+See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-term-meta/other_notes/) page for available filters.
 
 = Related Plugins =
 
@@ -82,7 +74,16 @@ There are no settings to update or adjust &mdash; simply install and activate th
 
 = Additional Documentation =
 
-* None
+**Developer Filters**
+
+*'jsm_stm_view_cap' ( 'manage_options' )* &mdash; The current user must have these capabilities to view the "Term Meta" metabox (default: 'manage_options' ).</p>
+
+*'jsm_stm_taxonomy' ( true, $screen_base )* &mdash; Add the "Term Meta" metabox to the term editing page of this taxonomy (example: 'category').</p>
+
+*'jsm_stm_term_meta' ( $term_meta, $term_obj )* &mdash; The term meta array (unserialized) retrieved for display in the metabox.</p>
+
+*'jsm_stm_skip_keys' ( $array )* &mdash; An array of key name regular expressions to ignore (default: empty array).</p>
+
 
 == Screenshots ==
 
