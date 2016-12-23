@@ -119,19 +119,22 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 					width:100%;
 					max-width:100%;
 					text-align:left;
+					table-layout:fixed;
+				}
+				div#jsm-stm.postbox table .key-column { 
+					width:30%;
 				}
 				div#jsm-stm.postbox table td { 
 					padding:10px;
 					vertical-align:top;
 					border:1px dotted #ccc;
 				}
-				div#jsm-stm.postbox table td pre { 
+				div#jsm-stm.postbox table td div {
+					overflow-x:auto;
+				}
+				div#jsm-stm.postbox table td div pre { 
 					margin:0;
 					padding:0;
-					white-space:pre-wrap;
-				}
-				div#jsm-stm.postbox table .key-column { 
-					width:20%;
 				}
 			</style>
 			<?php
@@ -140,32 +143,33 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			echo '<th class="value-column">'.__( 'Value', 'jsm-show-term-meta' ).'</th></tr></thead><tbody>';
 	
 			ksort( $term_meta );
-			foreach( $term_meta as $key => $arr ) {
-				foreach ( $skip_keys as $dnsw )
-					if ( strpos( $key, $dnsw ) === 0 )
+			foreach( $term_meta as $meta_key => $arr ) {
+				foreach ( $skip_keys as $preg_dns )
+					if ( preg_match( $preg_dns, $meta_key ) )
 						continue 2;
 	
 				foreach ( $arr as $num => $el )
 					$arr[$num] = maybe_unserialize( $el );
 	
-				echo '<tr><td class="key-column">'.esc_html( $key ).'</td>'.
-					'<td class="value-column"><pre>'.
-						esc_html( var_export( $arr, true ) ).'</pre></td></tr>';
+				echo '<tr><td class="key-column"><div class="key-cell"><pre>'.
+					esc_html( $meta_key ).'</pre></div></td>';
+				echo '<td class="value-column"><div class="value-cell"><pre>'.
+					esc_html( var_export( $arr, true ) ).'</pre></div></td></tr>'."\n";
 			}
 			echo '</tbody></table>';
 		}
 	
-		public function get_request_value( $key, $method = 'ANY' ) {
+		public function get_request_value( $req_key, $method = 'ANY' ) {
 			if ( $method === 'ANY' )
 				$method = $_SERVER['REQUEST_METHOD'];
 			switch( $method ) {
 				case 'POST':
-					if ( isset( $_POST[$key] ) )
-						return sanitize_text_field( $_POST[$key] );
+					if ( isset( $_POST[$req_key] ) )
+						return sanitize_text_field( $_POST[$req_key] );
 					break;
 				case 'GET':
-					if ( isset( $_GET[$key] ) )
-						return sanitize_text_field( $_GET[$key] );
+					if ( isset( $_GET[$req_key] ) )
+						return sanitize_text_field( $_GET[$req_key] );
 					break;
 			}
 			return '';
