@@ -28,7 +28,7 @@ Show all term meta (aka custom fields) keys and their unserialized values in a m
 Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use the new term meta functions, while the [WooCommerce](https://wordpress.org/plugins/woocommerce/) and [WordPress Social Sharing Optimization (WPSSO)](https://wordpress.org/plugins/wpsso/) plugins do.
 
 <blockquote>
-<p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
+<p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
 = Developers =
