@@ -84,6 +84,24 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-term-meta/ot
 
 *'jsm_stm_skip_keys' ( $array )* &mdash; An array of key name regular expressions to ignore (default: empty array).</p>
 
+An example to add Yoast SEO term meta to the "Term Meta" metabox.
+
+`
+add_filter( 'jsm_stm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
+
+function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
+
+	$tax_opts = get_option( 'wpseo_taxonomy_meta' );
+
+	if ( ! isset( $term_obj->taxonomy ) ||
+		! isset( $tax_opts[$term_obj->taxonomy][$term_obj->term_id] ) )
+			return $term_meta;
+
+	$term_meta['wpseo_taxonomy_meta'][] = $tax_opts[$term_obj->taxonomy][$term_obj->term_id];
+	
+	return $term_meta;
+}
+`
 
 == Screenshots ==
 
@@ -109,6 +127,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.0.2-1 (2016/12/28)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Highlighted new term meta rows added by the 'jsm_stm_term_meta' filters.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.0.1-1 (2016/12/23)**
 
 * *New Features*
@@ -133,6 +162,10 @@ Note that the production stage level can be incremented on occasion for simple t
 	* None
 
 == Upgrade Notice ==
+
+= 1.0.2-1 =
+
+(2016/12/28) Highlighted new term meta rows added by the 'jsm_sum_term_meta' filters.
 
 = 1.0.1-1 =
 

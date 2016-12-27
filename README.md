@@ -93,3 +93,21 @@
 
 <p><em>'jsm_stm_skip_keys' ( $array )</em> &mdash; An array of key name regular expressions to ignore (default: empty array).</p></p>
 
+<p>An example to add Yoast SEO term meta to the "Term Meta" metabox.</p>
+
+<pre><code>add_filter( 'jsm_stm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
+
+function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
+
+    $tax_opts = get_option( 'wpseo_taxonomy_meta' );
+
+    if ( ! isset( $term_obj-&gt;taxonomy ) ||
+        ! isset( $tax_opts[$term_obj-&gt;taxonomy][$term_obj-&gt;term_id] ) )
+            return $term_meta;
+
+    $term_meta['wpseo_taxonomy_meta'][] = $tax_opts[$term_obj-&gt;taxonomy][$term_obj-&gt;term_id];
+
+    return $term_meta;
+}
+</code></pre>
+
