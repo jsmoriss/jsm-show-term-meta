@@ -12,7 +12,7 @@
  * Description: Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
  * Requires At Least: 4.4
  * Tested Up To: 4.7
- * Version: 1.0.1-1
+ * Version: 1.0.2-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -108,9 +108,8 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			if ( empty( $term_obj->term_id ) )
 				return;
 	
-			$term_meta = apply_filters( 'jsm_stm_term_meta', 
-				get_term_meta( $term_obj->term_id ), $term_obj );	// since wp v3.0
-	
+			$term_meta = get_term_meta( $term_obj->term_id );	// since wp v4.4
+			$term_meta_filtered = apply_filters( 'jsm_stm_term_meta', $term_meta, $term_obj );
 			$skip_keys = apply_filters( 'jsm_stm_skip_keys', array() );
 	
 			?>
@@ -123,6 +122,9 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				}
 				div#jsm-stm.postbox table .key-column { 
 					width:30%;
+				}
+				div#jsm-stm.postbox table tr.added-meta { 
+					background-color:#eee;
 				}
 				div#jsm-stm.postbox table td { 
 					padding:10px;
@@ -142,16 +144,19 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			echo '<table><thead><tr><th class="key-column">'.__( 'Key', 'jsm-show-term-meta' ).'</th>';
 			echo '<th class="value-column">'.__( 'Value', 'jsm-show-term-meta' ).'</th></tr></thead><tbody>';
 	
-			ksort( $term_meta );
-			foreach( $term_meta as $meta_key => $arr ) {
+			ksort( $term_meta_filtered );
+			foreach( $term_meta_filtered as $meta_key => $arr ) {
 				foreach ( $skip_keys as $preg_dns )
 					if ( preg_match( $preg_dns, $meta_key ) )
 						continue 2;
 	
 				foreach ( $arr as $num => $el )
 					$arr[$num] = maybe_unserialize( $el );
-	
-				echo '<tr><td class="key-column"><div class="key-cell"><pre>'.
+
+				$is_added = isset( $term_meta[$meta_key] ) ? false : true;
+
+				echo $is_added ? '<tr class="added-meta">' : '<tr>';
+				echo '<td class="key-column"><div class="key-cell"><pre>'.
 					esc_html( $meta_key ).'</pre></div></td>';
 				echo '<td class="value-column"><div class="value-cell"><pre>'.
 					esc_html( var_export( $arr, true ) ).'</pre></div></td></tr>'."\n";
