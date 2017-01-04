@@ -49,12 +49,6 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 		public $view_cap;
 		public $tax_slug;
 	
-		public static function &get_instance() {
-			if ( ! isset( self::$instance ) )
-				self::$instance = new self;
-			return self::$instance;
-		}
-	
 		private function __construct() {
 			if ( is_admin() ) {
 				load_plugin_textdomain( 'jsm-show-term-meta', false, 'jsm-show-term-meta/languages/' );
@@ -65,6 +59,12 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' )
 					add_action( $this->tax_slug.'_edit_form', array( &$this, 'show_meta_boxes' ), 1000, 1 );
 			}
+		}
+	
+		public static function &get_instance() {
+			if ( ! isset( self::$instance ) )
+				self::$instance = new self;
+			return self::$instance;
 		}
 	
 		public static function check_wp_version() {
