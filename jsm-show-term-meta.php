@@ -33,7 +33,7 @@
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * http://www.gnu.org/licenses/.
  * 
- * Copyright 2016 Jean-Sebastien Morisset (https://surniaulula.com/)
+ * Copyright 2016-2017 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) 
