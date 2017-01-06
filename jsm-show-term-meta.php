@@ -51,8 +51,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 	
 		private function __construct() {
 			if ( is_admin() ) {
-				load_plugin_textdomain( 'jsm-show-term-meta', false, 'jsm-show-term-meta/languages/' );
-
+				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 
 				// make sure we have a taxonomy slug to hook the metabox action
@@ -67,6 +66,10 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			return self::$instance;
 		}
 	
+		public static function load_textdomain() {
+			load_plugin_textdomain( 'jsm-show-term-meta', false, 'jsm-show-term-meta/languages/' );
+		}
+
 		public static function check_wp_version() {
 			global $wp_version;
 			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
