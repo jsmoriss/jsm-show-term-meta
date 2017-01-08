@@ -111,7 +111,7 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 
 = Repositories =
 
-* [GitHub](https://github.com/jsmoriss/jsm-show-term-meta)
+* [GitHub](https://jsmoriss.github.io/jsm-show-term-meta/)
 * [WordPress.org](https://wordpress.org/plugins/jsm-show-term-meta/developers/)
 
 = Version Numbering Scheme =
