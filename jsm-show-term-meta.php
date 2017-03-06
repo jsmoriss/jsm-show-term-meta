@@ -55,7 +55,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 
 				// make sure we have a taxonomy slug to hook the metabox action
-				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' )
+				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' )	// uses sanitize_text_field
 					add_action( $this->tax_slug.'_edit_form', array( &$this, 'show_meta_boxes' ), 1000, 1 );
 			}
 		}
