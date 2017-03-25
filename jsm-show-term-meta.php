@@ -77,7 +77,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				if ( is_plugin_active( $plugin ) ) {
 					self::load_textdomain();
 					if ( ! function_exists( 'deactivate_plugins' ) ) {
-						require_once ABSPATH.'wp-admin/includes/plugin.php';
+						require_once trailingslashit( ABSPATH ).'wp-admin/includes/plugin.php';
 					}
 					$plugin_data = get_plugin_data( __FILE__, false );	// $markup = false
 					deactivate_plugins( $plugin, true );	// $silent = true
