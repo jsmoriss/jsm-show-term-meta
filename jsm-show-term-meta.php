@@ -75,14 +75,17 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 				if ( is_plugin_active( $plugin ) ) {
-					require_once( ABSPATH.'wp-admin/includes/plugin.php' );	// just in case
+					self::load_textdomain();
+					if ( ! function_exists( 'deactivate_plugins' ) ) {
+						require_once ABSPATH.'wp-admin/includes/plugin.php';
+					}
 					$plugin_data = get_plugin_data( __FILE__, false );	// $markup = false
-					deactivate_plugins( $plugin );
+					deactivate_plugins( $plugin, true );	// $silent = true
 					wp_die( 
-						sprintf( __( '%1$s requires WordPress version %2$s or higher and has been deactivated.',
-							'jsm-show-term-meta' ), $plugin_data['Name'], self::$wp_min_version ).'<br/><br/>'.
-						sprintf( __( 'Please upgrade WordPress before trying to reactivate the %1$s plugin.',
-							'jsm-show-term-meta' ), $plugin_data['Name'] )
+						'<p>'.sprintf( __( '%1$s requires WordPress version %2$s or higher and has been deactivated.',
+							'jsm-show-term-meta' ), $plugin_data['Name'], self::$wp_min_version ).'</p>'.
+						'<p>'.sprintf( __( 'Please upgrade WordPress before trying to reactivate the %1$s plugin.',
+							'jsm-show-term-meta' ), $plugin_data['Name'] ).'</p>'
 					);
 				}
 			}
