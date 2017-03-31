@@ -18,7 +18,7 @@ msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
 msgstr ""
 
 #: jsm-show-term-meta.php:87
-msgid "Please upgrade %1$s before trying to reactivate the %2$s plugin."
+msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
 #: jsm-show-term-meta.php:104
