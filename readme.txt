@@ -113,7 +113,7 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 * [GitHub](https://jsmoriss.github.io/jsm-show-term-meta/)
 * [WordPress.org](https://wordpress.org/plugins/jsm-show-term-meta/developers/)
 
-= Version Numbering Scheme =
+= Version Numbering =
 
 Version components: `{major}.{minor}.{bugfix}-{stage}{level}`
 
