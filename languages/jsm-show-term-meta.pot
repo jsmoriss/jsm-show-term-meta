@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the JSM's Show Term Meta package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Show Term Meta 1.0.3-1\n"
+"Project-Id-Version: JSM's Show Term Meta 1.0.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-term-"
 "meta\n"
 "POT-Creation-Date: 2017-MO-DA HO:MI+ZONE\n"
@@ -13,27 +13,27 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-show-term-meta.php:85
+#: jsm-show-term-meta.php:73
 msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
 msgstr ""
 
-#: jsm-show-term-meta.php:87
+#: jsm-show-term-meta.php:75
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
-#: jsm-show-term-meta.php:104
+#: jsm-show-term-meta.php:92
 msgid "Term Meta"
 msgstr ""
 
-#: jsm-show-term-meta.php:107
+#: jsm-show-term-meta.php:95
 msgid "Show Term Meta"
 msgstr ""
 
-#: jsm-show-term-meta.php:150
+#: jsm-show-term-meta.php:138
 msgid "Key"
 msgstr ""
 
-#: jsm-show-term-meta.php:151
+#: jsm-show-term-meta.php:139
 msgid "Value"
 msgstr ""
 
