@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Term Meta</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.3-1</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.4</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 4.4</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.7.3</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
