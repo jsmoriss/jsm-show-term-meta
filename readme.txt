@@ -124,66 +124,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.0.3-1 (2017/03/25)**
+**Version 1.0.4 (2017/04/08)**
 
 * *New Features*
 	* None
-* *Improvements*
-	* Minor updates to textdomain translation strings.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.0.2-1 (2016/12/28)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Highlighted new term meta rows added by the 'jsm_stm_term_meta' filters.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.0.1-1 (2016/12/23)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added French translation of labels and notices.
-	* Updated CSS to scroll overflow of meta values.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Maintenance release - minor refactoring of code.
-
-**Version 1.0.0-1 (2016/08/04)**
-
-* *New Features*
-	* Initial release.
 * *Improvements*
 	* None
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
+	* Maintenance release - update to version numbering scheme.
+	* Dropped the package number from the production version string.
 
 == Upgrade Notice ==
 
-= 1.0.3-1 =
+= 1.0.4 =
 
-(2017/03/25) Minor updates to textdomain translation strings.
-
-= 1.0.2-1 =
-
-(2016/12/28) Highlighted new term meta rows added by the 'jsm_sum_term_meta' filters.
-
-= 1.0.1-1 =
-
-(2016/12/23) Maintenance release - minor refactoring of code. Added French translation of labels and notices. Updated CSS to scroll overflow of meta values.
-
-= 1.0.0-1 =
-
-(2016/08/04) Initial release.
+(2017/04/08) Maintenance release - update to version numbering scheme.
 
