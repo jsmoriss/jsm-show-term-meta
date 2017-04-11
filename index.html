@@ -124,9 +124,10 @@
 
 <p>An example to add Yoast SEO term meta to the "Term Meta" metabox.</p>
 
-<pre><code>add_filter( 'jsm_stm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
+<p>`<br />
+    add_filter( 'jsm_stm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );</p>
 
-function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
+<pre><code>function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 
     $tax_opts = get_option( 'wpseo_taxonomy_meta' );
 
@@ -139,6 +140,8 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
     return $term_meta;
 }
 </code></pre>
+
+<p>`</p>
 
       </section>
       <footer>
