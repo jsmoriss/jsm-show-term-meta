@@ -24,8 +24,9 @@
  * Copyright 2016-2017 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
-if ( ! defined( 'ABSPATH' ) ) 
+if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for...' );
+}
 
 if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 
