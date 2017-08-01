@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
 Tags: meta, term meta, custom fields, debug, tools
 Contributors: jsmoriss
 Requires At Least: 4.4
-Tested Up To: 4.8
+Tested Up To: 4.8.1
 Stable Tag: 1.0.4
 
 Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
