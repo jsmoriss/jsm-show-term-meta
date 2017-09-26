@@ -56,13 +56,13 @@
 <h4>Semi-Automated Install</h4>
 
 <ol>
-<li>Download the plugin archive file.</li>
+<li>Download the plugin ZIP file.</li>
 <li>Go to the wp-admin/ section of your website.</li>
 <li>Select the <em>Plugins</em> menu item.</li>
 <li>Select the <em>Add New</em> sub-menu item.</li>
 <li>Click on <em>Upload</em> link (just under the Install Plugins page title).</li>
 <li>Click the <em>Browse...</em> button.</li>
-<li>Navigate your local folders / directories and choose the zip file you downloaded previously.</li>
+<li>Navigate your local folders / directories and choose the ZIP file you downloaded previously.</li>
 <li>Click on the <em>Install Now</em> button.</li>
 <li>Click the <em>Activate Plugin</em> link.</li>
 </ol>
