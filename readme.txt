@@ -31,7 +31,7 @@ Term meta has been available since WordPress v4.4. Older plugins that supported 
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-= Developers =
+= Power-users / Developers =
 
 See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-term-meta/other_notes/) page for information on available filters.
 
