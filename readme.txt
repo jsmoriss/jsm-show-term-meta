@@ -66,13 +66,13 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-term-meta/ot
 
 == Frequently Asked Questions ==
 
-= Frequently Asked Questions =
+<h3>Frequently Asked Questions</h3>
 
 * None
 
 == Other Notes ==
 
-= Additional Documentation =
+<h3>Additional Documentation</h3>
 
 **Developer Filters**
 
@@ -109,12 +109,12 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 
 == Changelog ==
 
-= Repositories =
+<h3>Repositories</h3>
 
 * [GitHub](https://jsmoriss.github.io/jsm-show-term-meta/)
 * [WordPress.org](https://wordpress.org/plugins/jsm-show-term-meta/developers/)
 
-= Version Numbering =
+<h3>Version Numbering</h3>
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
 
-= Changelog / Release Notes =
+<h3>Changelog / Release Notes</h3>
 
 **Version 1.0.4 (2017/04/08)**
 
