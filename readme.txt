@@ -1,4 +1,4 @@
-=== JSM's Show Term Meta on Term Editing Pages ===
+=== JSM's Show Term Meta in a Metabox on Term Editing Pages ===
 Plugin Name: JSM's Show Term Meta
 Plugin Slug: jsm-show-term-meta
 Text Domain: jsm-show-term-meta
@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
-Tags: meta, term meta, custom fields, debug, tools
+Tags: meta, term meta, inspector, custom fields, debug, tools
 Contributors: jsmoriss
 Requires At Least: 4.4
 Tested Up To: 4.8.2
