@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
 Tags: meta, term meta, inspector, custom fields, debug, tools
 Contributors: jsmoriss
 Requires At Least: 4.4
-Tested Up To: 4.8.2
+Tested Up To: 4.8.3
 Requires PHP: 5.3
 Stable Tag: 1.0.4
 
