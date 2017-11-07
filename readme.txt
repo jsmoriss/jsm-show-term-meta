@@ -1,4 +1,4 @@
-=== JSM's Show Term Meta in a Metabox on Term Editing Pages ===
+=== JSM's Show Term Meta in a Metabox on Term Editing Pages (Great Plugin for Developers) ===
 Plugin Name: JSM's Show Term Meta
 Plugin Slug: jsm-show-term-meta
 Text Domain: jsm-show-term-meta
