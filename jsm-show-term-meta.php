@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: JSM's Show Term Meta
  * Text Domain: jsm-show-term-meta
