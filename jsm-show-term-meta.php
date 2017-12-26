@@ -46,7 +46,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 
 				// make sure we have a taxonomy slug to hook the metabox action
 				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' )	// uses sanitize_text_field
-					add_action( $this->tax_slug.'_edit_form', array( &$this, 'show_meta_boxes' ), 1000, 1 );
+					add_action( $this->tax_slug . '_edit_form', array( &$this, 'show_meta_boxes' ), 1000, 1 );
 			}
 		}
 	
@@ -69,15 +69,15 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 				if ( is_plugin_active( $plugin ) ) {
 					if ( ! function_exists( 'deactivate_plugins' ) ) {
-						require_once trailingslashit( ABSPATH ).'wp-admin/includes/plugin.php';
+						require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 					}
 					$plugin_data = get_plugin_data( __FILE__, false );	// $markup = false
 					deactivate_plugins( $plugin, true );	// $silent = true
 					wp_die( 
-						'<p>'.sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
-							'jsm-show-term-meta' ), $plugin_data['Name'], 'WordPress', $wp_min_version ).'</p>'.
-						'<p>'.sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-							'jsm-show-term-meta' ), 'WordPress', $plugin_data['Name'] ).'</p>'
+						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
+							'jsm-show-term-meta' ), $plugin_data['Name'], 'WordPress', $wp_min_version ) . '</p>' . 
+						'<p>' . sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
+							'jsm-show-term-meta' ), 'WordPress', $plugin_data['Name'] ) . '</p>'
 					);
 				}
 			}
@@ -96,7 +96,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			add_meta_box( 'jsm-stm', __( 'Term Meta', 'jsm-show-term-meta' ),
 				array( &$this, 'show_term_meta' ), 'jsm-stm-term', 'normal', 'low' );
 	
-			echo '<h3 id="jsm-stm-metaboxes">'.__( 'Show Term Meta', 'jsm-show-term-meta' ).'</h3>';
+			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Meta', 'jsm-show-term-meta' ) . '</h3>';
 			echo '<div id="poststuff">';
 			do_meta_boxes( 'jsm-stm-term', 'normal', $term_obj );
 			echo '</div><!-- .poststuff -->';
@@ -139,26 +139,30 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			</style>
 			<?php
 	
-			echo '<table><thead><tr><th class="key-column">'.__( 'Key', 'jsm-show-term-meta' ).'</th>';
-			echo '<th class="value-column">'.__( 'Value', 'jsm-show-term-meta' ).'</th></tr></thead><tbody>';
+			echo '<table><thead><tr><th class="key-column">' . __( 'Key', 'jsm-show-term-meta' ) . '</th>';
+			echo '<th class="value-column">' . __( 'Value', 'jsm-show-term-meta' ) . '</th></tr></thead><tbody>';
 	
 			ksort( $term_meta_filtered );
+
 			foreach( $term_meta_filtered as $meta_key => $arr ) {
-				foreach ( $skip_keys as $preg_dns )
-					if ( preg_match( $preg_dns, $meta_key ) )
+
+				foreach ( $skip_keys as $preg_dns ) {
+					if ( preg_match( $preg_dns, $meta_key ) ) {
 						continue 2;
+					}
+				}
 	
-				foreach ( $arr as $num => $el )
+				foreach ( $arr as $num => $el ) {
 					$arr[$num] = maybe_unserialize( $el );
+				}
 
 				$is_added = isset( $term_meta[$meta_key] ) ? false : true;
 
 				echo $is_added ? '<tr class="added-meta">' : '<tr>';
-				echo '<td class="key-column"><div class="key-cell"><pre>'.
-					esc_html( $meta_key ).'</pre></div></td>';
-				echo '<td class="value-column"><div class="value-cell"><pre>'.
-					esc_html( var_export( $arr, true ) ).'</pre></div></td></tr>'."\n";
+				echo '<td class="key-column"><div class="key-cell"><pre>' . esc_html( $meta_key ) . '</pre></div></td>';
+				echo '<td class="value-column"><div class="value-cell"><pre>' . esc_html( var_export( $arr, true ) ) . '</pre></div></td></tr>' . "\n";
 			}
+
 			echo '</tbody></table>';
 		}
 	
