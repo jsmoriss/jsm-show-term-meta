@@ -83,14 +83,17 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 		}
 
 		public function show_meta_boxes( $term_obj ) {
-			if ( ! isset( $term_obj->term_id ) )	// just in case
+
+			if ( ! isset( $term_obj->term_id ) ) {	// just in case
 				return;
+			}
 	
 			$this->view_cap = apply_filters( 'jsm_stm_view_cap', 'manage_options' );
 	
 			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || 
-				! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) )
-					return;
+				! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
+				return;
+			}
 	
 			add_meta_box( 'jsm-stm', __( 'Term Meta', 'jsm-show-term-meta' ),
 				array( &$this, 'show_term_meta' ), 'jsm-stm-term', 'normal', 'low' );
@@ -102,8 +105,10 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 		}
 	
 		public function show_term_meta( $term_obj ) {
-			if ( empty( $term_obj->term_id ) )
+
+			if ( empty( $term_obj->term_id ) ) {
 				return;
+			}
 	
 			$term_meta = get_term_meta( $term_obj->term_id );	// since wp v4.4
 			$term_meta_filtered = apply_filters( 'jsm_stm_term_meta', $term_meta, $term_obj );
