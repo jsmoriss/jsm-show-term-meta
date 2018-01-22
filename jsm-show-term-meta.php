@@ -189,4 +189,3 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 
 	JSM_Show_Term_Meta::get_instance();
 }
-
