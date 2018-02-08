@@ -84,7 +84,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 
 		public function show_meta_boxes( $term_obj ) {
 
-			if ( ! isset( $term_obj->term_id ) ) {	// just in case
+			if ( ! isset( $term_obj->term_id ) ) {	// Just in case.
 				return;
 			}
 	
