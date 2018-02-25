@@ -90,8 +90,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 	
 			$this->view_cap = apply_filters( 'jsm_stm_view_cap', 'manage_options' );
 	
-			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || 
-				! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
+			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || ! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
 				return;
 			}
 	
