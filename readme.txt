@@ -13,7 +13,7 @@ Requires At Least: 4.4
 Tested Up To: 4.9.4
 Stable Tag: 1.0.4
 
-Show all term (categories, tags) meta in a metabox on post editing pages -- great plugin for developers or debugging issues with term meta.
+Show all term (categories, tags) meta in a metabox on term editing pages -- great plugin for developers or debugging issues with term meta.
 
 == Description ==
 
