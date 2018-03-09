@@ -1,4 +1,4 @@
-=== JSM's Show Term Meta in a Metabox on Term Editing Pages (Great Plugin for Developers) ===
+=== JSM's Show Term Meta ===
 Plugin Name: JSM's Show Term Meta
 Plugin Slug: jsm-show-term-meta
 Text Domain: jsm-show-term-meta
@@ -13,21 +13,23 @@ Requires At Least: 4.4
 Tested Up To: 4.9.4
 Stable Tag: 1.0.4
 
-Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
+Show all term (categories, tags) meta in a metabox on post editing pages -- great plugin for developers or debugging issues with term meta.
 
 == Description ==
 
-<strong>Wondering about the term meta your theme and/or plugins might be creating?</strong>
+Wondering about the term meta your theme and/or plugins might be creating?
 
-<strong>Want to find the name of a specific term meta key?</strong>
+Want to find the name of a specific term meta key?
 
-<strong>Need some help debugging your term meta?</strong>
+Need some help debugging your term meta?
 
-The JSM's Show Term Meta plugin displays all term meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of term editing pages (categories, tags, etc.).
-
-Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use the new term meta functions, while the [WooCommerce](https://wordpress.org/plugins/woocommerce/) and [WPSSO](https://wordpress.org/plugins/wpsso/) plugins do.
+The JSM's Show Term Meta plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.
 
 There are no plugin settings &mdash; simply install and activate the plugin.
+
+<blockquote>
+Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use the new term meta functions, while the [WooCommerce](https://wordpress.org/plugins/woocommerce/) and [WPSSO](https://wordpress.org/plugins/wpsso/) plugins do.
+</blockquote>
 
 = Power-users / Developers =
 
