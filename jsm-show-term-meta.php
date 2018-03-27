@@ -34,6 +34,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 	class JSM_Show_Term_Meta {
 
 		private static $instance;
+		private static $wp_min_version = 4.4;
 	
 		public $view_cap;
 		public $tax_slug;
@@ -41,7 +42,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 		private function __construct() {
 			if ( is_admin() ) {
 				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );	// Requires WP v4.4 or better.
 
 				// make sure we have a taxonomy slug to hook the metabox action
 				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' )	// uses sanitize_text_field
@@ -62,9 +63,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 
 		public static function check_wp_version() {
 			global $wp_version;
-			$wp_min_version = 4.4;
-
-			if ( version_compare( $wp_version, $wp_min_version, '<' ) ) {
+			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 				if ( is_plugin_active( $plugin ) ) {
 					if ( ! function_exists( 'deactivate_plugins' ) ) {
@@ -74,7 +73,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 					deactivate_plugins( $plugin, true ); // $silent = true
 					wp_die( 
 						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
-							'jsm-show-term-meta' ), $plugin_data['Name'], 'WordPress', $wp_min_version ) . '</p>' . 
+							'jsm-show-term-meta' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . '</p>' . 
 						'<p>' . sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
 							'jsm-show-term-meta' ), 'WordPress', $plugin_data['Name'] ) . '</p>'
 					);
