@@ -34,7 +34,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 	class JSM_Show_Term_Meta {
 
 		private static $instance;
-		private static $wp_min_version = 4.4;
+		private static $wp_min_version = '4.4';
 	
 		public $view_cap;
 		public $tax_slug;
