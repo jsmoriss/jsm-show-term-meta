@@ -29,11 +29,11 @@ msgstr ""
 msgid "Show Term Meta"
 msgstr ""
 
-#: jsm-show-term-meta.php:146
+#: jsm-show-term-meta.php:148
 msgid "Key"
 msgstr ""
 
-#: jsm-show-term-meta.php:147
+#: jsm-show-term-meta.php:149
 msgid "Value"
 msgstr ""
 

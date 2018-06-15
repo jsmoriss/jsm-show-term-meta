@@ -46,7 +46,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 
 				// make sure we have a taxonomy slug to hook the metabox action
 				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' )	// uses sanitize_text_field
-					add_action( $this->tax_slug . '_edit_form', array( &$this, 'show_meta_boxes' ), 1000, 1 );
+					add_action( $this->tax_slug . '_edit_form', array( $this, 'show_meta_boxes' ), 1000, 1 );
 			}
 		}
 	
@@ -96,11 +96,13 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			}
 	
 			add_meta_box( 'jsm-stm', __( 'Term Meta', 'jsm-show-term-meta' ),
-				array( &$this, 'show_term_meta' ), 'jsm-stm-term', 'normal', 'low' );
+				array( $this, 'show_term_meta' ), 'jsm-stm-term', 'normal', 'low' );
 	
 			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Meta', 'jsm-show-term-meta' ) . '</h3>';
 			echo '<div id="poststuff">';
+
 			do_meta_boxes( 'jsm-stm-term', 'normal', $term_obj );
+
 			echo '</div><!-- .poststuff -->';
 		}
 	
