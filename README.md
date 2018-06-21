@@ -70,7 +70,7 @@
 
 <h2>Frequently Asked Questions</h2>
 
-<h3>Frequently Asked Questions</h3>
+<h3 class="top">Frequently Asked Questions</h3>
 
 <ul>
 <li>None</li>
@@ -80,7 +80,7 @@
 <h2>Other Notes</h2>
 
 <h3>Other Notes</h3>
-<h3>Additional Documentation</h3>
+<h3 class="top">Additional Documentation</h3>
 
 <p><strong>Developer Filters</strong></p>
 
