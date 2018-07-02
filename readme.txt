@@ -29,10 +29,6 @@ There are no plugin settings &mdash; simply install and activate the plugin.
 
 > Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use the new term meta functions, while the [WooCommerce](https://wordpress.org/plugins/woocommerce/) and [WPSSO](https://wordpress.org/plugins/wpsso/) plugins do.
 
-= Power-users / Developers =
-
-See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-term-meta/other_notes/) page for information on available filters.
-
 = Related Plugins =
 
 * [JSM's Show Post Meta](https://wordpress.org/plugins/jsm-show-post-meta/)
@@ -68,38 +64,26 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-term-meta/ot
 
 * None
 
-== Other Notes ==
-
-<h3 class="top">Additional Documentation</h3>
+<h3>Documentation and Notes</h3>
 
 **Developer Filters**
 
-*'jsm_stm_view_cap' ( 'manage_options' )* &mdash; The current user must have these capabilities to view the "Term Meta" metabox (default: 'manage_options' ).</p>
-
-*'jsm_stm_taxonomy' ( true, $screen_base )* &mdash; Add the "Term Meta" metabox to the term editing page of this taxonomy (example: 'category').</p>
-
-*'jsm_stm_term_meta' ( $term_meta, $term_obj )* &mdash; The term meta array (unserialized) retrieved for display in the metabox.</p>
-
-*'jsm_stm_skip_keys' ( $array )* &mdash; An array of key name regular expressions to ignore (default: empty array).</p>
-
 An example to add Yoast SEO term meta to the "Term Meta" metabox.
 
-`
+<pre>
 add_filter( 'jsm_stm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
 
 function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 
 	$tax_opts = get_option( 'wpseo_taxonomy_meta' );
 
-	if ( ! isset( $term_obj->taxonomy ) ||
-		! isset( $tax_opts[$term_obj->taxonomy][$term_obj->term_id] ) )
-			return $term_meta;
-
-	$term_meta['wpseo_taxonomy_meta'][] = $tax_opts[$term_obj->taxonomy][$term_obj->term_id];
+	if ( isset( $tax_opts[$term_obj->taxonomy][$term_obj->term_id] ) ) {
+		$term_meta['wpseo_taxonomy_meta'][] = $tax_opts[$term_obj->taxonomy][$term_obj->term_id];
+	}
 	
 	return $term_meta;
 }
-`
+</pre>
 
 == Screenshots ==
 
