@@ -62,7 +62,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 <h3 class="top">Frequently Asked Questions</h3>
 
-* None
+* None.
 
 <h3>Documentation and Notes</h3>
 
@@ -110,11 +110,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 1.0.4 (2017/04/08)**
 
 * *New Features*
-	* None
+	* None.
 * *Improvements*
-	* None
+	* None.
 * *Bugfixes*
-	* None
+	* None.
 * *Developer Notes*
 	* Maintenance release.
 
