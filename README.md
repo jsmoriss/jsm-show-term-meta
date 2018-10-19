@@ -72,7 +72,7 @@
 <li>None.</li>
 </ul>
 
-<h3>Documentation and Notes</h3>
+<h3>Advanced Documentation and Notes</h3>
 
 <p><strong>Developer Filters</strong></p>
 
