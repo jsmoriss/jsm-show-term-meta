@@ -21,19 +21,19 @@ msgstr ""
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
-#: jsm-show-term-meta.php:98
+#: jsm-show-term-meta.php:99
 msgid "Term Meta"
 msgstr ""
 
-#: jsm-show-term-meta.php:101
+#: jsm-show-term-meta.php:111
 msgid "Show Term Meta"
 msgstr ""
 
-#: jsm-show-term-meta.php:148
+#: jsm-show-term-meta.php:158
 msgid "Key"
 msgstr ""
 
-#: jsm-show-term-meta.php:149
+#: jsm-show-term-meta.php:159
 msgid "Value"
 msgstr ""
 

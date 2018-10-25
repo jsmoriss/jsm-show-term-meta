@@ -95,8 +95,18 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				return;
 			}
 	
-			add_meta_box( 'jsm-stm', __( 'Term Meta', 'jsm-show-term-meta' ),
-				array( $this, 'show_term_meta' ), 'jsm-stm-term', 'normal', 'low' );
+			$metabox_id      = 'jsm-stm';
+			$metabox_title   = __( 'Term Meta', 'jsm-show-term-meta' );
+			$metabox_screen  = 'jsm-stm-term';
+			$metabox_context = 'normal';
+			$metabox_prio    = 'low';
+			$callback_args   = array(	// The SECOND argument passed to the callback.
+				'__block_editor_compatible_meta_box' => true,
+			);
+
+			add_meta_box( $metabox_id, $metabox_title,
+				array( $this, 'show_term_meta' ), $metabox_screen,
+					$metabox_context, $metabox_prio, $callback_args );
 	
 			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Meta', 'jsm-show-term-meta' ) . '</h3>';
 			echo '<div id="poststuff">';
