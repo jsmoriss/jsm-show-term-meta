@@ -100,7 +100,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			$metabox_screen  = 'jsm-stm-term';
 			$metabox_context = 'normal';
 			$metabox_prio    = 'low';
-			$callback_args   = array(	// The SECOND argument passed to the callback.
+			$callback_args   = array(	// Second argument passed to the callback function / method.
 				'__block_editor_compatible_meta_box' => true,
 			);
 
