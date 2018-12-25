@@ -122,9 +122,9 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				return;
 			}
 	
-			$term_meta = get_term_meta( $term_obj->term_id );	// since wp v4.4
+			$term_meta          = get_term_meta( $term_obj->term_id );	// Since WP v4.4.
 			$term_meta_filtered = apply_filters( 'jsm_stm_term_meta', $term_meta, $term_obj );
-			$skip_keys = apply_filters( 'jsm_stm_skip_keys', array() );
+			$skip_keys          = apply_filters( 'jsm_stm_skip_keys', array() );
 	
 			?>
 			<style>
