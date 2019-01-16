@@ -64,15 +64,23 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 		}
 
 		public static function check_wp_version() {
+
 			global $wp_version;
+
 			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
+
 				$plugin = plugin_basename( __FILE__ );
+
 				if ( is_plugin_active( $plugin ) ) {
+
 					if ( ! function_exists( 'deactivate_plugins' ) ) {
 						require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 					}
+
 					$plugin_data = get_plugin_data( __FILE__, false ); // $markup is false
+
 					deactivate_plugins( $plugin, true ); // $silent is true
+
 					wp_die( 
 						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
 							'jsm-show-term-meta' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . '</p>' . 
