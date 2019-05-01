@@ -177,10 +177,10 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				}
 	
 				foreach ( $arr as $num => $el ) {
-					$arr[$num] = maybe_unserialize( $el );
+					$arr[ $num ] = maybe_unserialize( $el );
 				}
 
-				$is_added = isset( $term_meta[$meta_key] ) ? false : true;
+				$is_added = isset( $term_meta[ $meta_key ] ) ? false : true;
 
 				echo $is_added ? '<tr class="added-meta">' : '<tr>';
 				echo '<td class="key-column"><div class="key-cell"><pre>' . esc_html( $meta_key ) . '</pre></div></td>';
@@ -191,16 +191,27 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 		}
 	
 		public function get_request_value( $req_key, $method = 'ANY' ) {
-			if ( $method === 'ANY' )
+
+			if ( $method === 'ANY' ) {
 				$method = $_SERVER['REQUEST_METHOD'];
+			}
+
 			switch( $method ) {
+
 				case 'POST':
-					if ( isset( $_POST[$req_key] ) )
-						return sanitize_text_field( $_POST[$req_key] );
+
+					if ( isset( $_POST[ $req_key ] ) ) {
+						return sanitize_text_field( $_POST[ $req_key ] );
+					}
+
 					break;
+
 				case 'GET':
-					if ( isset( $_GET[$req_key] ) )
-						return sanitize_text_field( $_GET[$req_key] );
+
+					if ( isset( $_GET[ $req_key ] ) ) {
+						return sanitize_text_field( $_GET[ $req_key ] );
+					}
+
 					break;
 			}
 			return '';
