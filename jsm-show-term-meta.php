@@ -26,7 +26,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	die( 'These aren\'t the droids you\'re looking for...' );
+	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
 if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
