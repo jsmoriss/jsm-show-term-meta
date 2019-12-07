@@ -40,13 +40,18 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 		public $tax_slug;
 	
 		private function __construct() {
-			if ( is_admin() ) {
-				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );	// Requires WP v4.4 or better.
 
-				// make sure we have a taxonomy slug to hook the metabox action
-				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' )	// uses sanitize_text_field
+			if ( is_admin() ) {
+
+				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
+
+				/**
+				 * Make sure we have a taxonomy slug to hook the metabox action.
+				 */
+				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' ) {	// Uses sanitize_text_field.
 					add_action( $this->tax_slug . '_edit_form', array( $this, 'show_meta_boxes' ), 1000, 1 );
+				}
 			}
 		}
 	
