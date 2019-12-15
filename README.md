@@ -4,7 +4,7 @@
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Term Meta</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Show all term (categories, tags) meta in a metabox on term editing pages -- great plugin for developers or debugging issues with term meta.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.4</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.6 or newer</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.5 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>4.4 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.3.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>

@@ -8,7 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
 Tags: meta, term meta, inspector, custom fields, debug, tools
 Contributors: jsmoriss
-Requires PHP: 5.6
+Requires PHP: 5.5
 Requires At Least: 4.4
 Tested Up To: 5.3.1
 Stable Tag: 1.0.4
