@@ -118,7 +118,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			);
 
 			add_meta_box( $metabox_id, $metabox_title,
-				array( $this, 'show_term_meta' ), $metabox_screen,
+				array( $this, 'show_term_metadata' ), $metabox_screen,
 					$metabox_context, $metabox_prio, $callback_args );
 	
 			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Metadata', 'jsm-show-term-meta' ) . '</h3>';
@@ -129,7 +129,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			echo '</div><!-- .poststuff -->';
 		}
 	
-		public function show_term_meta( $term_obj ) {
+		public function show_term_metadata( $term_obj ) {
 
 			if ( empty( $term_obj->term_id ) ) {
 				return;
