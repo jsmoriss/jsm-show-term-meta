@@ -1,5 +1,5 @@
-=== JSM's Show Term Meta ===
-Plugin Name: JSM's Show Term Meta
+=== JSM's Show Term Metadata ===
+Plugin Name: JSM's Show Term Metadata
 Plugin Slug: jsm-show-term-meta
 Text Domain: jsm-show-term-meta
 Domain Path: /languages
@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.5
 Requires At Least: 4.4
 Tested Up To: 5.3.2
-Stable Tag: 1.0.4
+Stable Tag: 1.1.0
 
 Show all term (categories, tags) meta in a metabox on term editing pages -- great plugin for developers or debugging issues with term meta.
 
@@ -23,16 +23,16 @@ Want to find the name of a specific term meta key?
 
 Need some help debugging your term meta?
 
-The JSM's Show Term Meta plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.
+The JSM's Show Term Metadata plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.
 
 There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
-> Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use the new term meta functions, while the [WooCommerce](https://wordpress.org/plugins/woocommerce/) and [WPSSO](https://wordpress.org/plugins/wpsso/) plugins do.
+> Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Metadata list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use the new term meta functions, while the [WooCommerce](https://wordpress.org/plugins/woocommerce/) and [WPSSO](https://wordpress.org/plugins/wpsso/) plugins do.
 
 = Related Plugins =
 
-* [JSM's Show Post Meta](https://wordpress.org/plugins/jsm-show-post-meta/)
-* [JSM's Show User Meta](https://wordpress.org/plugins/jsm-show-user-meta/)
+* [JSM's Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
+* [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
 
 == Installation ==
 
@@ -68,7 +68,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 **Developer Filters**
 
-An example to add Yoast SEO term meta to the "Term Meta" metabox.
+An example to add Yoast SEO term meta to the "Term Metadata" metabox.
 
 <pre>
 add_filter( 'jsm_stm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
@@ -87,7 +87,7 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 
 == Screenshots ==
 
-01. The Term Meta metabox added to admin term editing pages.
+01. The Term Metadata metabox added to admin term editing pages.
 
 == Changelog ==
 
@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.4 (2017/04/08)**
+**Version 1.1.0 (2020/01/16)**
 
 * **New Features**
 	* None.
@@ -120,7 +120,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.0.4 =
+= 1.1.0 =
 
-(2017/04/08) Maintenance release.
+(2020/01/16) Maintenance release.
 

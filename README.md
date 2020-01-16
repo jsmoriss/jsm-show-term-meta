@@ -1,9 +1,9 @@
-<h1>JSM&#039;s Show Term Meta</h1>
+<h1>JSM&#039;s Show Term Metadata</h1>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Term Meta</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Term Metadata</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Show all term (categories, tags) meta in a metabox on term editing pages -- great plugin for developers or debugging issues with term meta.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.4</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.1.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.5 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>4.4 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.3.2</td></tr>
@@ -20,19 +20,19 @@
 
 <p>Need some help debugging your term meta?</p>
 
-<p>The JSM's Show Term Meta plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.</p>
+<p>The JSM's Show Term Metadata plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.</p>
 
 <p>There are no plugin settings &mdash; simply <em>install</em> and <em>activate</em> the plugin.</p>
 
 <blockquote>
-  <p>Term meta has been available since WordPress v4.4. Older plugins that supported "<em>term meta</em>" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "<em>term meta</em>" solutions instead. This custom "<em>term meta</em>", which is not stored in the WordPress term meta table, will not appear in the Term Meta list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "<em>term meta</em>". As an example, the <a href="https://wordpress.org/plugins/wordpress-seo/">Yoast SEO</a> plugin still does not use the new term meta functions, while the <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> and <a href="https://wordpress.org/plugins/wpsso/">WPSSO</a> plugins do.</p>
+  <p>Term meta has been available since WordPress v4.4. Older plugins that supported "<em>term meta</em>" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "<em>term meta</em>" solutions instead. This custom "<em>term meta</em>", which is not stored in the WordPress term meta table, will not appear in the Term Metadata list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "<em>term meta</em>". As an example, the <a href="https://wordpress.org/plugins/wordpress-seo/">Yoast SEO</a> plugin still does not use the new term meta functions, while the <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> and <a href="https://wordpress.org/plugins/wpsso/">WPSSO</a> plugins do.</p>
 </blockquote>
 
 <h4>Related Plugins</h4>
 
 <ul>
-<li><a href="https://wordpress.org/plugins/jsm-show-post-meta/">JSM's Show Post Meta</a></li>
-<li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Meta</a></li>
+<li><a href="https://wordpress.org/plugins/jsm-show-post-meta/">JSM's Show Post Metadata</a></li>
+<li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Metadata</a></li>
 </ul>
 
 
@@ -77,7 +77,7 @@
 
 <p><strong>Developer Filters</strong></p>
 
-<p>An example to add Yoast SEO term meta to the "Term Meta" metabox.</p>
+<p>An example to add Yoast SEO term meta to the "Term Metadata" metabox.</p>
 
 <pre>
 add_filter( 'jsm_stm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
