@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: JSM's Show Term Meta
+ * Plugin Name: JSM's Show Term Metadata
  * Text Domain: jsm-show-term-meta
  * Domain Path: /languages
  * Plugin URI: https://surniaulula.com/extend/plugins/jsm-show-term-meta/
@@ -29,9 +29,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
+if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
-	class JSM_Show_Term_Meta {
+	class JSM_Show_Term_Metadata {
 
 		private static $instance;
 		private static $wp_min_version = '4.4';
@@ -109,7 +109,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 			}
 	
 			$metabox_id      = 'jsm-stm';
-			$metabox_title   = __( 'Term Meta', 'jsm-show-term-meta' );
+			$metabox_title   = __( 'Term Metadata', 'jsm-show-term-meta' );
 			$metabox_screen  = 'jsm-stm-term';
 			$metabox_context = 'normal';
 			$metabox_prio    = 'low';
@@ -121,7 +121,7 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 				array( $this, 'show_term_meta' ), $metabox_screen,
 					$metabox_context, $metabox_prio, $callback_args );
 	
-			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Meta', 'jsm-show-term-meta' ) . '</h3>';
+			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Metadata', 'jsm-show-term-meta' ) . '</h3>';
 			echo '<div id="poststuff">';
 
 			do_meta_boxes( 'jsm-stm-term', 'normal', $term_obj );
@@ -223,5 +223,5 @@ if ( ! class_exists( 'JSM_Show_Term_Meta' ) ) {
 		}
 	}
 
-	JSM_Show_Term_Meta::get_instance();
+	JSM_Show_Term_Metadata::get_instance();
 }
