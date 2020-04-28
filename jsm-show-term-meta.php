@@ -50,7 +50,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				 */
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 
-				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+				add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
 
 				/**
 				 * Make sure we have a taxonomy slug to hook the metabox action.
@@ -101,15 +101,15 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			}
 		}
 
-		public static function load_textdomain() {
+		public static function init_textdomain() {
 
-			static $do_once = null;
+			static $loaded = null;
 
-			if ( null !== $do_once ) {	// Already loaded.
+			if ( null !== $loaded ) {
 				return;
 			}
 
-			$do_once = true;
+			$loaded = true;
 
 			load_plugin_textdomain( 'jsm-show-term-meta', false, 'jsm-show-term-meta/languages/' );
 		}
