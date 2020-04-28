@@ -13,27 +13,27 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-show-term-meta.php:90
+#: jsm-show-term-meta.php:98
 msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
 msgstr ""
 
-#: jsm-show-term-meta.php:92
+#: jsm-show-term-meta.php:100
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
-#: jsm-show-term-meta.php:112
+#: jsm-show-term-meta.php:118
 msgid "Term Metadata"
 msgstr ""
 
-#: jsm-show-term-meta.php:124
+#: jsm-show-term-meta.php:130
 msgid "Show Term Metadata"
 msgstr ""
 
-#: jsm-show-term-meta.php:171
+#: jsm-show-term-meta.php:177
 msgid "Key"
 msgstr ""
 
-#: jsm-show-term-meta.php:172
+#: jsm-show-term-meta.php:178
 msgid "Value"
 msgstr ""
 
