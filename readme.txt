@@ -64,7 +64,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 * None.
 
-<h3>Advanced Documentation and Notes</h3>
+<h3>Notes and Documentation</h3>
 
 **Developer Filters**
 
