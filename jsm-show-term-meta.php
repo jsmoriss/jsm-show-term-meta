@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.4
  * Tested Up To: 5.4.1
- * Version: 1.1.0
+ * Version: 1.2.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -65,6 +65,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
+
 				self::$instance = new self;
 			}
 
@@ -87,6 +88,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 
 				if ( ! function_exists( 'deactivate_plugins' ) ) {
+
 					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 				}
 
@@ -110,6 +112,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			static $loaded = null;
 
 			if ( null !== $loaded ) {
+
 				return;
 			}
 
@@ -121,12 +124,15 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 		public function show_meta_boxes( $term_obj ) {
 
 			if ( ! isset( $term_obj->term_id ) ) {	// Just in case.
+
 				return;
 			}
 	
 			$this->view_cap = apply_filters( 'jsm_stm_view_cap', 'manage_options' );
 	
-			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || ! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
+			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || 
+				! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
+
 				return;
 			}
 	
@@ -144,6 +150,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 					$metabox_context, $metabox_prio, $callback_args );
 	
 			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Metadata', 'jsm-show-term-meta' ) . '</h3>';
+
 			echo '<div id="poststuff">';
 
 			do_meta_boxes( 'jsm-stm-term', 'normal', $term_obj );
@@ -154,6 +161,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 		public function show_term_metadata( $term_obj ) {
 
 			if ( empty( $term_obj->term_id ) ) {
+
 				return;
 			}
 	
@@ -191,6 +199,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			<?php
 	
 			echo '<table><thead><tr><th class="key-column">' . __( 'Key', 'jsm-show-term-meta' ) . '</th>';
+
 			echo '<th class="value-column">' . __( 'Value', 'jsm-show-term-meta' ) . '</th></tr></thead><tbody>';
 	
 			ksort( $term_meta_filtered );
@@ -198,19 +207,24 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			foreach( $term_meta_filtered as $meta_key => $arr ) {
 
 				foreach ( $skip_keys as $preg_dns ) {
+
 					if ( preg_match( $preg_dns, $meta_key ) ) {
+
 						continue 2;
 					}
 				}
 	
 				foreach ( $arr as $num => $el ) {
+
 					$arr[ $num ] = maybe_unserialize( $el );
 				}
 
 				$is_added = isset( $term_meta[ $meta_key ] ) ? false : true;
 
 				echo $is_added ? '<tr class="added-meta">' : '<tr>';
+
 				echo '<td class="key-column"><div class="key-cell"><pre>' . esc_html( $meta_key ) . '</pre></div></td>';
+
 				echo '<td class="value-column"><div class="value-cell"><pre>' . esc_html( var_export( $arr, true ) ) . '</pre></div></td></tr>' . "\n";
 			}
 
@@ -219,8 +233,9 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 	
 		public function get_request_value( $req_key, $method = 'ANY' ) {
 
-			if ( $method === 'ANY' ) {
-				$method = $_SERVER['REQUEST_METHOD'];
+			if ( 'ANY' === $method ) {
+
+				$method = $_SERVER[ 'REQUEST_METHOD' ];
 			}
 
 			switch( $method ) {
@@ -228,6 +243,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				case 'POST':
 
 					if ( isset( $_POST[ $req_key ] ) ) {
+
 						return sanitize_text_field( $_POST[ $req_key ] );
 					}
 
@@ -236,11 +252,13 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				case 'GET':
 
 					if ( isset( $_GET[ $req_key ] ) ) {
+
 						return sanitize_text_field( $_GET[ $req_key ] );
 					}
 
 					break;
 			}
+
 			return '';
 		}
 	}
