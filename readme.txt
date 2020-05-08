@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.4
 Tested Up To: 5.4.1
-Stable Tag: 1.1.0
+Stable Tag: 1.2.0
 
 Show all term (categories, tags) meta in a metabox on term editing pages -- great plugin for developers or debugging issues with term meta.
 
@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.1.0 (2020/01/16)**
+**Version 1.2.0 (2020/05/08)**
 
 * **New Features**
 	* None.
@@ -116,11 +116,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Maintenance release.
+	* Maintenance release - minor code formatting changes.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.2.
 
 == Upgrade Notice ==
 
-= 1.1.0 =
+= 1.2.0 =
 
-(2020/01/16) Maintenance release.
+(2020/05/08) Maintenance release - minor code formatting changes.
 
