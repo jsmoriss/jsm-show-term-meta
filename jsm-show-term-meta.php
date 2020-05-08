@@ -92,12 +92,16 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 				$plugin_data = get_plugin_data( __FILE__, $markup = false );
 
+				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.',
+					'jsm-show-term-meta' );
+
+				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
+					'jsm-show-term-meta' );
+
 				deactivate_plugins( $plugin, $silent = true );
 
-				wp_die( '<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
-					'jsm-show-term-meta' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . ' ' .
-						sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-							'jsm-show-term-meta' ), 'WordPress', $plugin_data['Name'] ) . '</p>' );
+				wp_die( '<p>' . sprintf( $notice_version_transl, $plugin_data[ 'Name' ], 'WordPress', self::$wp_min_version ) . ' ' . 
+					 sprintf( $notice_upgrade_transl, 'WordPress', $plugin_data[ 'Name' ] ) . '</p>' );
 			}
 		}
 
