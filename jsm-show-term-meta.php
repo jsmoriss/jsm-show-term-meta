@@ -36,11 +36,11 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 		private static $instance = null;
 
 		private static $wp_min_version = '4.4';
-	
+
 		public $view_cap;
 
 		public $tax_slug;
-	
+
 		private function __construct() {
 
 			if ( is_admin() ) {
@@ -61,7 +61,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				}
 			}
 		}
-	
+
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
@@ -71,7 +71,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 			return self::$instance;
 		}
-	
+
 		/**
 		 * Check for the minimum required WordPress version.
 		 *
@@ -127,15 +127,15 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 				return;
 			}
-	
+
 			$this->view_cap = apply_filters( 'jsm_stm_view_cap', 'manage_options' );
-	
+
 			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || 
 				! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
 
 				return;
 			}
-	
+
 			$metabox_id      = 'jsm-stm';
 			$metabox_title   = __( 'Term Metadata', 'jsm-show-term-meta' );
 			$metabox_screen  = 'jsm-stm-term';
@@ -148,7 +148,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			add_meta_box( $metabox_id, $metabox_title,
 				array( $this, 'show_term_metadata' ), $metabox_screen,
 					$metabox_context, $metabox_prio, $callback_args );
-	
+
 			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Metadata', 'jsm-show-term-meta' ) . '</h3>';
 
 			echo '<div id="poststuff">';
@@ -157,18 +157,18 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 			echo '</div><!-- .poststuff -->';
 		}
-	
+
 		public function show_term_metadata( $term_obj ) {
 
 			if ( empty( $term_obj->term_id ) ) {
 
 				return;
 			}
-	
+
 			$term_meta          = get_term_meta( $term_obj->term_id );	// Since WP v4.4.
 			$term_meta_filtered = apply_filters( 'jsm_stm_term_meta', $term_meta, $term_obj );
 			$skip_keys          = apply_filters( 'jsm_stm_skip_keys', array() );
-	
+
 			?>
 			<style>
 				div#jsm-stm.postbox table { 
@@ -197,11 +197,11 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				}
 			</style>
 			<?php
-	
+
 			echo '<table><thead><tr><th class="key-column">' . __( 'Key', 'jsm-show-term-meta' ) . '</th>';
 
 			echo '<th class="value-column">' . __( 'Value', 'jsm-show-term-meta' ) . '</th></tr></thead><tbody>';
-	
+
 			ksort( $term_meta_filtered );
 
 			foreach( $term_meta_filtered as $meta_key => $arr ) {
@@ -213,7 +213,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 						continue 2;
 					}
 				}
-	
+
 				foreach ( $arr as $num => $el ) {
 
 					$arr[ $num ] = maybe_unserialize( $el );
@@ -230,7 +230,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 			echo '</tbody></table>';
 		}
-	
+
 		public function get_request_value( $req_key, $method = 'ANY' ) {
 
 			if ( 'ANY' === $method ) {
