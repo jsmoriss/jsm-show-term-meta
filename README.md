@@ -89,7 +89,7 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
     if ( isset( $tax_opts[ $term_obj->taxonomy ][ $term_obj->term_id ] ) ) {
         $term_meta[ 'wpseo_taxonomy_meta' ][] = $tax_opts[ $term_obj->taxonomy ][ $term_obj->term_id ];
     }
-    
+
     return $term_meta;
 }
 </pre>
