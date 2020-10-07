@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.4
 Tested Up To: 5.5.1
-Stable Tag: 1.2.0
+Stable Tag: 1.3.0
 
 Show all term (categories, tags) meta in a metabox on term editing pages -- great plugin for developers or debugging issues with term meta.
 
