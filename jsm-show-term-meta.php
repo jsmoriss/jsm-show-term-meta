@@ -75,16 +75,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 		public function init_textdomain() {
 
-			static $local_cache = null;
-
-			if ( null === $local_cache ) {
-
-				$local_cache = 'jsm-show-term-meta';
-
-				load_plugin_textdomain( 'jsm-show-term-meta', false, 'jsm-show-term-meta/languages/' );
-			}
-
-			return $local_cache;
+			load_plugin_textdomain( 'jsm-show-term-meta', false, 'jsm-show-term-meta/languages/' );
 		}
 
 		/**
