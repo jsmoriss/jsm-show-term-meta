@@ -163,19 +163,19 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 			?>
 			<style>
-				div#jsm-stm.postbox table { 
+				div#jsm-stm.postbox table {
 					width:100%;
 					max-width:100%;
 					text-align:left;
 					table-layout:fixed;
 				}
-				div#jsm-stm.postbox table .key-column { 
+				div#jsm-stm.postbox table .key-column {
 					width:30%;
 				}
-				div#jsm-stm.postbox table tr.added-meta { 
+				div#jsm-stm.postbox table tr.added-meta {
 					background-color:#eee;
 				}
-				div#jsm-stm.postbox table td { 
+				div#jsm-stm.postbox table td {
 					padding:10px;
 					vertical-align:top;
 					border:1px dotted #ccc;
@@ -183,7 +183,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				div#jsm-stm.postbox table td div {
 					overflow-x:auto;
 				}
-				div#jsm-stm.postbox table td div pre { 
+				div#jsm-stm.postbox table td div pre {
 					margin:0;
 					padding:0;
 				}
