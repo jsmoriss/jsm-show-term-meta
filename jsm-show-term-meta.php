@@ -100,11 +100,9 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 				$plugin_data = get_plugin_data( __FILE__, $markup = false );
 
-				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.',
-					'jsm-show-term-meta' );
+				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.', 'jsm-show-term-meta' );
 
-				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-					'jsm-show-term-meta' );
+				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.', 'jsm-show-term-meta' );
 
 				deactivate_plugins( $plugin, $silent = true );
 
@@ -122,8 +120,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 			$this->view_cap = apply_filters( 'jsm_stm_view_cap', 'manage_options' );
 
-			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || 
-				! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
+			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || ! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
 
 				return;
 			}
@@ -137,9 +134,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				'__block_editor_compatible_meta_box' => true,
 			);
 
-			add_meta_box( $metabox_id, $metabox_title,
-				array( $this, 'show_term_metadata' ), $metabox_screen,
-					$metabox_context, $metabox_prio, $callback_args );
+			add_meta_box( $metabox_id, $metabox_title, array( $this, 'show_term_metadata' ), $metabox_screen, $metabox_context, $metabox_prio, $callback_args );
 
 			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Metadata', 'jsm-show-term-meta' ) . '</h3>';
 
