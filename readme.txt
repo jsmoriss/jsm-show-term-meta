@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
 Tags: meta, term meta, inspector, custom fields, debug, tools
 Contributors: jsmoriss
 Requires PHP: 5.6
-Requires At Least: 4.4
+Requires At Least: 4.5
 Tested Up To: 5.6
 Stable Tag: 1.3.0
 
@@ -26,8 +26,6 @@ Need some help debugging your term meta?
 The JSM's Show Term Metadata plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.
 
 There are no plugin settings &mdash; simply *install* and *activate* the plugin.
-
-> Term meta has been available since WordPress v4.4. Older plugins that supported "*term meta*" before WordPress v4.4 may not use the current WordPress term meta functions, preferring to use their own custom "*term meta*" solutions instead. This custom "*term meta*", which is not stored in the WordPress term meta table, will not appear in the Term Metadata list. You can contact the author of those older plugins to request an update, which uses the current WordPress term meta functions, or hook the 'jsm_stm_term_meta' filter to merge the custom "*term meta*". As an example, the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin still does not use the new term meta functions, while the [WooCommerce](https://wordpress.org/plugins/woocommerce/) and [WPSSO](https://wordpress.org/plugins/wpsso/) plugins do.
 
 = Related Plugins =
 
@@ -121,7 +119,7 @@ Maintenance release.
 	* None.
 * **Requires At Least**
 	* PHP v5.6.
-	* WordPress v4.4.
+	* WordPress v4.5.
 
 == Upgrade Notice ==
 
