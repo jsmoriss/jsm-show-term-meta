@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Term Metadata</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Show all term (categories, tags) meta in a metabox on term editing pages -- great plugin for developers or debugging issues with term meta.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Show all term (categories, tags) meta (aka custom fields) in a metabox on term editing pages -- a great tool for debugging issues with term meta.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.3.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.0 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>4.5 or newer</td></tr>
@@ -18,7 +18,7 @@
 
 <p>Want to find the name of a specific term meta key?</p>
 
-<p>Need some help debugging your term meta?</p>
+<p>Need some help debugging your term meta (aka custom fields)?</p>
 
 <p>The JSM's Show Term Metadata plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.</p>
 
@@ -27,6 +27,7 @@
 <h4>Related Plugins</h4>
 
 <ul>
+<li><a href="https://wordpress.org/plugins/jsm-show-comment-meta/">JSM's Show Comment Metadata</a></li>
 <li><a href="https://wordpress.org/plugins/jsm-show-post-meta/">JSM's Show Post Metadata</a></li>
 <li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Metadata</a></li>
 </ul>
@@ -83,6 +84,7 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
     $tax_opts = get_option( 'wpseo_taxonomy_meta' );
 
     if ( isset( $tax_opts[ $term_obj->taxonomy ][ $term_obj->term_id ] ) ) {
+
         $term_meta[ 'wpseo_taxonomy_meta' ][] = $tax_opts[ $term_obj->taxonomy ][ $term_obj->term_id ];
     }
 

@@ -13,7 +13,7 @@ Requires At Least: 4.5
 Tested Up To: 5.6
 Stable Tag: 1.3.0
 
-Show all term (categories, tags) meta in a metabox on term editing pages -- great plugin for developers or debugging issues with term meta.
+Show all term (categories, tags) meta (aka custom fields) in a metabox on term editing pages -- a great tool for debugging issues with term meta.
 
 == Description ==
 
@@ -21,7 +21,7 @@ Wondering about the term meta your theme and/or plugins might be creating?
 
 Want to find the name of a specific term meta key?
 
-Need some help debugging your term meta?
+Need some help debugging your term meta (aka custom fields)?
 
 The JSM's Show Term Metadata plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.
 
@@ -29,6 +29,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = Related Plugins =
 
+* [JSM's Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
 * [JSM's Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
 * [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
 
@@ -76,6 +77,7 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 	$tax_opts = get_option( 'wpseo_taxonomy_meta' );
 
 	if ( isset( $tax_opts[ $term_obj->taxonomy ][ $term_obj->term_id ] ) ) {
+
 		$term_meta[ 'wpseo_taxonomy_meta' ][] = $tax_opts[ $term_obj->taxonomy ][ $term_obj->term_id ];
 	}
 
@@ -85,7 +87,7 @@ function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 
 == Screenshots ==
 
-01. The Term Metadata metabox added to admin term editing pages.
+01. The "Term Metadata" metabox added to admin term editing pages.
 
 == Changelog ==
 
