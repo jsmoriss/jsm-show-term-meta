@@ -14,11 +14,11 @@
 
 <h2>Description</h2>
 
-<p>Wondering about the term meta your theme and/or plugins might be creating?</p>
+<p><strong>Wondering about the term meta your theme and/or plugins might be creating?</strong></p>
 
-<p>Want to find the name of a specific term meta key?</p>
+<p><strong>Want to find the name of a specific term meta key?</strong></p>
 
-<p>Need some help debugging your term meta (aka custom fields)?</p>
+<p><strong>Need some help debugging your term meta (aka custom fields)?</strong></p>
 
 <p>The JSM's Show Term Metadata plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.</p>
 
