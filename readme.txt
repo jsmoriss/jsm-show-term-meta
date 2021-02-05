@@ -33,6 +33,10 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 * [JSM's Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
 * [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
 
+= Need a Boost to your Social and Search Ranking? =
+
+Check out [the WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) to present your content at its best on social sites and in search results, no matter how webpages are shared, re-shared, messaged, posted, embedded, or crawled.
+
 == Installation ==
 
 = Automated Install =
