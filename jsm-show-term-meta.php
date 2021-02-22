@@ -12,7 +12,7 @@
  * Description: Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
  * Requires PHP: 7.0
  * Requires At Least: 4.5
- * Tested Up To: 5.6.1
+ * Tested Up To: 5.6.2
  * Version: 1.3.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
