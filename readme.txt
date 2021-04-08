@@ -10,7 +10,7 @@ Tags: meta, term meta, inspector, custom fields, debug, tools
 Contributors: jsmoriss
 Requires PHP: 7.0
 Requires At Least: 4.5
-Tested Up To: 5.7
+Tested Up To: 5.7.1
 Stable Tag: 1.3.0
 
 Show all term (categories, tags) meta (aka custom fields) in a metabox on term editing pages -- a great tool for debugging issues with term meta.
