@@ -157,7 +157,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			$skip_keys_preg_match = apply_filters( 'jsm_stm_skip_keys', array() );
 
 			?>
-			<style>
+			<style type="text/css">
 				div#jsm-stm.postbox table {
 					width:100%;
 					max-width:100%;
