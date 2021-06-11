@@ -25,7 +25,7 @@ Show all term (categories, tags) meta (aka custom fields) in a metabox on term e
 
 The JSM's Show Term Metadata plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.
 
-There are no plugin settings &mdash; simply *install* and *activate* the plugin.
+There are no plugin settings - simply *install* and *activate* the plugin.
 
 = Related Plugins =
 
