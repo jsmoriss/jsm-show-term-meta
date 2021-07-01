@@ -11,7 +11,7 @@
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
  * Requires PHP: 7.0
- * Requires At Least: 4.5
+ * Requires At Least: 5.0
  * Tested Up To: 5.7.2
  * Version: 1.3.0
  *
@@ -38,7 +38,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 		private $view_cap;
 
-		private $wp_min_version = '4.5';
+		private $wp_min_version = '5.0';
 
 		private static $instance = null;	// JSM_Show_Term_Metadata class object.
 
