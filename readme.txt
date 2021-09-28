@@ -35,7 +35,7 @@ There are no plugin settings - simply *install* and *activate* the plugin.
 
 = Need a Boost to your Social and Search Ranking? =
 
-Check out [the WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) to rank higher and improve click through rates by presenting your content at its best on social sites and in search results - no matter how URLs are shared, re-shared, messaged, posted, embedded, or crawled.
+Check out [the WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) to rank higher and improve click through rates by presenting your content at its best on **social sites** and in **search results** - no matter how URLs are shared, re-shared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
