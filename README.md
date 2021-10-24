@@ -34,7 +34,7 @@
 
 <h4>Need a Boost to your Social and Search Ranking?</h4>
 
-<p>Check out <a href="https://wordpress.org/plugins/wpsso/">the WPSSO Core plugin</a> to rank higher and improve click through rates by presenting your content at its best on <strong>social sites</strong> and in <strong>search results</strong> - no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.</p>
+<p><a href="https://wordpress.org/plugins/wpsso/">WPSSO is an advanced structured data plugin for WordPress SEO and SMO</a> that helps you rank higher and improves click through rates by presenting your content at its best in <strong>search results</strong> and on <strong>social sites</strong> - no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.</p>
 
 
 <h2>Installation</h2>
