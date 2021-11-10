@@ -13,7 +13,7 @@ Requires At Least: 5.0
 Tested Up To: 5.8.2
 Stable Tag: 1.3.0
 
-Show all term (categories, tags) meta (aka custom fields) in a metabox on term editing pages -- a great tool for debugging issues with term meta.
+Show all term (categories, tags) meta (aka custom fields) in a metabox on term editing pages &mdash; a great tool for debugging issues with term meta.
 
 == Description ==
 
