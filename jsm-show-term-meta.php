@@ -10,8 +10,8 @@
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Show all term meta (aka custom fields) keys and their unserialized values in a metabox on term editing pages.
- * Requires PHP: 7.0
- * Requires At Least: 5.0
+ * Requires PHP: 7.2
+ * Requires At Least: 5.2
  * Tested Up To: 5.8.2
  * Version: 1.3.0
  *
