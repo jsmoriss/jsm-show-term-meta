@@ -32,10 +32,6 @@
 <li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Metadata</a></li>
 </ul>
 
-<h4>Need a Boost to your Social and Search Ranking?</h4>
-
-<p><a href="https://wordpress.org/plugins/wpsso/">WPSSO is an advanced structured data plugin for WordPress SEO and SMO</a> that helps you rank higher and improves click through rates by presenting your content at its best in <strong>search results</strong> and on <strong>social sites</strong> - no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.</p>
-
 
 <h2>Installation</h2>
 
