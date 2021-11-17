@@ -38,7 +38,7 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 		private $view_cap;
 
-		private $wp_min_version = '5.0';
+		private $wp_min_version = '5.2';
 
 		private static $instance = null;	// JSM_Show_Term_Metadata class object.
 
