@@ -70,7 +70,7 @@ There are no plugin settings - simply *install* and *activate* the plugin.
 An example to add Yoast SEO term meta to the "Term Metadata" metabox.
 
 <pre>
-add_filter( 'jsm_stm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
+add_filter( 'jsmstm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
 
 function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
 
