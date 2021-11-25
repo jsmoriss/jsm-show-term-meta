@@ -107,6 +107,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.0.0-dev.2 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+
 **Version 1.3.0 (2020/10/07)**
 
 Maintenance release.
@@ -124,6 +138,10 @@ Maintenance release.
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 2.0.0-dev.2 =
+
+(TBD) None.
 
 = 1.3.0 =
 
