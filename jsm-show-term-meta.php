@@ -13,7 +13,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 5.8.2
- * Version: 1.3.0
+ * Version: 2.0.0-dev.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -30,35 +30,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
+if ( ! class_exists( 'JsmShowTermMeta' ) ) {
 
-	class JSM_Show_Term_Metadata {
+	class JsmShowTermMeta {
 
-		private $tax_slug;
-
-		private $view_cap;
-
-		private $wp_min_version = '5.2';
-
-		private static $instance = null;	// JSM_Show_Term_Metadata class object.
+		private static $instance = null;	// JsmShowTermMeta class object.
 
 		private function __construct() {
 
 			if ( is_admin() ) {
-
-				/**
-				 * Check for the minimum required WordPress version.
-				 */
-				add_action( 'admin_init', array( $this, 'check_wp_min_version' ) );
 
 				add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
 
 				/**
 				 * Make sure we have a taxonomy slug to hook the metabox action.
 				 */
-				if ( ( $this->tax_slug = $this->get_request_value( 'taxonomy' ) ) !== '' ) {	// Uses sanitize_text_field.
+				if ( '' !== ( $tax_slug = $this->get_request_value( 'taxonomy' ) ) ) {	// Uses sanitize_text_field.
 
-					add_action( $this->tax_slug . '_edit_form', array( $this, 'show_meta_boxes' ), 1000, 1 );
+					add_action( $tax_slug . '_edit_form', array( $this, 'show_meta_boxes' ), 1000, 1 );
 				}
 			}
 		}
@@ -78,39 +67,6 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 			load_plugin_textdomain( 'jsm-show-term-meta', false, 'jsm-show-term-meta/languages/' );
 		}
 
-		/**
-		 * Check for the minimum required WordPress version.
-		 *
-		 * If we don't have the minimum required version, then de-activate ourselves and die.
-		 */
-		public function check_wp_min_version() {
-
-			global $wp_version;
-
-			if ( version_compare( $wp_version, $this->wp_min_version, '<' ) ) {
-
-				$this->init_textdomain();	// If not already loaded, load the textdomain now.
-
-				$plugin = plugin_basename( __FILE__ );
-
-				if ( ! function_exists( 'deactivate_plugins' ) ) {
-
-					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
-				}
-
-				$plugin_data = get_plugin_data( __FILE__, $markup = false );
-
-				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.', 'jsm-show-term-meta' );
-
-				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.', 'jsm-show-term-meta' );
-
-				deactivate_plugins( $plugin, $silent = true );
-
-				wp_die( '<p>' . sprintf( $notice_version_transl, $plugin_data[ 'Name' ], 'WordPress', $this->wp_min_version ) . ' ' . 
-					 sprintf( $notice_upgrade_transl, 'WordPress', $plugin_data[ 'Name' ] ) . '</p>' );
-			}
-		}
-
 		public function show_meta_boxes( $term_obj ) {
 
 			if ( ! isset( $term_obj->term_id ) ) {	// Just in case.
@@ -118,16 +74,20 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 				return;
 			}
 
-			$this->view_cap = apply_filters( 'jsm_stm_view_cap', 'manage_options' );
+			$view_cap = apply_filters( 'jsm_stm_view_cap', 'manage_options' );
 
-			if ( ! current_user_can( $this->view_cap, $term_obj->term_id ) || ! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
+			if ( ! current_user_can( $view_cap, $term_obj->term_id ) ) {
+			
+				return;
+
+			} elseif ( ! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
 
 				return;
 			}
 
-			$metabox_id      = 'jsm-stm';
+			$metabox_id      = 'jsmstm';
 			$metabox_title   = __( 'Term Metadata', 'jsm-show-term-meta' );
-			$metabox_screen  = 'jsm-stm-term';
+			$metabox_screen  = 'jsm-show-term-meta';
 			$metabox_context = 'normal';
 			$metabox_prio    = 'low';
 			$callback_args   = array(	// Second argument passed to the callback function / method.
@@ -136,11 +96,11 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 			add_meta_box( $metabox_id, $metabox_title, array( $this, 'show_term_metadata' ), $metabox_screen, $metabox_context, $metabox_prio, $callback_args );
 
-			echo '<h3 id="jsm-stm-metaboxes">' . __( 'Show Term Metadata', 'jsm-show-term-meta' ) . '</h3>';
+			echo '<h3 id="jsmstm-metaboxes">' . __( 'Show Term Metadata', 'jsm-show-term-meta' ) . '</h3>';
 
 			echo '<div id="poststuff">';
 
-			do_meta_boxes( 'jsm-stm-term', 'normal', $term_obj );
+			do_meta_boxes( 'jsm-show-term-meta', 'normal', $term_obj );
 
 			echo '</div><!-- .poststuff -->';
 		}
@@ -158,27 +118,27 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 
 			?>
 			<style type="text/css">
-				div#jsm-stm.postbox table {
+				div#jsmstm.postbox table {
 					width:100%;
 					max-width:100%;
 					text-align:left;
 					table-layout:fixed;
 				}
-				div#jsm-stm.postbox table .key-column {
+				div#jsmstm.postbox table .key-column {
 					width:30%;
 				}
-				div#jsm-stm.postbox table tr.added-meta {
+				div#jsmstm.postbox table tr.added-meta {
 					background-color:#eee;
 				}
-				div#jsm-stm.postbox table td {
+				div#jsmstm.postbox table td {
 					padding:10px;
 					vertical-align:top;
 					border:1px dotted #ccc;
 				}
-				div#jsm-stm.postbox table td div {
+				div#jsmstm.postbox table td div {
 					overflow-x:auto;
 				}
-				div#jsm-stm.postbox table td div pre {
+				div#jsmstm.postbox table td div pre {
 					margin:0;
 					padding:0;
 				}
@@ -253,5 +213,5 @@ if ( ! class_exists( 'JSM_Show_Term_Metadata' ) ) {
 		}
 	}
 
-	JSM_Show_Term_Metadata::get_instance();
+	JsmShowTermMeta::get_instance();
 }
