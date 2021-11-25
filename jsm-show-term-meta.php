@@ -74,13 +74,13 @@ if ( ! class_exists( 'JsmShowTermMeta' ) ) {
 				return;
 			}
 
-			$view_cap = apply_filters( 'jsm_stm_view_cap', 'manage_options' );
+			$view_cap = apply_filters( 'jsmstm_view_cap', 'manage_options' );
 
 			if ( ! current_user_can( $view_cap, $term_obj->term_id ) ) {
 			
 				return;
 
-			} elseif ( ! apply_filters( 'jsm_stm_taxonomy', true, $term_obj->taxonomy ) ) {
+			} elseif ( ! apply_filters( 'jsmstm_taxonomy', true, $term_obj->taxonomy ) ) {
 
 				return;
 			}
@@ -113,8 +113,8 @@ if ( ! class_exists( 'JsmShowTermMeta' ) ) {
 			}
 
 			$term_meta            = get_term_meta( $term_obj->term_id );	// Since WP v4.4.
-			$term_meta_filtered   = apply_filters( 'jsm_stm_term_meta', $term_meta, $term_obj );
-			$skip_keys_preg_match = apply_filters( 'jsm_stm_skip_keys', array() );
+			$term_meta_filtered   = apply_filters( 'jsmstm_term_meta', $term_meta, $term_obj );
+			$skip_keys_preg_match = apply_filters( 'jsmstm_skip_keys', array() );
 
 			?>
 			<style type="text/css">
