@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-dev.2 (TBD)**
+**Version 2.0.0-b.1 (TBD)**
 
 * **New Features**
 	* None.
@@ -116,7 +116,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Complete rewrite of the plugin - all class, method, and filter names have changed.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -139,9 +139,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 2.0.0-dev.2 =
+= 2.0.0-b.1 =
 
-(TBD) None.
+(TBD) Complete rewrite of the plugin - all class, method, and filter names have changed.
 
 = 1.3.0 =
 
