@@ -25,7 +25,7 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 			 * Make sure we have a taxonomy slug to hook the metabox action.
 			 */
 			$tax_slug = SucomUtil::get_request_value( 'taxonomy' );	// Uses sanitize_text_field.
-			
+
 			if ( ! empty( $tax_slug ) ) {
 
 				add_action( $tax_slug . '_edit_form', array( $this, 'add_meta_boxes' ), 1000, 1 );
@@ -39,13 +39,13 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 				return;
 			}
 
-			$view_cap = apply_filters( 'jsmstm_view_cap', 'manage_options' );
+			$capability = apply_filters( 'jsmstm_add_metabox_capability', 'manage_options', $term_obj );
 
-			if ( ! current_user_can( $view_cap, $term_obj->term_id ) ) {
+			if ( ! current_user_can( $capability, $term_obj->term_id ) ) {
 
 				return;
 
-			} elseif ( ! apply_filters( 'jsmstm_taxonomy', true, $term_obj->taxonomy ) ) {
+			} elseif ( ! apply_filters( 'jsmstm_add_metabox_taxonomy', true, $term_obj->taxonomy ) ) {
 
 				return;
 			}
