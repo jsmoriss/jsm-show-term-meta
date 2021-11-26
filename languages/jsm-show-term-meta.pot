@@ -13,19 +13,19 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-show-term-meta.php:89
+#: lib/term.php:54
 msgid "Term Metadata"
 msgstr ""
 
-#: jsm-show-term-meta.php:99
+#: lib/term.php:64
 msgid "Show Term Metadata"
 msgstr ""
 
-#: jsm-show-term-meta.php:148
+#: lib/term.php:87
 msgid "Key"
 msgstr ""
 
-#: jsm-show-term-meta.php:150
+#: lib/term.php:88
 msgid "Value"
 msgstr ""
 
