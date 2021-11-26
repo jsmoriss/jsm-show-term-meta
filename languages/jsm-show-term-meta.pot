@@ -39,8 +39,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Show all term meta (aka custom fields) keys and their unserialized values in "
-"a metabox on term editing pages."
+"Show term metadata in a metabox when editing terms - a great tool for "
+"debugging issues with term metadata."
 msgstr ""
 
 #. Author of the plugin/theme
