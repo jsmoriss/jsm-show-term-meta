@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-b.1 (TBD)**
+**Version 2.0.0-rc.1 (2021/11/26)**
 
 * **New Features**
 	* None.
@@ -139,9 +139,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 2.0.0-b.1 =
+= 2.0.0-rc.1 =
 
-(TBD) Complete rewrite of the plugin - all class, method, and filter names have changed.
+(2021/11/26) Complete rewrite of the plugin - all class, method, and filter names have changed.
 
 = 1.3.0 =
 
