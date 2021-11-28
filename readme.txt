@@ -32,6 +32,7 @@ There are no plugin settings - simply *install* and *activate* the plugin.
 * [JSM's Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
 * [JSM's Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
 * [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
+* [JSM's Show Registered Shortcodes](https://wordpress.org/plugins/jsm-show-registered-shortcodes/)
 
 == Installation ==
 
