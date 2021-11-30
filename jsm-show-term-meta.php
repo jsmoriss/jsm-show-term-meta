@@ -13,7 +13,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 5.8.2
- * Version: 2.0.0
+ * Version: 3.0.0-dev.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -68,6 +68,8 @@ if ( ! class_exists( 'JsmStm' ) ) {
 
 		public function init_objects() {
 
+			new JsmStmCompat();
+			new JsmStmScript();
 			new JsmStmTerm();
 		}
 	}

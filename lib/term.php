@@ -30,6 +30,8 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 
 				add_action( $tax_slug . '_edit_form', array( $this, 'add_meta_boxes' ), 1000, 1 );
 			}
+
+			add_action( 'wp_ajax_delete_jsmstm_meta', array( $this, 'ajax_delete_meta' ) );
 		}
 
 		public function add_meta_boxes( $term_obj ) {
@@ -39,13 +41,14 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 				return;
 			}
 
-			$capability = apply_filters( 'jsmstm_add_metabox_capability', 'manage_options', $term_obj );
+			$show_meta_cap = apply_filters( 'jsmstm_show_metabox_capability', 'manage_options', $term_obj );
+			$can_show_meta = current_user_can( $show_meta_cap, $term_obj->ID );
 
-			if ( ! current_user_can( $capability, $term_obj->term_id ) ) {
+			if ( ! $can_show_meta ) {
 
 				return;
 
-			} elseif ( ! apply_filters( 'jsmstm_add_metabox_taxonomy', true, $term_obj->taxonomy ) ) {
+			} elseif ( ! apply_filters( 'jsmstm_show_metabox_taxonomy', true, $term_obj->taxonomy ) ) {
 
 				return;
 			}
@@ -81,13 +84,55 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 				return;
 			}
 
+			$cf          = JsmStmConfig::get_config();
 			$term_meta   = get_term_meta( $term_obj->term_id );
 			$skip_keys   = array();
 			$metabox_id  = 'jsmstm';
-			$key_title   = __( 'Key', 'jsm-show-term-meta' );
-			$value_title = __( 'Value', 'jsm-show-term-meta' );
+			$admin_l10n  = $cf[ 'plugin' ][ 'jsmstm' ][ 'admin_l10n' ];
 
-			return SucomUtilMetabox::get_table_metadata( $term_meta, $skip_keys, $term_obj, $metabox_id, $key_title, $value_title );
+			$titles = array(
+				'key'   => __( 'Key', 'jsm-show-term-meta' ),
+				'value' => __( 'Value', 'jsm-show-term-meta' ),
+			);
+
+			return SucomUtilMetabox::get_table_metadata( $term_meta, $skip_keys, $term_obj, $term_obj->term_id, $metabox_id, $admin_l10n, $titles );
+		}
+
+		public function ajax_delete_meta() {
+
+			$doing_ajax = SucomUtilWP::doing_ajax();
+
+			if ( ! $doing_ajax ) {	// Just in case.
+
+				return;
+			}
+
+			check_ajax_referer( JSMSTM_NONCE_NAME, '_ajax_nonce', $die = true );
+
+			if ( empty( $_POST[ 'obj_id' ] ) || empty( $_POST[ 'meta_key' ] ) ) {
+
+				die( -1 );
+			}
+	
+			$metabox_id   = 'jsmstm';
+			$obj_id       = sanitize_key( $_POST[ 'obj_id' ] );
+			$meta_key     = sanitize_key( $_POST[ 'meta_key' ] );
+			$term_obj     = get_term( $obj_id );
+			$del_meta_cap = apply_filters( 'jsmstm_delete_meta_capability', 'manage_options', $term_obj );
+			$can_del_meta = current_user_can( $del_meta_cap, $obj_id );
+			$hide_row_id  = $metabox_id . '-' . $obj_id . '-' . $meta_key;
+
+			if ( ! $can_del_meta ) {
+
+				die( -1 );
+			}
+
+			if ( delete_term_meta( $obj_id, $meta_key ) ) {
+
+				die( $hide_row_id );
+			}
+
+			die( false );	// Show delete failed message.
 		}
 	}
 }

@@ -17,7 +17,7 @@ if ( ! class_exists( 'JsmStmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'jsmstm' => array(			// Plugin acronym.
-					'version'     => '2.0.0',	// Plugin version.
+					'version'     => '3.0.0-dev.2',	// Plugin version.
 					'slug'        => 'jsm-show-term-meta',
 					'base'        => 'jsm-show-term-meta/jsm-show-term-meta.php',
 					'text_domain' => 'jsm-show-term-meta',
@@ -74,6 +74,8 @@ if ( ! class_exists( 'JsmStmConfig' ) ) {
 			require_once JSMSTM_PLUGINDIR . 'lib/com/util.php';
 			require_once JSMSTM_PLUGINDIR . 'lib/com/util-metabox.php';
 			require_once JSMSTM_PLUGINDIR . 'lib/com/util-wp.php';
+			require_once JSMSTM_PLUGINDIR . 'lib/compat.php';
+			require_once JSMSTM_PLUGINDIR . 'lib/script.php';
 			require_once JSMSTM_PLUGINDIR . 'lib/term.php';
 
 			add_filter( 'jsmstm_load_lib', array( __CLASS__, 'load_lib' ), 10, 3 );
