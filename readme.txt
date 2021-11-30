@@ -25,7 +25,7 @@ There are no plugin settings - simply *install* and *activate* the plugin.
 
 = Shows Yoast SEO Term Meta =
 
-Yoast SEO stores its term (ie. categories, tags, and custom taxonomies) metadata in the WordPress options table, not the term meta table. The JSM's Show Term Metadata plugin will display Yoast SEO's term metadata, but it cannot be deleted (as it does not reside in the WordPress term meta table).
+Yoast SEO stores its term (ie. categories, tags, and custom taxonomies) metadata in the WordPress options table, not the term meta table. The JSM's Show Term Metadata plugin will read and display Yoast SEO's term metadata, but it cannot be deleted (as it does not reside in the WordPress term meta table).
 
 = Related Plugins =
 
@@ -82,7 +82,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-b.1 (2021/11/30)**
+**Version 3.0.0-rc.1 (2021/11/30)**
 
 * **New Features**
 	* Added the ability to delete individual term meta.
@@ -112,7 +112,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-b.1 =
+= 3.0.0-rc.1 =
 
 (2021/11/30) Added the ability to delete individual term meta. Added a `JsmStmCompat` class with a filter to add Yoast SEO taxonomy meta to the Term Metadata metabox.
 

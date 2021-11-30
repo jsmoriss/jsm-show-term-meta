@@ -22,7 +22,7 @@
 
 <h4>Shows Yoast SEO Term Meta</h4>
 
-<p>Yoast SEO stores its term (ie. categories, tags, and custom taxonomies) metadata in the WordPress options table, not the term meta table. The JSM's Show Term Metadata plugin will display Yoast SEO's term metadata, but it cannot be deleted (as it does not reside in the WordPress term meta table).</p>
+<p>Yoast SEO stores its term (ie. categories, tags, and custom taxonomies) metadata in the WordPress options table, not the term meta table. The JSM's Show Term Metadata plugin will read and display Yoast SEO's term metadata, but it cannot be deleted (as it does not reside in the WordPress term meta table).</p>
 
 <h4>Related Plugins</h4>
 
