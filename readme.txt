@@ -21,6 +21,10 @@ The JSM's Show Term Metadata plugin displays term (ie. categories, tags, and cus
 
 There are no plugin settings - simply *install* and *activate* the plugin.
 
+= Shows Yoast SEO Term Meta =
+
+Yoast SEO stores its term (ie. categories, tags, and custom taxonomies) metadata in the WordPress options table, not the term meta table. The JSM's Show Term Metadata plugin will display Yoast SEO's term metadata, but it cannot be deleted (as it does not reside in the WordPress term meta table).
+
 = Related Plugins =
 
 * [JSM's Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
