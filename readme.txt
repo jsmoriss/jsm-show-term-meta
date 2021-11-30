@@ -60,32 +60,6 @@ There are no plugin settings - simply *install* and *activate* the plugin.
 
 == Frequently Asked Questions ==
 
-<h3 class="top">Frequently Asked Questions</h3>
-
-* None.
-
-<h3>Notes and Documentation</h3>
-
-**Developer Filters**
-
-An example to add Yoast SEO term meta to the "Term Metadata" metabox.
-
-<pre>
-add_filter( 'jsmstm_term_meta', 'add_yoast_seo_term_meta', 10, 2 );
-
-function add_yoast_seo_term_meta( $term_meta, $term_obj ) {
-
-	$tax_opts = get_option( 'wpseo_taxonomy_meta' );
-
-	if ( isset( $tax_opts[ $term_obj->taxonomy ][ $term_obj->term_id ] ) ) {
-
-		$term_meta[ 'wpseo_taxonomy_meta' ][] = $tax_opts[ $term_obj->taxonomy ][ $term_obj->term_id ];
-	}
-
-	return $term_meta;
-}
-</pre>
-
 == Screenshots ==
 
 01. The "Term Metadata" metabox added to admin term editing pages.
@@ -108,6 +82,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.0-dev.2 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added a `JsmStmCompat` class with a filter to add Yoast SEO taxonomy meta to the Term Metadata metabox.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+
 **Version 2.0.0 (2021/11/26)**
 
 * **New Features**
@@ -123,6 +111,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 3.0.0-dev.2 =
+
+(TBD) Added a `JsmStmCompat` class with a filter to add Yoast SEO taxonomy meta to the Term Metadata metabox.
 
 = 2.0.0 =
 
