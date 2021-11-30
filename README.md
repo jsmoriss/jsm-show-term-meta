@@ -14,7 +14,9 @@
 
 <h2>Description</h2>
 
-<p>The JSM's Show Term Metadata plugin displays term (ie. categories, tags, and custom taxonomies) meta keys and their unserialized values in a metabox at the bottom of term editing pages. By default, the current user needs to have the 'manage_options' capability to view the Term Metadata metabox, and the 'manage_options' capability to delete individual meta keys. The default 'manage_options' capability can be modified using the 'jsmstm_show_metabox_capability' and 'jsmstm_delete_meta_capability' filters.</p>
+<p>The JSM's Show Term Metadata plugin displays term (ie. categories, tags, and custom taxonomies) meta keys and their unserialized values in a metabox at the bottom of term editing pages.</p>
+
+<p>By default, the current user needs to have the 'manage_options' capability to view the Term Metadata metabox, and the 'manage_options' capability to delete individual meta keys. The default 'manage_options' capability can be modified using the 'jsmstm_show_metabox_capability' and 'jsmstm_delete_meta_capability' filters (see filters.txt in the plugin folder).</p>
 
 <p>There are no plugin settings - simply <em>install</em> and <em>activate</em> the plugin.</p>
 
