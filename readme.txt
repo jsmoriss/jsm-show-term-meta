@@ -85,7 +85,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 3.0.0-dev.2 (TBD)**
 
 * **New Features**
-	* None.
+	* Added the ability to delete individual term meta.
 * **Improvements**
 	* Added a `JsmStmCompat` class with a filter to add Yoast SEO taxonomy meta to the Term Metadata metabox.
 * **Bugfixes**
@@ -114,7 +114,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.0.0-dev.2 =
 
-(TBD) Added a `JsmStmCompat` class with a filter to add Yoast SEO taxonomy meta to the Term Metadata metabox.
+(TBD) Added the ability to delete individual term meta. Added a `JsmStmCompat` class with a filter to add Yoast SEO taxonomy meta to the Term Metadata metabox.
 
 = 2.0.0 =
 
