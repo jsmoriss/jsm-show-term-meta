@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
-Tags: meta, term meta, inspector, custom fields, debug, tools
+Tags: taxonomy, meta, term meta, categories, tags, delete, debug
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
@@ -17,13 +17,7 @@ Show term metadata in a metabox when editing terms - a great tool for debugging 
 
 == Description ==
 
-**Wondering about the term meta your theme and/or plugins might be creating?**
-
-**Want to find the name of a specific term meta key?**
-
-**Need some help debugging your term meta (aka custom fields)?**
-
-The JSM's Show Term Metadata plugin displays all term (categories, tags) meta keys and their unserialized values in a metabox at the bottom of term editing pages.
+The JSM's Show Term Metadata plugin displays term (ie. categories, tags, and custom taxonomies) meta keys and their unserialized values in a metabox at the bottom of term editing pages. By default, the current user needs to have the 'manage_options' capability to view the Term Metadata metabox, and the 'manage_options' capability to delete individual meta keys. The default 'manage_options' capability can be modified using the 'jsmstm_show_metabox_capability' and 'jsmstm_delete_meta_capability' filters.
 
 There are no plugin settings - simply *install* and *activate* the plugin.
 
@@ -82,7 +76,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.2 (TBD)**
+**Version 3.0.0-b.1 (2021/11/30)**
 
 * **New Features**
 	* Added the ability to delete individual term meta.
@@ -112,9 +106,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-dev.2 =
+= 3.0.0-b.1 =
 
-(TBD) Added the ability to delete individual term meta. Added a `JsmStmCompat` class with a filter to add Yoast SEO taxonomy meta to the Term Metadata metabox.
+(2021/11/30) Added the ability to delete individual term meta. Added a `JsmStmCompat` class with a filter to add Yoast SEO taxonomy meta to the Term Metadata metabox.
 
 = 2.0.0 =
 
