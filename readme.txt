@@ -19,7 +19,7 @@ Show term metadata in a metabox when editing terms - a great tool for debugging 
 
 The JSM's Show Term Metadata plugin displays term (ie. categories, tags, and custom taxonomies) meta keys and their unserialized values in a metabox at the bottom of term editing pages.
 
-By default, the current user needs to have the 'manage_options' capability to view the Term Metadata metabox, and the 'manage_options' capability to delete individual meta keys. The default 'manage_options' capability can be modified using the 'jsmstm_show_metabox_capability' and 'jsmstm_delete_meta_capability' filters (see filters.txt in the plugin folder).
+**The current user needs to have the WordPress 'manage_options' capability to view the Term Metadata metabox, and the 'manage_options' capability to delete individual meta keys.** The default 'manage_options' capability can be modified using the 'jsmstm_show_metabox_capability' and 'jsmstm_delete_meta_capability' filters (see filters.txt in the plugin folder).
 
 There are no plugin settings - simply *install* and *activate* the plugin.
 
