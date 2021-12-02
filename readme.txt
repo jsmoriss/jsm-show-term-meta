@@ -23,7 +23,7 @@ The current user must have the [WordPress *manage_options* capability](https://w
 
 The default *manage_options* capability can be modified using the 'jsmstm_show_metabox_capability' and 'jsmstm_delete_meta_capability' filters (see filters.txt in the plugin folder).
 
-There are no plugin settings - simply *install* and *activate* the plugin.
+There are no plugin settings - simply install and activate the plugin.
 
 = Shows Yoast SEO Term Meta =
 
