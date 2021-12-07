@@ -21,15 +21,11 @@ msgstr ""
 msgid "Term Metadata"
 msgstr ""
 
-#: lib/term.php:67
-msgid "Show Term Metadata"
-msgstr ""
-
-#: lib/term.php:94
+#: lib/term.php:93
 msgid "Key"
 msgstr ""
 
-#: lib/term.php:95
+#: lib/term.php:94
 msgid "Value"
 msgstr ""
 
