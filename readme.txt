@@ -84,6 +84,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.1 (2021/12/09)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed a missing table column if there is no metadata and allowed to delete meta is true.
+* **Developer Notes**
+	* Updated `SucomUtilMetabox::get_table_metadata()` to add a missing empty delete column if `$row_count` is 0.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+
 **Version 3.0.0 (2021/11/30)**
 
 * **New Features**
@@ -113,6 +127,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 3.0.1 =
+
+(2021/12/09) Fixed a missing table column if there is no metadata and allowed to delete meta is true.
 
 = 3.0.0 =
 
