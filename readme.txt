@@ -84,6 +84,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.2-dev.1 (2021/12/10)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added a `trim()` to the returned table row id after successful delete, in case the returned value is corrupted by a leading/trailing space.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+
 **Version 3.0.1 (2021/12/09)**
 
 * **New Features**
@@ -127,6 +141,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 3.0.2-dev.1 =
+
+(2021/12/10) Added a `trim()` to the returned table row id after successful delete, in case the returned value is corrupted by a leading/trailing space.
 
 = 3.0.1 =
 
