@@ -84,7 +84,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.2-dev.1 (2021/12/10)**
+**Version 3.0.2 (2021/12/10)**
 
 * **New Features**
 	* None.
@@ -142,7 +142,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.2-dev.1 =
+= 3.0.2 =
 
 (2021/12/10) Added a `trim()` to the returned table row id after successful delete, in case the returned value is corrupted by a leading/trailing space.
 
