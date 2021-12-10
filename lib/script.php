@@ -44,7 +44,7 @@ if ( ! class_exists( 'JsmStmScript' ) ) {
 			$admin_l10n = $cf[ 'plugin' ][ 'jsmstm' ][ 'admin_l10n' ];
 
 			wp_register_script( 'sucom-admin-page', JSMSTM_URLPATH . 'js/com/jquery-admin-page.min.js',
-				$deps = array( 'jquery' ), '20211130-01', $in_footer = true );
+				$deps = array( 'jquery' ), '20211210-01', $in_footer = true );
 
 			wp_localize_script( 'sucom-admin-page', $admin_l10n, $this->get_admin_page_script_data() );
 
