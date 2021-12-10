@@ -89,7 +89,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Added a `trim()` to the returned CSS id after successful delete, in case the value is corrupted with a space or newline.
+	* Added a `trim()` to the returned CSS id after successful delete, in case the ajax return is corrupted with a space or newline.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -144,7 +144,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.0.2 =
 
-(2021/12/10) Added a `trim()` to the returned CSS id after successful delete, in case the value is corrupted with a space or newline.
+(2021/12/10) Added a `trim()` to the returned CSS id after successful delete, in case the ajax return is corrupted with a space or newline.
 
 = 3.0.1 =
 
