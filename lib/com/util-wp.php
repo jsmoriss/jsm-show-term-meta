@@ -416,7 +416,7 @@ if ( ! class_exists( 'SucomUtilWP' ) ) {
 			return $metadata[ $obj_id ];
 		}
 
-		public static function raw_update_post_title( $post_id, $post_title ) {
+		public static function raw_update_post( $post_id, array $args ) {
 
 			if ( wp_is_post_revision( $post_id ) ) {
 
@@ -428,14 +428,45 @@ if ( ! class_exists( 'SucomUtilWP' ) ) {
 				return false;
 			}
 
-			$post_id    = absint( $post_id );
-			$post_title = sanitize_text_field( $post_title );
-			$post_name  = sanitize_title( $post_title );
-			$where      = array( 'ID' => $post_id );
-
 			global $wpdb;
 
-			return $wpdb->update( $wpdb->posts, array( 'post_title' => $post_title, 'post_name' => $post_name ), $where );
+			$post_id = absint( $post_id );
+			$where   = array( 'ID' => $post_id );
+
+			foreach ( $args as $field => $value ) {
+
+				$args[ $field ] = sanitize_post_field( $field, $value, $post_id, $context = 'db' );
+			}
+
+			return $wpdb->update( $wpdb->posts, $args, $where );
+		}
+
+		public static function raw_update_post_title( $post_id, $post_title ) {
+
+			$post_title = sanitize_text_field( $post_title );
+			$post_name  = sanitize_title( $post_title );
+
+			$args = array(
+				'post_title' => $post_title,
+				'post_name'  => $post_name,
+			);
+
+			return self::raw_update_post( $post_id, $args );
+		}
+
+		public static function raw_update_post_title_content( $post_id, $post_title, $post_content ) {
+
+			$post_title   = sanitize_text_field( $post_title );
+			$post_name    = sanitize_title( $post_title );
+			$post_content = wp_kses_post( $post_content );	// KSES (Kses Strips Evil Scripts).
+
+			$args = array(
+				'post_title'   => $post_title,
+				'post_name'    => $post_name,
+				'post_content' => $post_content,
+			);
+
+			return self::raw_update_post( $post_id, $args );
 		}
 
 		public static function raw_metadata_exists( $meta_type, $obj_id, $meta_key ) {
