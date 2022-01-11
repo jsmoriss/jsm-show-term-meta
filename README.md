@@ -35,33 +35,3 @@
 <li><a href="https://wordpress.org/plugins/jsm-show-registered-shortcodes/">JSM's Show Registered Shortcodes</a></li>
 </ul>
 
-
-<h2>Installation</h2>
-
-<h4>Automated Install</h4>
-
-<ol>
-<li>Go to the wp-admin/ section of your website.</li>
-<li>Select the <em>Plugins</em> menu item.</li>
-<li>Select the <em>Add New</em> sub-menu item.</li>
-<li>In the <em>Search</em> box, enter the plugin name.</li>
-<li>Click the <em>Search Plugins</em> button.</li>
-<li>Click the <em>Install Now</em> link for the plugin.</li>
-<li>Click the <em>Activate Plugin</em> link.</li>
-</ol>
-
-<h4>Semi-Automated Install</h4>
-
-<ol>
-<li>Download the plugin ZIP file.</li>
-<li>Go to the wp-admin/ section of your website.</li>
-<li>Select the <em>Plugins</em> menu item.</li>
-<li>Select the <em>Add New</em> sub-menu item.</li>
-<li>Click on <em>Upload</em> link (just under the Install Plugins page title).</li>
-<li>Click the <em>Browse...</em> button.</li>
-<li>Navigate your local folders / directories and choose the ZIP file you downloaded previously.</li>
-<li>Click on the <em>Install Now</em> button.</li>
-<li>Click the <em>Activate Plugin</em> link.</li>
-</ol>
-
-
