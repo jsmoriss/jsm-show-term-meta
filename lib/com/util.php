@@ -1804,7 +1804,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			$in_arr_keys = array_keys( $in_arr );
 
-			$matched_keys = preg_grep( $key_preg, $in_arr_keys, $invert ? PREG_GREP_INVERT : null );
+			$matched_keys = preg_grep( $key_preg, $in_arr_keys, $invert ? PREG_GREP_INVERT : 0 );
 
 			if ( empty( $matched_keys ) && $invert ) {	// Nothing to do.
 
@@ -2745,7 +2745,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 */
 		public static function add_type_opts_md_pad( &$type_opts, array $mod, array $opts_md_pre = array() ) {
 
-			if ( is_object( $mod[ 'obj' ] ) ) {	// Just in case.
+			if ( ! empty( $mod[ 'obj' ] ) ) {	// Just in case.
 
 				$md_defs = (array) $mod[ 'obj' ]->get_defaults( $mod[ 'id' ] );
 				$md_opts = (array) $mod[ 'obj' ]->get_options( $mod[ 'id' ] );
