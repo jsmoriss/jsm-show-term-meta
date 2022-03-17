@@ -4741,11 +4741,11 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 */
 		public static function get_home_url( array $opts = array(), $mixed = 'current' ) {
 
-			$home_url = empty( $opts ) ? '' : self::get_key_value( 'home_url', $opts, $mixed );
+			$home_url = empty( $opts ) ? '' : self::get_key_value( 'site_home_url', $opts, $mixed );
 
 			if ( empty( $home_url ) ) {	// Fallback to default WordPress value.
 
-				$home_url = get_home_url();	// Fallback to default WordPress value.
+				$home_url = get_home_url( $blog_id = null, $path = '/', $scheme = null);	// Fallback to default WordPress value.
 			}
 
 			return $home_url;
@@ -4759,11 +4759,11 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 */
 		public static function get_wp_url( array $opts = array(), $mixed = 'current' ) {
 
-			$wp_url = empty( $opts ) ? '' : self::get_key_value( 'wp_url', $opts, $mixed );
+			$wp_url = empty( $opts ) ? '' : self::get_key_value( 'site_wp_url', $opts, $mixed );
 
 			if ( empty( $wp_url ) ) {
 
-				$wp_url = get_site_url();	// Fallback to default WordPress value.
+				$wp_url = get_site_url( $blog_id = null, $path = '/', $scheme = null );	// Fallback to default WordPress value.
 			}
 
 			return $wp_url;
