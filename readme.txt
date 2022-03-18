@@ -62,6 +62,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.3 (2022/03/18)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Updated the sucom class library files.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+
 **Version 3.0.2 (2021/12/10)**
 
 * **New Features**
@@ -119,6 +133,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 3.0.3 =
+
+(2022/03/18) Updated the sucom class library files.
 
 = 3.0.2 =
 
