@@ -1713,6 +1713,11 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return ltrim( strtolower( preg_replace('/[A-Z]/', '_$0', $str ) ), '_' );
 		}
 
+		public static function is_md5( $md5 ) {
+
+			return strlen( $md5 ) === 32 && preg_match( '/^[a-f0-9]+$/', $md5 ) ? true : false;
+		}
+
 		/**
 		 * Check that the id value is not true, false, null, or 'none'.
 		 */
@@ -4424,7 +4429,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			$html = preg_replace( '/<pre[ >].*<\/pre>/Uims', '', $html );
 			$html = preg_replace( '/<textarea[ >].*<\/textarea>/Uims', '', $html );
 
-			$json_data = array();
+			$json_scripts = array();
 
 			/**
 			 * U = Inverts the "greediness" of quantifiers so that they are not greedy by default.
@@ -4433,37 +4438,44 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			 *
 			 * See http://php.net/manual/en/reference.pcre.pattern.modifiers.php.
 			 */
-			if ( preg_match_all( '/<script\b[^>]*type=["\']application\/ld\+json["\'][^>]*>(.*)<\/script>/Uis', $html, $all_matches, PREG_SET_ORDER ) ) {
+			if ( preg_match_all( '/(<script\b[^>]*type=["\']application\/ld\+json["\'][^>]*>)(.+)(<\/script>)/Uis', $html, $all_matches, PREG_SET_ORDER ) ) {
 
 				foreach ( $all_matches as $num => $matches ) {
 
-					$json_decoded = json_decode( $matches[ 1 ], $assoc = true );
+					$json_data = json_decode( $matches[ 2 ], $assoc = true );
 
-					$json_md5 = md5( serialize( $json_decoded ) );	// md5() input must be a string.
+					if ( preg_match( '/ id=["\']([^"\']+)["\']/', $matches[ 1 ], $m ) ) {
 
-					if ( $do_decode ) {	// Return only the decoded json data.
+						$single_id = 'id:' . $m[ 1 ];
 
-						if ( is_array( $json_decoded ) ) {
+					} else {
 
-							$json_data[ $json_md5 ] = $json_decoded;
+						$single_id = 'md5:' . md5( serialize( $json_data ) );	// md5() input must be a string.
+					}
+
+					if ( $do_decode ) {	// Return the decoded json data.
+
+						if ( is_array( $json_data ) ) {
+
+							$json_scripts[ $single_id ] = $json_data;
 
 						} else {
 
 							$error_pre = sprintf( '%s error:', __METHOD__ );
 
-							$error_msg = sprintf( 'Error decoding json script: %s', print_r( $matches[ 1 ], true ) );
+							$error_msg = sprintf( 'Error decoding json script: %s', print_r( $matches[ 2 ], true ) );
 
 							self::safe_error_log( $error_pre . ' ' . $error_msg );
 						}
 
-					} else {	// Return the complete script container.
+					} else {	// Return the json script instead.
 
-						$json_data[ $json_md5 ] = $matches[ 0 ];
+						$json_scripts[ $single_id ] = $matches[ 0 ];
 					}
 				}
 			}
 
-			return $json_data;
+			return $json_scripts;
 		}
 
 		public static function get_user_ids( $blog_id = null, $role = '', $limit = '' ) {
