@@ -19,7 +19,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 	class SucomUtil {
 
-		protected static $cache_locale  = array();	// Saved get_locale() values.
+		protected static $locale_cache = array();	// Used by self::clear_locale_cache() and self::get_locale().
 
 		protected static $currencies = array(
 			'AED' => 'United Arab Emirates dirham',
@@ -2697,9 +2697,9 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return $results;
 		}
 
-		public static function refresh_current_locale_cache() {
+		public static function clear_locale_cache() {
 
-			self::get_locale( $mixed = 'current', $read_cache = false );
+			self::$locale_cache = array();
 		}
 
 		/**
@@ -2707,18 +2707,18 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 */
 		public static function get_locale( $mixed = 'current', $read_cache = true ) {
 
-			$cache_index = is_array( $mixed ) ? self::get_mod_salt( $mixed ) : $mixed;
-
 			if ( empty( $mixed ) ) {	// Just in case.
 
 				$mixed = 'current';
 			}
 
+			$cache_index = is_array( $mixed ) ? self::get_mod_salt( $mixed ) : $mixed;
+
 			if ( $read_cache ) {
 
-				if ( isset( self::$cache_locale[ $cache_index ] ) ) {
+				if ( isset( self::$locale_cache[ $cache_index ] ) ) {
 
-					return self::$cache_locale[ $cache_index ];
+					return self::$locale_cache[ $cache_index ];
 				}
 			}
 
@@ -2789,7 +2789,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			 */
 			$locale = apply_filters( 'sucom_get_locale', $locale, $mixed );
 
-			return self::$cache_locale[ $cache_index ] = $locale;
+			return self::$locale_cache[ $cache_index ] = $locale;
 		}
 
 		public static function get_available_feed_locale_names() {
