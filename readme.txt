@@ -62,6 +62,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.4 (2022/05/09)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed missing `SucomCountryCodes` class for country related methods in `SucomUtil`.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+
 **Version 3.0.3 (2022/03/18)**
 
 * **New Features**
@@ -133,6 +147,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 3.0.4 =
+
+(2022/05/09) Fixed missing `SucomCountryCodes` class for country related methods in `SucomUtil`.
 
 = 3.0.3 =
 
