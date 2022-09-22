@@ -2364,7 +2364,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		}
 
 		/**
-		 * Private method used by get_mt_image_seed(), get_mt_product_seed(), and get_mt_video_seed().
+		 * Protected method used by get_mt_image_seed(), get_mt_product_seed(), and get_mt_video_seed().
 		 */
 		protected static function maybe_merge_mt_og( array $mt_ret, array $mt_og ) {
 
@@ -2376,8 +2376,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			/**
 			 * Always keep the 'og:type' meta tag top-most.
 			 *
-			 * Note that isset() does not return true for array keys that correspond to a null value, while
-			 * array_key_exists() does, so use array_key_exists() here.
+			 * Use array_key_exists() to allow for null value.
 			 */
 			if ( array_key_exists( 'og:type', $mt_og ) ) {
 
