@@ -901,9 +901,8 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 */
 		public static function format_tz_offset( $offset ) {
 
-			$hours   = (int) $offset;
-			$minutes = ( $offset - $hours );
-
+			$hours     = (int) $offset;
+			$minutes   = ( $offset - $hours );
 			$sign      = ( $offset < 0 ) ? '-' : '+';
 			$abs_hour  = abs( $hours );
 			$abs_mins  = abs( $minutes * 60 );
@@ -3817,7 +3816,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return $exists;
 		}
 
-		public static function get_roles_user_ids( array $roles, $blog_id = null, $limit = '' ) {
+		public static function get_roles_user_ids( array $roles, $blog_id = null, $limit = null ) {
 
 			/**
 			 * Get the user ID => name associative array, and keep only the array keys.
@@ -3829,7 +3828,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return $user_ids;
 		}
 
-		public static function get_roles_user_select( array $roles, $blog_id = null, $add_none = true, $limit = '' ) {
+		public static function get_roles_user_select( array $roles, $blog_id = null, $add_none = true, $limit = null ) {
 
 			$user_select = self::get_roles_user_names( $roles, $blog_id, $limit );
 
@@ -3841,7 +3840,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return $user_select;
 		}
 
-		public static function get_roles_user_names( array $roles, $blog_id = null, $limit = '' ) {
+		public static function get_roles_user_names( array $roles, $blog_id = null, $limit = null ) {
 
 			if ( empty( $roles ) ) {
 
@@ -3857,7 +3856,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			foreach ( $roles as $role ) {
 
-				$role_users = self::get_user_names( $role, $blog_id, $limit );	// Can return false with a numeric $limit argument.
+				$role_users = self::get_users_names( $role, $blog_id, $limit );	// Can return false with a numeric $limit argument.
 
 				if ( ! empty( $role_users ) && is_array( $role_users ) ) {	// Check return value, just in case.
 
@@ -3885,12 +3884,12 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 * 	AND wp_usermeta.meta_value LIKE '%\"person\"%' ) ) )
 		 * 	ORDER BY display_name ASC
 		 *
-		 * If using the $limit argument, you must keep calling get_user_names() until it returns false - it may also return
+		 * If using the $limit argument, you must keep calling get_users_names() until it returns false - it may also return
 		 * false on the first query if there are no users in the specified role.
 		 */
-		public static function get_user_names( $role = '', $blog_id = null, $limit = '' ) {
+		public static function get_users_names( $role = '', $blog_id = null, $limit = null ) {
 
-			static $offset = '';
+			static $offset = null;
 
 			if ( empty( $blog_id ) ) {
 
@@ -3899,17 +3898,20 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			if ( is_numeric( $limit ) ) {
 
-				$offset = '' === $offset ? 0 : $offset + $limit;
+				$offset = null === $offset ? 0 : $offset + $limit;
 			}
 
+			/**
+			 * See https://developer.wordpress.org/reference/classes/wp_user_query/.
+			 */
 			$user_args  = array(
 				'blog_id' => $blog_id,
-				'offset'  => $offset,
-				'number'  => $limit,
+				'offset'  => null === $offset ? '' : $offset,	// Default value should be an empty string.
+				'number'  => null === $limit ? '' : $limit,	// Default value should be an empty string.
 				'order'   => 'ASC',
 				'orderby' => 'display_name',
 				'role'    => $role,
-				'fields'  => array(	// Save memory and only return only specific fields.
+				'fields'  => array(	// Save memory and return only specific fields.
 					'ID',
 					'display_name',
 				)
@@ -3922,17 +3924,63 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				$user_names[ $user_obj->ID ] = $user_obj->display_name;
 			}
 
-			if ( '' !== $offset ) {	// 0 or multiple of $limit.
+			if ( null !== $offset ) {	// 0 or multiple of $limit integer.
 
 				if ( empty( $user_names ) ) {
 
-					$offset = '';	// Allow the next call to start fresh.
+					$offset = null;	// Allow the next call to start fresh.
 
 					return false;	// To break the while loop.
 				}
 			}
 
 			return $user_names;
+		}
+
+		public static function get_users_ids( $blog_id = null, $role = '', $limit = null ) {
+
+			static $offset = null;
+
+			if ( empty( $blog_id ) ) {
+
+				$blog_id = get_current_blog_id();
+			}
+
+			if ( is_numeric( $limit ) ) {
+
+				$offset = null === $offset ? 0 : $offset + $limit;
+			}
+
+			$user_args  = array(
+				'blog_id' => $blog_id,
+				'offset'  => null === $offset ? '' : $offset,	// Default value should be an empty string.
+				'number'  => null === $limit ? '' : $limit,	// Default value should be an empty string.
+				'order'   => 'DESC',	// Newest users first.
+				'orderby' => 'ID',
+				'role'    => $role,
+				'fields'  => array(	// Save memory and return only specific fields.
+					'ID',
+				)
+			);
+
+			$user_ids = array();
+
+			foreach ( get_users( $user_args ) as $user_obj ) {
+
+				$user_ids[] = $user_obj->ID;
+			}
+
+			if ( null !== $offset ) {	// 0 or multiple of $limit integer.
+
+				if ( empty( $user_ids ) ) {
+
+					$offset = null;	// Allow the next call to start fresh.
+
+					return false;	// To break the while loop.
+				}
+			}
+
+			return $user_ids;
 		}
 
 		public static function user_exists( $user_id ) {
@@ -4493,52 +4541,6 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			}
 
 			return $json_scripts;
-		}
-
-		public static function get_user_ids( $blog_id = null, $role = '', $limit = '' ) {
-
-			static $offset = '';
-
-			if ( empty( $blog_id ) ) {
-
-				$blog_id = get_current_blog_id();
-			}
-
-			if ( is_numeric( $limit ) ) {
-
-				$offset = '' === $offset ? 0 : $offset + $limit;
-			}
-
-			$user_args  = array(
-				'blog_id' => $blog_id,
-				'offset'  => $offset,
-				'number'  => $limit,
-				'order'   => 'DESC',	// Newest users first.
-				'orderby' => 'ID',
-				'role'    => $role,
-				'fields'  => array(	// Save memory and only return only specific fields.
-					'ID',
-				)
-			);
-
-			$user_ids = array();
-
-			foreach ( get_users( $user_args ) as $user_obj ) {
-
-				$user_ids[] = $user_obj->ID;
-			}
-
-			if ( '' !== $offset ) {
-
-				if ( empty( $user_ids ) ) {
-
-					$offset = '';	// Allow the next call to start fresh.
-
-					return false;	// To break the while loop.
-				}
-			}
-
-			return $user_ids;
 		}
 
 		public static function count_diff( &$arr, $max = 0 ) {
