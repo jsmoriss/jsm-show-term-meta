@@ -3816,21 +3816,12 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return $exists;
 		}
 
-		public static function get_roles_user_ids( array $roles, $blog_id = null, $limit = null ) {
+		/**
+		 * See WpssoUser->get_persons_names().
+		 */
+		public static function get_roles_users_select( array $roles, $blog_id = null, $add_none = true, $limit = null ) {
 
-			/**
-			 * Get the user ID => name associative array, and keep only the array keys.
-			 */
-			$user_ids = array_keys( self::get_roles_user_names( $roles, $blog_id, $limit ) );
-
-			rsort( $user_ids );	// Newest user first.
-
-			return $user_ids;
-		}
-
-		public static function get_roles_user_select( array $roles, $blog_id = null, $add_none = true, $limit = null ) {
-
-			$user_select = self::get_roles_user_names( $roles, $blog_id, $limit );
+			$user_select = self::get_roles_users_names( $roles, $blog_id, $limit );
 
 			if ( $add_none ) {
 
@@ -3840,7 +3831,27 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return $user_select;
 		}
 
-		public static function get_roles_user_names( array $roles, $blog_id = null, $limit = null ) {
+		/**
+		 * See WpssoUser->get_public_ids().
+		 * See WpssoOptionsUpgrade->options().
+		 */
+		public static function get_roles_users_ids( array $roles, $blog_id = null, $limit = null ) {
+
+			/**
+			 * Get the user ID => name associative array, and keep only the array keys.
+			 */
+			$user_ids = array_keys( self::get_roles_users_names( $roles, $blog_id, $limit ) );
+
+			rsort( $user_ids );	// Newest user first.
+
+			return $user_ids;
+		}
+
+		/**
+		 * See self::get_roles_users_select().
+		 * See self::get_roles_users_ids().
+		 */
+		public static function get_roles_users_names( array $roles, $blog_id = null, $limit = null ) {
 
 			if ( empty( $roles ) ) {
 
@@ -3886,6 +3897,8 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 *
 		 * If using the $limit argument, you must keep calling get_users_names() until it returns false - it may also return
 		 * false on the first query if there are no users in the specified role.
+		 *
+		 * See self::get_roles_users_names().
 		 */
 		public static function get_users_names( $role = '', $blog_id = null, $limit = null ) {
 
@@ -3919,6 +3932,9 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			$user_names = array();
 
+			/**
+			 * See https://developer.wordpress.org/reference/classes/WP_User_Query/prepare_query/.
+			 */
 			foreach ( get_users( $user_args ) as $user_obj ) {
 
 				$user_names[ $user_obj->ID ] = $user_obj->display_name;
@@ -3937,6 +3953,9 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return $user_names;
 		}
 
+		/**
+		 * See WpssoRegister->uninstall_plugin().
+		 */
 		public static function get_users_ids( $blog_id = null, $role = '', $limit = null ) {
 
 			static $offset = null;
@@ -3965,6 +3984,9 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			$user_ids = array();
 
+			/**
+			 * See https://developer.wordpress.org/reference/classes/WP_User_Query/prepare_query/.
+			 */
 			foreach ( get_users( $user_args ) as $user_obj ) {
 
 				$user_ids[] = $user_obj->ID;
