@@ -2263,12 +2263,12 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				 */
 				$mt_pre . ':depth:value'        => null,	// Non-standard / internal meta tag.
 				$mt_pre . ':depth:units'        => null,	// Non-standard / internal meta tag (units after value).
+				$mt_pre . ':fluid_volume:value' => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':fluid_volume:units' => null,	// Non-standard / internal meta tag (units after value).
 				$mt_pre . ':height:value'       => null,	// Non-standard / internal meta tag.
 				$mt_pre . ':height:units'       => null,	// Non-standard / internal meta tag (units after value).
 				$mt_pre . ':length:value'       => null,	// Non-standard / internal meta tag.
 				$mt_pre . ':length:units'       => null,	// Non-standard / internal meta tag (units after value).
-				$mt_pre . ':fluid_volume:value' => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':fluid_volume:units' => null,	// Non-standard / internal meta tag (units after value).
 				$mt_pre . ':weight:value'       => null,
 				$mt_pre . ':weight:units'       => null,
 				$mt_pre . ':width:value'        => null,	// Non-standard / internal meta tag.
@@ -2301,13 +2301,13 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				$mt_pre . ':shipping_cost:amount'            => null,
 				$mt_pre . ':shipping_cost:currency'          => null,
 				$mt_pre . ':shipping_length:value'           => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':shipping_length:units'           => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':shipping_width:value'            => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':shipping_width:units'            => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':shipping_length:units'           => null,	// Non-standard / internal meta tag (units after value).
 				$mt_pre . ':shipping_height:value'           => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':shipping_height:units'           => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':shipping_height:units'           => null,	// Non-standard / internal meta tag (units after value).
 				$mt_pre . ':shipping_weight:value'           => null,
 				$mt_pre . ':shipping_weight:units'           => null,
+				$mt_pre . ':shipping_width:value'            => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':shipping_width:units'            => null,	// Non-standard / internal meta tag (units after value).
 			);
 
 			if ( isset( $mt_og[ 'og:type' ] ) ) {
@@ -4144,6 +4144,18 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			}
 
 			return false;
+		}
+
+		public static function get_options_transl( array $opts, $text_domain ) {
+
+			foreach ( $opts as $opt_key => &$opt_label ) {
+
+				$opt_label = _x( $opt_label, 'option label', $text_domain );
+			}
+			
+			self::natasort( $opts );
+
+			return $opts;
 		}
 
 		/**
