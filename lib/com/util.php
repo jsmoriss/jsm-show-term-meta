@@ -2600,6 +2600,19 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			$mixed = str_replace( '\'', '\\\'', $mixed );
 
 			echo '_x( \'' . $mixed . '\', \'' . $context . '\', \'' . $text_domain . '\' );' . "\n";
+
+			/**
+			 * Include values without their comment / qualifier (for example, 'Adult (13 years old or more)').
+			 */
+			if ( 'option value' === $context ) {
+
+				if ( false !== ( $pos = strpos( $mixed, '(' ) ) ) {
+			
+					$mixed = trim( substr( $mixed, 0, $pos ) );
+				
+					echo '_x( \'' . $mixed . '\', \'' . $context . '\', \'' . $text_domain . '\' );' . "\n";
+				}
+			}
 		}
 
 		public static function transl_key_values( $pattern, array &$opts, $text_domain ) {
@@ -4158,7 +4171,17 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return false;
 		}
 
-		public static function get_options_transl( array $opts, $text_domain ) {
+		public static function get_options_value_transl( array $opts, $text_domain ) {
+
+			foreach ( $opts as $opt_key => &$opt_label ) {
+
+				$opt_label = _x( $opt_label, 'option value', $text_domain );
+			}
+
+			return $opts;
+		}
+
+		public static function get_options_label_transl( array $opts, $text_domain ) {
 
 			foreach ( $opts as $opt_key => &$opt_label ) {
 
