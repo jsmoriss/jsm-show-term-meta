@@ -21,7 +21,7 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 
 		public function __construct() {
 
-			/**
+			/*
 			 * Make sure we have a taxonomy slug to hook the metabox action.
 			 */
 			$tax_slug = SucomUtil::get_request_value( 'taxonomy' );	// Uses sanitize_text_field.
@@ -113,7 +113,7 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 				die( -1 );
 			}
 
-			/**
+			/*
 			 * Note that the $table_row_id value must match the value used in SucomUtilMetabox::get_table_metadata(),
 			 * so that jQuery can hide the table row after a successful delete.
 			 */

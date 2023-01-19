@@ -50,7 +50,7 @@ if ( ! class_exists( 'JsmStmConfig' ) ) {
 
 			$nonce_key = defined( 'NONCE_KEY' ) ? NONCE_KEY : '';
 
-			/**
+			/*
 			 * Define fixed constants.
 			 */
 			define( 'JSMSTM_FILEPATH', $plugin_file );
@@ -62,7 +62,7 @@ if ( ! class_exists( 'JsmStmConfig' ) ) {
 			define( 'JSMSTM_VERSION', $info[ 'version' ] );
 		}
 
-		/**
+		/*
 		 * Load all essential library files.
 		 *
 		 * Avoid calling is_admin() here as it can be unreliable this early in the load process - some plugins that operate
