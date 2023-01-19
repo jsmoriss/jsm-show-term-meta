@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Plugin Name: JSM's Show Term Metadata
  * Text Domain: jsm-show-term-meta
  * Domain Path: /languages
