@@ -2867,6 +2867,11 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				$mixed = 'current';
 			}
 
+			/*
+			 * If $mixed is an array, get its salt, otherwise use the string or post ID.
+			 *
+			 * Note that SucomUtil::get_mod_salt() does not include the page number or locale.
+			 */
 			$cache_index = is_array( $mixed ) ? self::get_mod_salt( $mixed ) : $mixed;
 
 			if ( $read_cache ) {
@@ -3060,7 +3065,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 		public static function get_mod_anchor( array $mod ) {
 
-			$mod_anchor = self::get_mod_salt( $mod );
+			$mod_anchor = self::get_mod_salt( $mod );	// Does not include the page number or locale.
 
 			$mod_anchor = self::sanitize_css_id( $mod_anchor );
 
@@ -3068,7 +3073,9 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		}
 
 		/*
-		 * Results a salt string based on $mod values.
+		 * A cache salt string based on $mod values.
+		 *
+		 * Note that the page number and locale are not added to the salt string.
 		 *
 		 * Example mod salts:
 		 *
@@ -3076,6 +3083,9 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 * 	'term:456_tax:post_tag'
 		 * 	'post:0_url:https://example.com/a-subject/'
 		 * 	'url:https://example.com/2022/01/'
+		 *
+		 * See SucomUtil::get_cache_index().
+		 * See WpssoHead->get_head_cache_index().
 		 */
 		public static function get_mod_salt( $mod = false, $canonical_url = false ) {
 
@@ -3102,11 +3112,6 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 					$mod_salt .= '_tax:' . $mod[ 'tax_slug' ];
 				}
 
-				if ( ! empty( $mod[ 'paged' ] ) ) {
-
-					$mod_salt .= '_paged:' . $mod[ 'paged' ];
-				}
-
 				if ( ! is_numeric( $mod[ 'id' ] ) || ! $mod[ 'id' ] > 0 ) {
 
 					if ( ! empty( $mod[ 'is_home' ] ) ) {	// Home page (static or blog archive).
@@ -3128,6 +3133,35 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			$mod_salt = ltrim( $mod_salt, '_' );	// Remove leading underscore.
 
 			return apply_filters( 'sucom_mod_salt', $mod_salt, $canonical_url );
+		}
+
+		/*
+		 * See WpssoHead->get_head_cache_index().
+		 */
+		public static function get_cache_index( $mixed = 'current' ) {
+
+			$cache_index = '';
+
+			if ( is_array( $mixed ) ) {
+
+				if ( ! empty( $mixed[ 'paged' ] ) && $mixed[ 'paged' ] > 1 ) {	// False or numeric.
+
+					$cache_index .= '_paged:' . $mixed[ 'paged' ];
+				}
+			}
+
+			$cache_index .= '_locale:' . self::get_locale( $mixed );
+
+			if ( self::is_amp() ) {	// Returns null, true, or false.
+
+				$cache_index .= '_amp:true';
+			}
+
+			$cache_index = trim( $cache_index, '_' );	// Cleanup leading underscores.
+
+			$cache_index = apply_filters( 'sucom_cache_index', $cache_index, $mixed );
+
+			return $cache_index;
 		}
 
 		public static function get_assoc_salt( array $assoc ) {
