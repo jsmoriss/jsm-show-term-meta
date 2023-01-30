@@ -62,6 +62,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.9 (2023/01/30)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Update for SucomUtilWP library class.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+
 **Version 3.0.8 (2023/01/26)**
 
 * **New Features**
@@ -203,6 +217,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 3.0.9 =
+
+(2023/01/30) Update for SucomUtilWP library class.
 
 = 3.0.8 =
 
