@@ -2645,7 +2645,11 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			if ( $add_none ) {
 
-				$results = array( 'none' => 'none' ) + $results;	// Maintain numeric index.
+				/*
+				 * The union operator (+) gives priority to values in the first array, while array_replace() gives
+				 * priority to values in the the second array.
+				 */
+				$results = array( 'none' => 'none' ) + $results;	// Maintains numeric index.
 			}
 
 			return $results;
@@ -3408,7 +3412,11 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			if ( $add_none ) {
 
-				$user_select = array( 'none' => 'none' ) + $user_select;
+				/*
+				 * The union operator (+) gives priority to values in the first array, while array_replace() gives
+				 * priority to values in the the second array.
+				 */
+				$user_select = array( 'none' => 'none' ) + $user_select;	// Maintains numeric index.
 			}
 
 			return $user_select;
@@ -3446,19 +3454,23 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				$blog_id = get_current_blog_id();
 			}
 
-			$user_names = array();
+			$users_names = array();
 
 			foreach ( $roles as $role ) {
 
 				while ( $role_users = self::get_users_names( $role, $blog_id, $limit = 1000 ) ) {
 
-					$user_names += $role_users;
+					/*
+					 * The union operator (+) gives priority to values in the first array, while
+					 * array_replace() gives priority to values in the the second array.
+					 */
+					$users_names = $users_names + $role_users;	// Maintains numeric index.
 				}
 			}
 
-			self::natasort( $user_names );	// Maintain ID => display_name association.
+			self::natasort( $users_names );	// Maintain ID => display_name association.
 
-			return $user_names;
+			return $users_names;
 		}
 
 		/*
@@ -3510,27 +3522,27 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				)
 			);
 
-			$user_names = array();
+			$users_names = array();
 
 			/*
 			 * See https://developer.wordpress.org/reference/classes/WP_User_Query/prepare_query/.
 			 */
 			foreach ( get_users( $user_args ) as $user_obj ) {
 
-				$user_names[ $user_obj->ID ] = $user_obj->display_name;
+				$users_names[ $user_obj->ID ] = $user_obj->display_name;
 			}
 
-			if ( null !== $offset ) {	// 0 or multiple of $limit integer.
+			if ( null !== $offset ) {	// Null, 0, or multiple of $limit integer.
 
-				if ( empty( $user_names ) ) {
+				if ( empty( $users_names ) ) {
 
 					$offset = null;	// Allow the next call to start fresh.
 
-					return false;	// To break the while loop.
+					return false;	// Break the calling while loop.
 				}
 			}
 
-			return $user_names;
+			return $users_names;
 		}
 
 		/*
@@ -3574,13 +3586,13 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				$users_ids[] = $user_obj->ID;
 			}
 
-			if ( null !== $offset ) {	// 0 or multiple of $limit integer.
+			if ( null !== $offset ) {	// Null, 0, or multiple of $limit integer.
 
 				if ( empty( $users_ids ) ) {
 
 					$offset = null;	// Allow the next call to start fresh.
 
-					return false;	// To break the while loop.
+					return false;	// Break the calling while loop.
 				}
 			}
 
@@ -4596,6 +4608,10 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			if ( true === $add_none ) {	// Prefix array with 'none'.
 
+				/*
+				 * The union operator (+) gives priority to values in the first array, while
+				 * array_replace() gives priority to values in the the second array.
+				 */
 				$arr = array( 'none' => 'none' ) + $arr;	// Maintains numeric index.
 			}
 
