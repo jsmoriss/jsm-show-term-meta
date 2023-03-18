@@ -10,7 +10,7 @@ Tags: taxonomy, meta, term meta, categories, tags, delete, debug, inspector
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.4
-Tested Up To: 6.1.1
+Tested Up To: 6.2.0
 Stable Tag: 3.0.11
 
 Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.
