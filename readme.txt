@@ -62,7 +62,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.11 (2023/02/22)**
+**Version 3.0.12 (2023/04/26)**
 
 * **New Features**
 	* None.
@@ -71,14 +71,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Update for SucomUtil classes.
+	* Update for SucomUtil class.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.5.
 
 == Upgrade Notice ==
 
-= 3.0.11 =
+= 3.0.12 =
 
-(2023/02/22) Update for SucomUtil classes.
+(2023/04/26) Update for SucomUtil class.
 
