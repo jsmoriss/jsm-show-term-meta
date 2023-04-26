@@ -8,7 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
 Tags: taxonomy, meta, term meta, categories, tags, delete, debug, inspector
 Contributors: jsmoriss
-Requires PHP: 7.2
+Requires PHP: 7.2.5
 Requires At Least: 5.5
 Tested Up To: 6.2.0
 Stable Tag: 3.0.12
@@ -73,7 +73,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Update for SucomUtil class.
 * **Requires At Least**
-	* PHP v7.2.
+	* PHP v7.2.5.
 	* WordPress v5.5.
 
 == Upgrade Notice ==
