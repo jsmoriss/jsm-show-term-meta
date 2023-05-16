@@ -1,5 +1,5 @@
-=== JSM's Show Term Metadata ===
-Plugin Name: JSM's Show Term Metadata
+=== JSM Show Term Metadata ===
+Plugin Name: JSM Show Term Metadata
 Plugin Slug: jsm-show-term-meta
 Text Domain: jsm-show-term-meta
 Domain Path: /languages
@@ -17,7 +17,7 @@ Show term metadata in a metabox when editing terms - a great tool for debugging 
 
 == Description ==
 
-**The JSM's Show Term Metadata plugin displays term (ie. categories, tags, and custom taxonomies) meta keys and their unserialized values in a metabox at the bottom of term editing pages.**
+**The JSM Show Term Metadata plugin displays term (ie. categories, tags, and custom taxonomies) meta keys and their unserialized values in a metabox at the bottom of term editing pages.**
 
 The current user must have the [WordPress *manage_options* capability](https://wordpress.org/support/article/roles-and-capabilities/#manage_options) (allows access to administration options) to view the Term Metadata metabox, and the *manage_options* capability to delete individual meta keys.
 
@@ -27,14 +27,14 @@ There are no plugin settings - simply install and activate the plugin.
 
 = Shows Yoast SEO Term Meta =
 
-Yoast SEO stores its term (ie. categories, tags, and custom taxonomies) metadata in the WordPress options table, not the term meta table. The JSM's Show Term Metadata plugin will read and display Yoast SEO's term metadata, but it cannot be deleted (as it does not reside in the WordPress term meta table).
+Yoast SEO stores its term (ie. categories, tags, and custom taxonomies) metadata in the WordPress options table, not the term meta table. The JSM Show Term Metadata plugin will read and display Yoast SEO's term metadata, but it cannot be deleted (as it does not reside in the WordPress term meta table).
 
 = Related Plugins =
 
-* [JSM's Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
-* [JSM's Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
-* [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
-* [JSM's Show Registered Shortcodes](https://wordpress.org/plugins/jsm-show-registered-shortcodes/)
+* [JSM Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
+* [JSM Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
+* [JSM Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
+* [JSM Show Registered Shortcodes](https://wordpress.org/plugins/jsm-show-registered-shortcodes/)
 
 == Installation ==
 
