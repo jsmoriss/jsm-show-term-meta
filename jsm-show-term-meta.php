@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: JSM's Show Term Metadata
+ * Plugin Name: JSM Show Term Metadata
  * Text Domain: jsm-show-term-meta
  * Domain Path: /languages
  * Plugin URI: https://surniaulula.com/extend/plugins/jsm-show-term-meta/
