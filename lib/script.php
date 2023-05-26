@@ -43,8 +43,9 @@ if ( ! class_exists( 'JsmStmScript' ) ) {
 
 			$admin_l10n = $cf[ 'plugin' ][ 'jsmstm' ][ 'admin_l10n' ];
 
+			// The version number should match the version in js/com/jquery-admin-page.js.
 			wp_register_script( 'sucom-admin-page', JSMSTM_URLPATH . 'js/com/jquery-admin-page.min.js',
-				$deps = array( 'jquery' ), '20220318-02', $in_footer = true );
+				$deps = array( 'jquery' ), '20230522', $in_footer = true );
 
 			wp_localize_script( 'sucom-admin-page', $admin_l10n, $this->get_admin_page_script_data() );
 

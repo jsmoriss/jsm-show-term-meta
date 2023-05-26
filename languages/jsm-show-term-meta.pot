@@ -13,7 +13,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/script.php:61
+#: lib/script.php:62
 msgid "Unable to delete meta key '{1}' for term ID {0}."
 msgstr ""
 
