@@ -62,7 +62,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.12 (2023/04/26)**
+**Version 3.0.13 (2023/05/31)**
 
 * **New Features**
 	* None.
@@ -71,14 +71,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Update for SucomUtil class.
+	* Update for jquery-admin-page.js.
 * **Requires At Least**
 	* PHP v7.2.5.
 	* WordPress v5.5.
 
 == Upgrade Notice ==
 
-= 3.0.12 =
+= 3.0.13 =
 
-(2023/04/26) Update for SucomUtil class.
+(2023/05/31) Update for jquery-admin-page.js.
 
