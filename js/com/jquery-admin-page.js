@@ -3,18 +3,15 @@
  *
  * Update the wp_register_script() arguments for the 'sucom-admin-page' script when updating this version number.
  *
- * Version: 20230531
+ * Version: 20230704
  */
-
-/*
- * Update block-editor metaboxes.
- */
-function sucomBlockPostbox( pluginId, adminPageL10n ) {
+function sucomEditorPostbox( pluginId, adminPageL10n, postId ) {
 
 	if ( 'undefined' === typeof wp.data ) return;	// Just in case.
 
-	var post_id = wp.data.select( 'core/editor' ).getCurrentPostId;
-	var cfg     = window[ adminPageL10n ];
+	if ( 'undefined' === typeof postId ) postId = wp.data.select( 'core/editor' ).getCurrentPostId;
+
+	var cfg = window[ adminPageL10n ];
 
 	if ( ! cfg[ '_ajax_nonce' ] ) {
 
@@ -55,7 +52,7 @@ function sucomBlockPostbox( pluginId, adminPageL10n ) {
 
 		var ajaxData = {
 			action: ajax_action_update_postbox,
-			post_id: post_id,
+			post_id: postId,
 			_ajax_nonce: cfg[ '_ajax_nonce' ],
 		}
 
@@ -75,7 +72,7 @@ function sucomBlockPostbox( pluginId, adminPageL10n ) {
 /*
  * Create block-editor notices first, excluding any toolbar notice types, then update toolbar notices.
  */
-function sucomBlockNotices( pluginId, adminPageL10n ) {
+function sucomBlockEditorNotices( pluginId, adminPageL10n ) {
 
 	if ( 'undefined' === typeof wp.data ) return;	// Just in case.
 
@@ -353,10 +350,11 @@ function sucomToolbarNotices( pluginId, adminPageL10n ) {
 	} );
 }
 
-function sucomToolbarValidators( pluginId, adminPageL10n ) {
+function sucomToolbarValidators( pluginId, adminPageL10n, postId ) {
 
-	var post_id = wp.data.select( 'core/editor' ).getCurrentPostId;
-	var cfg     = window[ adminPageL10n ];
+	if ( 'undefined' === typeof postId ) postId = wp.data.select( 'core/editor' ).getCurrentPostId;
+
+	var cfg = window[ adminPageL10n ];
 
 	if ( ! cfg[ '_ajax_nonce' ] ) {
 
@@ -375,7 +373,7 @@ function sucomToolbarValidators( pluginId, adminPageL10n ) {
 
 	var ajaxData = {
 		action: cfg[ '_ajax_actions' ][ 'get_validate_submenu' ],
-		post_id: post_id,
+		post_id: postId,
 		_ajax_nonce: cfg[ '_ajax_nonce' ],
 	}
 
@@ -737,4 +735,20 @@ String.prototype.formatUnicorn = function() {
 	}
 
 	return str;
+}
+
+/*
+ * Deprecated on 2023/07/04.
+ */
+function sucomBlockPostbox( pluginId, adminPageL10n, postId ) {
+
+	sucomEditorPostbox( pluginId, adminPageL10n, postId );
+}
+
+/*
+ * Deprecated on 2023/07/04.
+ */
+function sucomBlockNotices( pluginId, adminPageL10n ) {
+
+	sucomBlockEditorNotices( pluginId, adminPageL10n );
 }
