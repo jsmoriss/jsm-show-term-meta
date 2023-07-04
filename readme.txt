@@ -62,6 +62,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.1.0-dev.3 (2023/07/04)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Renamed the `sucomBlockPostbox()` javascript function to `sucomEditorPostbox()`.
+* **Requires At Least**
+	* PHP v7.2.5.
+	* WordPress v5.5.
+
 **Version 3.0.14 (2023/06/02)**
 
 * **New Features**
@@ -77,6 +91,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.5.
 
 == Upgrade Notice ==
+
+= 3.1.0-dev.3 =
+
+(2023/07/04) Renamed the `sucomBlockPostbox()` javascript function to `sucomEditorPostbox()`.
 
 = 3.0.14 =
 
