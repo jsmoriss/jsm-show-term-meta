@@ -84,7 +84,7 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 			}
 
 			$cf          = JsmStmConfig::get_config();
-			$term_meta   = get_term_meta( $term_obj->term_id );
+			$term_meta   = get_metadata( 'term', $term_obj->term_id );
 			$skip_keys   = array();
 			$metabox_id  = 'jsmstm';
 			$admin_l10n  = $cf[ 'plugin' ][ 'jsmstm' ][ 'admin_l10n' ];
@@ -130,7 +130,7 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 				die( -1 );
 			}
 
-			if ( delete_term_meta( $obj_id, $meta_key ) ) {
+			if ( delete_metadata( 'term', $obj_id, $meta_key ) ) {
 
 				die( $table_row_id );
 			}
