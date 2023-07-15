@@ -2857,10 +2857,17 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			}
 		}
 
+		/*
+		 * Add a CSS ID to a URL.
+		 */
+		public static function append_url_fragment( $url, $css_id ) {
+
+			return preg_replace( '/#.*/', '', $url ) . ( empty( $css_id ) ? '' : '#' . self::sanitize_css_id( $css_id ) );
+		}
+
 		public static function get_mod_anchor( array $mod ) {
 
 			$mod_anchor = self::get_mod_salt( $mod );	// Does not include the page number or locale.
-
 			$mod_anchor = self::sanitize_css_id( $mod_anchor );
 
 			return $mod_anchor;
