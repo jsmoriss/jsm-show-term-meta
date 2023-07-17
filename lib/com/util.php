@@ -2858,11 +2858,11 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		}
 
 		/*
-		 * Add a CSS ID to a URL.
+		 * Add a fragment to a URL.
 		 */
-		public static function append_url_fragment( $url, $css_id ) {
+		public static function append_url_fragment( $url, $fragment ) {
 
-			return preg_replace( '/#.*/', '', $url ) . ( empty( $css_id ) ? '' : '#' . self::sanitize_css_id( $css_id ) );
+			return preg_replace( '/#.*/', '', $url ) . ( empty( $fragment ) ? '' : '#' . self::sanitize_css_id( $fragment ) );
 		}
 
 		public static function get_mod_anchor( array $mod ) {
@@ -2964,6 +2964,19 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			if ( self::is_amp() ) {	// Returns null, true, or false.
 
 				$cache_index .= '_amp:true';
+			}
+
+			/*
+			 * Since WPSSO Core v15.17.1.
+			 *
+			 * Include a check for embedded pages as they are "noindex" by default.
+			 */
+			foreach ( array( 'is_embed' => 'embed:true' ) as $function => $index_val ) {
+
+				if ( function_exists( 'is_embed' ) && $function() ) {
+
+					$cache_index .= '_' . $index_val;
+				}
 			}
 
 			$cache_index = trim( $cache_index, '_' );	// Cleanup leading underscores.
