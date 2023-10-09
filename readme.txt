@@ -62,7 +62,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.0 (2023/07/17)**
+**Version 3.3.0 (2023/10/09)**
 
 * **New Features**
 	* None.
@@ -74,66 +74,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Update for the `SucomUtil` class.
 * **Requires At Least**
 	* PHP v7.2.34.
-	* WordPress v5.5.
-
-**Version 3.1.1 (2023/07/08)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Minor code optimization and standardization:
-		* Replaced `{get|update|delete}_{comment|post|term|user}_meta()` functions by `{get|update|delete}_metadata()`.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-
-**Version 3.1.0 (2023/07/04)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Renamed the `sucomBlockPostbox()` javascript function to `sucomEditorPostbox()`.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-
-**Version 3.0.14 (2023/06/02)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Update for the `SucomUtil` class.
-* **Requires At Least**
-	* PHP v7.2.
 	* WordPress v5.5.
 
 == Upgrade Notice ==
 
-= 3.2.0 =
+= 3.3.0 =
 
-(2023/07/17) Update for the `SucomUtil` class.
-
-= 3.1.1 =
-
-(2023/07/08) Minor code optimization and standardization.
-
-= 3.1.0 =
-
-(2023/07/04) Renamed the `sucomBlockPostbox()` javascript function to `sucomEditorPostbox()`.
-
-= 3.0.14 =
-
-(2023/06/02) Update for the `SucomUtil` class.
+(2023/10/09) Update for the `SucomUtil` class.
 
