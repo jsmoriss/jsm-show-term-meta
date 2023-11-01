@@ -62,7 +62,8 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 				'__block_editor_compatible_meta_box' => true,
 			);
 
-			add_meta_box( $metabox_id, $metabox_title, array( $this, 'show_metabox' ), $metabox_screen, $metabox_context, $metabox_prio, $callback_args );
+			add_meta_box( $metabox_id, $metabox_title, array( $this, 'show_metabox' ),
+				$metabox_screen, $metabox_context, $metabox_prio, $callback_args );
 
 			echo '<div class="metabox-holder">' . "\n";
 
