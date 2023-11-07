@@ -62,7 +62,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.5.0 (2023/11/01)**
+**Version 3.6.0 (2023/11/07)**
 
 * **New Features**
 	* None.
@@ -71,14 +71,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Update for the `SucomUtil` class.
+	* Update for the `SucomUtil` and `SuextMinifyCssCompressor` class.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
 
 == Upgrade Notice ==
 
-= 3.5.0 =
+= 3.6.0 =
 
-(2023/11/01) Update for the `SucomUtil` class.
+(2023/11/07) Update for the `SucomUtil` and `SuextMinifyCssCompressor` class.
 
