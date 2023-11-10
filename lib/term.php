@@ -36,13 +36,14 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 
 		public function add_meta_boxes( $term_obj ) {
 
-			if ( ! isset( $term_obj->term_id ) ) {	// Just in case.
+			if ( ! empty( $term_obj->term_id ) ) {
 
-				return;
-			}
+				$term_id = $term_obj->term_id;
+
+			} else return;
 
 			$show_meta_cap = apply_filters( 'jsmstm_show_metabox_capability', 'manage_options', $term_obj );
-			$can_show_meta = current_user_can( $show_meta_cap, $term_obj->ID );
+			$can_show_meta = current_user_can( $show_meta_cap, $term_id );
 
 			if ( ! $can_show_meta ) {
 
@@ -79,13 +80,14 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 
 		public function get_metabox( $term_obj ) {
 
-			if ( empty( $term_obj->term_id ) ) {
+			if ( ! empty( $term_obj->term_id ) ) {
 
-				return;
-			}
+				$term_id = $term_obj->term_id;
+
+			} else return;
 
 			$cf          = JsmStmConfig::get_config();
-			$term_meta   = get_metadata( 'term', $term_obj->term_id );
+			$term_meta   = get_metadata( 'term', $term_id );
 			$skip_keys   = array();
 			$metabox_id  = 'jsmstm';
 			$admin_l10n  = $cf[ 'plugin' ][ 'jsmstm' ][ 'admin_l10n' ];
@@ -95,7 +97,7 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 				'value' => __( 'Value', 'jsm-show-term-meta' ),
 			);
 
-			return SucomUtilMetabox::get_table_metadata( $term_meta, $skip_keys, $term_obj, $term_obj->term_id, $metabox_id, $admin_l10n, $titles );
+			return SucomUtilMetabox::get_table_metadata( $term_meta, $skip_keys, $term_obj, $term_id, $metabox_id, $admin_l10n, $titles );
 		}
 
 		public function ajax_delete_meta() {

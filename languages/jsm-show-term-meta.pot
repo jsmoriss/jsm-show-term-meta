@@ -17,15 +17,15 @@ msgstr ""
 msgid "Unable to delete meta key '{1}' for term ID {0}."
 msgstr ""
 
-#: lib/term.php:57
+#: lib/term.php:58
 msgid "Term Metadata"
 msgstr ""
 
-#: lib/term.php:94
+#: lib/term.php:96
 msgid "Key"
 msgstr ""
 
-#: lib/term.php:95
+#: lib/term.php:97
 msgid "Value"
 msgstr ""
 
