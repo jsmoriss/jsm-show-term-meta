@@ -62,7 +62,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.7.0 (2023/11/10)**
+**Version 3.8.0 (2023/11/24)**
 
 * **New Features**
 	* None.
@@ -71,15 +71,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Update for the `SucomUtilWP` class.
-	* Refactored the `JsmStmTerm->add_meta_boxes()` method.
+	* Update for the `SucomUtil` class.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
 
 == Upgrade Notice ==
 
-= 3.7.0 =
+= 3.8.0 =
 
-(2023/11/10) Update for the `SucomUtilWP` class. Refactored the `JsmScmComment->add_meta_boxes()` method.
+(2023/11/24) Update for the `SucomUtil` class.
 
