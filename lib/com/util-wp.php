@@ -340,10 +340,7 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 					$args[ 'paged' ]++;	// Get the next page.
 				}
 
-			} else {
-
-				$posts = $wp_query->query( $args );
-			}
+			} else $posts = $wp_query->query( $args );
 
 			return $posts;
 		}

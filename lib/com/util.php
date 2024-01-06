@@ -1886,19 +1886,25 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		public static function get_mt_og_seed() {
 
 			return array(
-				'fb:admins'       => null,
-				'fb:app_id'       => null,
-				'og:time'         => null,	// Non-standard / internal meta tag.
-				'og:type'         => null,
-				'og:url'          => null,
-				'og:redirect_url' => null,	// Non-standard / internal meta tag.
-				'og:locale'       => null,
-				'og:site_name'    => null,
-				'og:title'        => null,
-				'og:description'  => null,
-				'og:updated_time' => null,
-				'og:video'        => null,
-				'og:image'        => null,
+				'fb:admins'           => null,
+				'fb:app_id'           => null,
+				'og:time'             => null,	// Internal meta tag.
+				'og:type'             => null,
+				'og:url'              => null,
+				'og:redirect_url'     => null,	// Internal meta tag.
+				'og:locale'           => null,
+				'og:site_name'        => null,
+				'og:title'            => null,
+				'og:description'      => null,
+				'og:updated_time'     => null,
+				'og:video'            => null,
+				'og:image'            => null,
+				'schema:language'     => null,	// Internal meta tag.
+				'schema:type:id'      => null,	// Internal meta tag.
+				'schema:type:url'     => null,	// Internal meta tag.
+				'schema:type:context' => null,	// Internal meta tag.
+				'schema:type:name'    => null,	// Internal meta tag.
+				'schema:type:path'    => null,	// Internal meta tag.
 			);
 		}
 
@@ -1912,10 +1918,10 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				$mt_pre . ':image:url'        => null,
 				$mt_pre . ':image:width'      => null,
 				$mt_pre . ':image:height'     => null,
-				$mt_pre . ':image:cropped'    => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':image:id'         => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':image:cropped'    => null,	// Internal meta tag.
+				$mt_pre . ':image:id'         => null,	// Internal meta tag.
 				$mt_pre . ':image:alt'        => null,
-				$mt_pre . ':image:size_name'  => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':image:size_name'  => null,	// Internal meta tag.
 			);
 
 			return self::maybe_merge_mt_og( $mt_ret, $mt_og );
@@ -1938,120 +1944,120 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				$mt_pre . ':mfr_part_no'      => null,	// Product MPN.
 				$mt_pre . ':item_group_id'    => null,	// Product variant group ID.
 				$mt_pre . ':ean'              => null,	// aka EAN, EAN-13, GTIN-13.
-				$mt_pre . ':gtin14'           => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':gtin13'           => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':gtin12'           => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':gtin8'            => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':gtin'             => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':gtin14'           => null,	// Internal meta tag.
+				$mt_pre . ':gtin13'           => null,	// Internal meta tag.
+				$mt_pre . ':gtin12'           => null,	// Internal meta tag.
+				$mt_pre . ':gtin8'            => null,	// Internal meta tag.
+				$mt_pre . ':gtin'             => null,	// Internal meta tag.
 				$mt_pre . ':isbn'             => null,
 				$mt_pre . ':upc'              => null,	// Aka the UPC, UPC-A, UPC, GTIN-12.
 
 				/*
 				 * Product attributes and descriptions.
 				 */
-				$mt_pre . ':url'                         => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':title'                       => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':description'                 => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':updated_time'                => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':adult_type'                  => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':url'                         => null,	// Internal meta tag.
+				$mt_pre . ':title'                       => null,	// Internal meta tag.
+				$mt_pre . ':description'                 => null,	// Internal meta tag.
+				$mt_pre . ':updated_time'                => null,	// Internal meta tag.
+				$mt_pre . ':adult_type'                  => null,	// Internal meta tag.
 				$mt_pre . ':age_group'                   => null,
-				$mt_pre . ':quantity'                    => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':quantity'                    => null,	// Internal meta tag.
 				$mt_pre . ':availability'                => null,
 				$mt_pre . ':brand'                       => null,
 				$mt_pre . ':category'                    => null,	// The product category according to the Google product taxonomy.
-				$mt_pre . ':retailer_category'           => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':awards'                      => array(),	// Non-standard / internal meta tag.
+				$mt_pre . ':retailer_category'           => null,	// Internal meta tag.
+				$mt_pre . ':awards'                      => array(),	// Internal meta tag.
 				$mt_pre . ':condition'                   => null,
-				$mt_pre . ':energy_efficiency:value'     => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':energy_efficiency:min_value' => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':energy_efficiency:max_value' => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':energy_efficiency:value'     => null,	// Internal meta tag.
+				$mt_pre . ':energy_efficiency:min_value' => null,	// Internal meta tag.
+				$mt_pre . ':energy_efficiency:max_value' => null,	// Internal meta tag.
 				$mt_pre . ':expiration_time'             => null,
 				$mt_pre . ':color'                       => null,
 				$mt_pre . ':material'                    => null,
-				$mt_pre . ':mrp_id'                      => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':mrp_id'                      => null,	// Internal meta tag.
 				$mt_pre . ':pattern'                     => null,
 				$mt_pre . ':purchase_limit'              => null,
-				$mt_pre . ':eligible_quantity:value'     => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':eligible_quantity:min_value' => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':eligible_quantity:max_value' => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':eligible_quantity:unit_code' => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':eligible_quantity:unit_text' => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':eligible_quantity:value'     => null,	// Internal meta tag.
+				$mt_pre . ':eligible_quantity:min_value' => null,	// Internal meta tag.
+				$mt_pre . ':eligible_quantity:max_value' => null,	// Internal meta tag.
+				$mt_pre . ':eligible_quantity:unit_code' => null,	// Internal meta tag.
+				$mt_pre . ':eligible_quantity:unit_text' => null,	// Internal meta tag.
 				$mt_pre . ':target_gender'               => null,
 				$mt_pre . ':size'                        => null,
-				$mt_pre . ':size_group'                  => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':size_system'                 => null,	// Non-standard / internal meta tag.
+				$mt_pre . ':size_group'                  => null,	// Internal meta tag.
+				$mt_pre . ':size_system'                 => null,	// Internal meta tag.
 
 				/*
 				 * Product net dimensions and weight.
 				 */
-				$mt_pre . ':length:value'       => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':length:units'       => null,	// Non-standard / internal meta tag (units after value).
-				$mt_pre . ':width:value'        => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':width:units'        => null,	// Non-standard / internal meta tag (units after value).
-				$mt_pre . ':height:value'       => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':height:units'       => null,	// Non-standard / internal meta tag (units after value).
+				$mt_pre . ':length:value'       => null,	// Internal meta tag.
+				$mt_pre . ':length:units'       => null,	// Internal meta tag (units after value).
+				$mt_pre . ':width:value'        => null,	// Internal meta tag.
+				$mt_pre . ':width:units'        => null,	// Internal meta tag (units after value).
+				$mt_pre . ':height:value'       => null,	// Internal meta tag.
+				$mt_pre . ':height:units'       => null,	// Internal meta tag (units after value).
 				$mt_pre . ':weight:value'       => null,
 				$mt_pre . ':weight:units'       => null,
-				$mt_pre . ':fluid_volume:value' => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':fluid_volume:units' => null,	// Non-standard / internal meta tag (units after value).
+				$mt_pre . ':fluid_volume:value' => null,	// Internal meta tag.
+				$mt_pre . ':fluid_volume:units' => null,	// Internal meta tag (units after value).
 
 				/*
 				 * Product prices.
 				 */
-				$mt_pre . ':min_advert_price:amount'         => null,		// Non-standard / internal meta tag.
-				$mt_pre . ':min_advert_price:currency'       => null,		// Non-standard / internal meta tag.
+				$mt_pre . ':min_advert_price:amount'         => null,		// Internal meta tag.
+				$mt_pre . ':min_advert_price:currency'       => null,		// Internal meta tag.
 				$mt_pre . ':original_price:amount'           => null,
 				$mt_pre . ':original_price:currency'         => null,
 				$mt_pre . ':pretax_price:amount'             => null,
 				$mt_pre . ':pretax_price:currency'           => null,
-				$mt_pre . ':price_type'                      => null,		// Non-standard / internal meta tag.
+				$mt_pre . ':price_type'                      => null,		// Internal meta tag.
 				$mt_pre . ':price:amount'                    => null,
 				$mt_pre . ':price:currency'                  => null,
 				$mt_pre . ':sale_price:amount'               => null,
 				$mt_pre . ':sale_price:currency'             => null,
 				$mt_pre . ':sale_price_dates:start'          => null,
-				$mt_pre . ':sale_price_dates:start_date'     => null,		// Non-standard / internal meta tag.
-				$mt_pre . ':sale_price_dates:start_time'     => null,		// Non-standard / internal meta tag.
-				$mt_pre . ':sale_price_dates:start_timezone' => null,		// Non-standard / internal meta tag.
-				$mt_pre . ':sale_price_dates:start_iso'      => null,		// Non-standard / internal meta tag.
+				$mt_pre . ':sale_price_dates:start_date'     => null,		// Internal meta tag.
+				$mt_pre . ':sale_price_dates:start_time'     => null,		// Internal meta tag.
+				$mt_pre . ':sale_price_dates:start_timezone' => null,		// Internal meta tag.
+				$mt_pre . ':sale_price_dates:start_iso'      => null,		// Internal meta tag.
 				$mt_pre . ':sale_price_dates:end'            => null,
-				$mt_pre . ':sale_price_dates:end_date'       => null,		// Non-standard / internal meta tag.
-				$mt_pre . ':sale_price_dates:end_time'       => null,		// Non-standard / internal meta tag.
-				$mt_pre . ':sale_price_dates:end_timezone'   => null,		// Non-standard / internal meta tag.
-				$mt_pre . ':sale_price_dates:end_iso'        => null,		// Non-standard / internal meta tag.
-				$mt_pre . ':offers'                          => array(),	// Non-standard / internal meta tag.
+				$mt_pre . ':sale_price_dates:end_date'       => null,		// Internal meta tag.
+				$mt_pre . ':sale_price_dates:end_time'       => null,		// Internal meta tag.
+				$mt_pre . ':sale_price_dates:end_timezone'   => null,		// Internal meta tag.
+				$mt_pre . ':sale_price_dates:end_iso'        => null,		// Internal meta tag.
+				$mt_pre . ':offers'                          => array(),	// Internal meta tag.
 
 				/*
 				 * Product shipping.
 				 */
 				$mt_pre . ':shipping_cost:amount'   => null,
 				$mt_pre . ':shipping_cost:currency' => null,
-				$mt_pre . ':shipping_length:value'  => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':shipping_length:units'  => null,	// Non-standard / internal meta tag (units after value).
-				$mt_pre . ':shipping_width:value'   => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':shipping_width:units'   => null,	// Non-standard / internal meta tag (units after value).
-				$mt_pre . ':shipping_height:value'  => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':shipping_height:units'  => null,	// Non-standard / internal meta tag (units after value).
+				$mt_pre . ':shipping_length:value'  => null,	// Internal meta tag.
+				$mt_pre . ':shipping_length:units'  => null,	// Internal meta tag (units after value).
+				$mt_pre . ':shipping_width:value'   => null,	// Internal meta tag.
+				$mt_pre . ':shipping_width:units'   => null,	// Internal meta tag (units after value).
+				$mt_pre . ':shipping_height:value'  => null,	// Internal meta tag.
+				$mt_pre . ':shipping_height:units'  => null,	// Internal meta tag (units after value).
 				$mt_pre . ':shipping_weight:value'  => null,
 				$mt_pre . ':shipping_weight:units'  => null,
-				$mt_pre . ':shipping_class_id'      => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':shipping_offers'        => array(),	// Non-standard / internal meta tag.
+				$mt_pre . ':shipping_class_id'      => null,	// Internal meta tag.
+				$mt_pre . ':shipping_offers'        => array(),	// Internal meta tag.
 
 				/*
 				 * Product ratings and reviews.
 				 */
-				$mt_pre . ':rating:average' => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':rating:count'   => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':rating:worst'   => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':rating:best'    => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':review:count'   => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':reviews'        => array(),	// Non-standard / internal meta tag.
+				$mt_pre . ':rating:average' => null,	// Internal meta tag.
+				$mt_pre . ':rating:count'   => null,	// Internal meta tag.
+				$mt_pre . ':rating:worst'   => null,	// Internal meta tag.
+				$mt_pre . ':rating:best'    => null,	// Internal meta tag.
+				$mt_pre . ':review:count'   => null,	// Internal meta tag.
+				$mt_pre . ':reviews'        => array(),	// Internal meta tag.
 			);
 
 			if ( ! empty( $mt_og[ 'og:type' ] ) &&  'product' === $mt_og[ 'og:type' ] ) {
 
 				$mt_ret = array_merge( $mt_ret, array(
-					$mt_pre . ':variants' => array(),	// Non-standard / internal meta tag.
+					$mt_pre . ':variants' => array(),	// Internal meta tag.
 				) );
 			}
 
@@ -2063,31 +2069,31 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			$mt_ret = array(
 				$mt_pre . ':video:secure_url'      => null,
 				$mt_pre . ':video:url'             => null,
-				$mt_pre . ':video:title'           => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:description'     => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:family_friendly' => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:regions_allowed' => array(),	// Non-standard / internal meta tag.
+				$mt_pre . ':video:title'           => null,	// Internal meta tag.
+				$mt_pre . ':video:description'     => null,	// Internal meta tag.
+				$mt_pre . ':video:family_friendly' => null,	// Internal meta tag.
+				$mt_pre . ':video:regions_allowed' => array(),	// Internal meta tag.
 				$mt_pre . ':video:type'            => null,	// Example: 'application/x-shockwave-flash', 'text/html', 'video/mp4', etc.
 				$mt_pre . ':video:width'           => null,
 				$mt_pre . ':video:height'          => null,
 				$mt_pre . ':video:tag'             => array(),
-				$mt_pre . ':video:duration'        => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:published_date'  => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:upload_date'     => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:thumbnail_url'   => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:embed_url'       => null,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:stream_url'      => null,	// Non-standard / internal meta tag. VideoObject contentUrl.
-				$mt_pre . ':video:stream_size'     => null,	// Non-standard / internal meta tag. VideoObject contentSize.
-				$mt_pre . ':video:has_image'       => false,	// Non-standard / internal meta tag.
-				$mt_pre . ':video:iphone_name'     => null,	// Non-standard / internal meta tag for Twitter player card.
-				$mt_pre . ':video:iphone_id'       => null,	// Non-standard / internal meta tag for Twitter player card.
-				$mt_pre . ':video:iphone_url'      => null,	// Non-standard / internal meta tag for Twitter player card.
-				$mt_pre . ':video:ipad_name'       => null,	// Non-standard / internal meta tag for Twitter player card.
-				$mt_pre . ':video:ipad_id'         => null,	// Non-standard / internal meta tag for Twitter player card.
-				$mt_pre . ':video:ipad_url'        => null,	// Non-standard / internal meta tag for Twitter player card.
-				$mt_pre . ':video:googleplay_name' => null,	// Non-standard / internal meta tag for Twitter player card.
-				$mt_pre . ':video:googleplay_id'   => null,	// Non-standard / internal meta tag for Twitter player card.
-				$mt_pre . ':video:googleplay_url'  => null,	// Non-standard / internal meta tag for Twitter player card.
+				$mt_pre . ':video:duration'        => null,	// Internal meta tag.
+				$mt_pre . ':video:published_date'  => null,	// Internal meta tag.
+				$mt_pre . ':video:upload_date'     => null,	// Internal meta tag.
+				$mt_pre . ':video:thumbnail_url'   => null,	// Internal meta tag.
+				$mt_pre . ':video:embed_url'       => null,	// Internal meta tag.
+				$mt_pre . ':video:stream_url'      => null,	// Internal meta tag. VideoObject contentUrl.
+				$mt_pre . ':video:stream_size'     => null,	// Internal meta tag. VideoObject contentSize.
+				$mt_pre . ':video:has_image'       => false,	// Internal meta tag.
+				$mt_pre . ':video:iphone_name'     => null,	// Internal meta tag for Twitter player card.
+				$mt_pre . ':video:iphone_id'       => null,	// Internal meta tag for Twitter player card.
+				$mt_pre . ':video:iphone_url'      => null,	// Internal meta tag for Twitter player card.
+				$mt_pre . ':video:ipad_name'       => null,	// Internal meta tag for Twitter player card.
+				$mt_pre . ':video:ipad_id'         => null,	// Internal meta tag for Twitter player card.
+				$mt_pre . ':video:ipad_url'        => null,	// Internal meta tag for Twitter player card.
+				$mt_pre . ':video:googleplay_name' => null,	// Internal meta tag for Twitter player card.
+				$mt_pre . ':video:googleplay_id'   => null,	// Internal meta tag for Twitter player card.
+				$mt_pre . ':video:googleplay_url'  => null,	// Internal meta tag for Twitter player card.
 			);
 
 			$mt_ret += self::get_mt_image_seed( $mt_pre );
@@ -2240,7 +2246,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		}
 
 		/*
-		 * Translate HTML headers, paragraphs, and list items.
+		 * Translate HTML headers, paragraphs, list items, and blockquotes.
 		 */
 		public static function get_html_transl( $html, $text_domain ) {
 
@@ -2578,10 +2584,6 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 						$locale = $db_locale;
 					}
 				}
-
-			} elseif ( 'current' === $mixed && is_admin() ) {
-
-				$locale = get_user_locale();
 
 			} elseif ( 'current' === $mixed || is_array( $mixed ) ) {
 
@@ -2987,20 +2989,62 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return $opts;
 		}
 
+		public static function get_comment_object( $comment_id = 0, $output = 'object' ) {
+
+			$comment_obj = null;
+
+			if ( $comment_id instanceof WP_Comment ) {
+
+				$comment_obj = $comment_id;
+
+			} elseif ( is_numeric( $comment_id ) && $comment_id > 0 ) {
+
+				$comment_obj = get_comment( (int) $comment_id, OBJECT );
+
+			} elseif ( is_admin() ) {
+
+				if ( 'editcomment' === self::get_request_value( 'action' ) &&
+					'' !== ( $comment_id = self::get_request_value( 'c' ) ) ) {
+
+					$comment_obj = get_comment( (int) $comment_id, OBJECT );
+				}
+			}
+
+			$comment_obj = apply_filters( 'sucom_get_comment_object', $comment_obj, $comment_id );
+
+			if ( $comment_obj instanceof WP_Comment ) {	// Just in case.
+
+				switch ( $output ) {
+
+					case 'id':
+					case 'ID':
+					case 'comment_id':
+
+						return isset( $comment_obj->comment_ID ) ? (int) $comment_obj->comment_ID : 0;	// Cast as integer.
+
+					default:
+
+						return $comment_obj;
+				}
+			}
+
+			return false;
+		}
+
 		/*
 		 * $use_post can be true (uses the $post global object), false (uses the queried object), a numeric post ID, or a post object.
 		 */
 		public static function get_post_object( $use_post = false, $output = 'object' ) {
 
-			$post_obj = false;	// Return false by default.
+			$post_obj = null;
 
-			if ( is_object( $use_post ) ) {	// Just in case.
+			if ( $use_post instanceof WP_Post ) {
 
 				$post_obj = $use_post;
 
 			} elseif ( is_numeric( $use_post ) && $use_post > 0 ) {
 
-				$post_obj = get_post( $use_post );
+				$post_obj = get_post( $use_post, OBJECT, $filter = 'raw' );
 
 			} elseif ( true === $use_post && ! empty( $GLOBALS[ 'post' ]->ID ) ) {
 
@@ -3012,24 +3056,24 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			} elseif ( ! is_home() && is_front_page() && 'page' === get_option( 'show_on_front' ) ) {	// Static front page.
 
-				$post_obj = get_post( get_option( 'page_on_front' ) );
+				$post_obj = get_post( get_option( 'page_on_front' ), OBJECT, $filter = 'raw' );
 
 			} elseif ( is_home() && ! is_front_page() && 'page' === get_option( 'show_on_front' ) ) {	// Static posts page.
 
-				$post_obj = get_post( get_option( 'page_for_posts' ) );
+				$post_obj = get_post( get_option( 'page_for_posts' ), OBJECT, $filter = 'raw' );
 
 			} elseif ( is_admin() ) {
 
 				if ( '' !== ( $post_id = self::get_request_value( 'post_ID', 'POST' ) ) ||
 					'' !== ( $post_id = self::get_request_value( 'post', 'GET' ) ) ) {
 
-					$post_obj = get_post( $post_id );
+					$post_obj = get_post( $post_id, OBJECT, $filter = 'raw' );
 				}
 			}
 
 			$post_obj = apply_filters( 'sucom_get_post_object', $post_obj, $use_post );
 
-			if ( $post_obj instanceof WP_Post ) {
+			if ( $post_obj instanceof WP_Post ) {	// Just in case.
 
 				switch ( $output ) {
 
@@ -3039,10 +3083,10 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 						return isset( $post_obj->ID ) ? (int) $post_obj->ID : 0;	// Cast as integer.
 
-						break;
+					default:
+				
+						return $post_obj;
 				}
-
-				return $post_obj;
 			}
 
 			return false;
@@ -3133,29 +3177,36 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 					self::sort_objects_by_label( $post_types );
 
-				} else {
-
-					asort( $post_types );
-				}
+				} else asort( $post_types );
 			}
 
 			return apply_filters( 'sucom_get_post_types', $post_types, $output, $args );
 		}
 
-		public static function maybe_load_post( $post_id, $force = false ) {
+		public static function maybe_load_post( $mixed, $force = false ) {
 
-			if ( empty( $post_id ) ) {	// Just in case.
+			if ( empty( $mixed ) ) {	// Just in case.
 
 				return false;
 			}
 
 			global $post;
 
-			if ( $force || ! isset( $post->ID ) || $post->ID !== $post_id ) {
+			if ( $mixed instanceof WP_Post ) {
 
-				$post = self::get_post_object( $post_id, 'object' );
+				if ( $force || ! isset( $post->ID ) || (int) $post->ID !== (int) $mixed->ID ) {
 
-				return true;
+					$post = $mixed;
+				}
+
+			} elseif ( is_numeric( $mixed ) ) {
+
+				if ( $force || ! isset( $post->ID ) || (int) $post->ID !== (int) $mixed ) {
+
+					$post = self::get_post_object( $mixed, $output = 'object' );
+
+					return true;
+				}
 			}
 
 			return false;
@@ -3185,10 +3236,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 					self::sort_objects_by_label( $taxonomies );
 
-				} else {
-
-					asort( $post_types );
-				}
+				} else asort( $post_types );
 			}
 
 			return apply_filters( 'sucom_get_taxonomies', $taxonomies, $output, $args );
@@ -3225,9 +3273,9 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 		public static function get_term_object( $term_id = 0, $tax_slug = '', $output = 'object' ) {
 
-			$term_obj = false;	// Return false by default.
+			$term_obj = null;
 
-			if ( is_object( $term_id ) ) {	// Just in case.
+			if ( $term_id instanceof WP_Term ) {	// Just in case.
 
 				$term_obj = $term_id;
 
@@ -3250,7 +3298,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			$term_obj = apply_filters( 'sucom_get_term_object', $term_obj, $term_id, $tax_slug );
 
-			if ( $term_obj instanceof WP_Term ) {
+			if ( $term_obj instanceof WP_Term ) {	// Just in case.
 
 				switch ( $output ) {
 
@@ -3260,16 +3308,14 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 						return isset( $term_obj->term_id ) ? (int) $term_obj->term_id : 0;	// Cast as integer.
 
-						break;
-
 					case 'taxonomy':
 
 						return isset( $term_obj->taxonomy ) ? (string) $term_obj->taxonomy : '';	// Cast as string.
 
-						break;
+					default:
+				
+						return $term_obj;
 				}
-
-				return $term_obj;
 			}
 
 			return false;
@@ -3492,9 +3538,9 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 		public static function get_user_object( $user_id = 0, $output = 'object' ) {
 
-			$user_obj = false;	// Return false by default.
+			$user_obj = null;
 
-			if ( is_object( $user_id ) ) {	// Just in case.
+			if ( $user_id instanceof WP_User ) {
 
 				$user_obj = $user_id;
 
@@ -3520,7 +3566,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 			$user_obj = apply_filters( 'sucom_get_user_object', $user_obj, $user_id );
 
-			if ( $user_obj instanceof WP_User ) {
+			if ( $user_obj instanceof WP_User ) {	// Just in case.
 
 				switch ( $output ) {
 
@@ -3530,10 +3576,10 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 						return isset( $user_obj->ID ) ? (int) $user_obj->ID : 0;	// Cast as integer.
 
-						break;
+					default:
+					
+						return $user_obj;
 				}
-
-				return $user_obj;
 			}
 
 			return false;
@@ -4615,7 +4661,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 					$is_home_page = true;
 
-				} elseif ( self::get_post_object( $use_post, 'id' ) === $post_id ) {
+				} elseif ( $post_id === self::get_post_object( $use_post, $output = 'id' ) ) {
 
 					$is_home_page = true;
 				}
@@ -4636,7 +4682,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 					$is_home_posts = true;
 
-				} elseif ( $post_id === self::get_post_object( $use_post, 'id' ) ) {
+				} elseif ( $post_id === self::get_post_object( $use_post, $output = 'id' ) ) {
 
 					$is_home_posts = true;
 				}
@@ -4870,10 +4916,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 
 					$post_type_obj = get_post_type_object( $post_type );
 
-				} else {	// Just in case.
-
-					return $is_post_type_archive;
-				}
+				} else return $is_post_type_archive;
 
 				if ( ! empty( $post_type_obj->has_archive ) ) {	// just in case.
 
@@ -4905,10 +4948,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 				 */
 				$post_type_name = get_post_type( $mixed );	// Post object or ID.
 
-			} else {
-
-				$post_type_name = $mixed;	// Post type name.
-			}
+			} else $post_type_name = $mixed;	// Post type name.
 
 			if ( $post_type_name ) {
 
@@ -5195,7 +5235,21 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			return trim( preg_replace( '/[^a-zA-Z0-9_\-]+/', '-', $css_id ), $characters = '-' );	// Spaces not allowed.
 		}
 
+		public static function sanitize_file_path( $file_path ) {
+
+			if ( empty( $file_path ) ) {
+
+				return false;
+			}
+
+			$file_path = implode( $glue = '/', array_map( array( __CLASS__, 'sanitize_file_name' ), explode( '/', $file_path ) ) );
+
+			return $file_path;
+		}
+
 		public static function sanitize_file_name( $file_name ) {
+
+			if ( '' === $file_name ) return $file_name;
 
 			$special_chars = array(
 				'?',
@@ -5235,18 +5289,6 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 			$file_name = trim( $file_name, '.-_' );
 
 			return $file_name;
-		}
-
-		public static function sanitize_file_path( $file_path ) {
-
-			if ( empty( $file_path ) ) {
-
-				return false;
-			}
-
-			$file_path = implode( $glue = '/', array_map( array( __CLASS__, 'sanitize_file_name' ), explode( '/', $file_path ) ) );
-
-			return $file_path;
 		}
 
 		/*
