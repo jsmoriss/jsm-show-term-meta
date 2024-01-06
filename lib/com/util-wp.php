@@ -710,8 +710,7 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 
 			$opts[ $key ] = $value;
 
-			return $site ? update_site_option( $options_name, $opts ) :
-				update_option( $options_name, $opts );
+			return $site ? update_site_option( $options_name, $opts ) : update_option( $options_name, $opts );
 		}
 
 		/*
@@ -763,12 +762,10 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 
 			if ( empty( $opts ) ) {	// Just in case.
 
-				return $site ? delete_site_option( $options_name ) :
-					delete_option( $options_name );
+				return $site ? delete_site_option( $options_name ) : delete_option( $options_name );
 			}
 
-			return $site ? update_site_option( $options_name, $opts ) :
-				update_option( $options_name, $opts );
+			return $site ? update_site_option( $options_name, $opts ) : update_option( $options_name, $opts );
 		}
 
 		public static function raw_update_post( $post_id, array $args ) {
@@ -1288,38 +1285,6 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 			}
 
 			return $shortlink;
-		}
-
-		/*
-		 * Deprecated on 2022/03/03.
-		 */
-		public static function get_post_types( $output = 'objects', $sort = false, $args = null ) {
-
-			return SucomUtil::get_post_types( $output, $sort, $args );
-		}
-
-		/*
-		 * Deprecated on 2022/03/03.
-		 */
-		public static function get_post_type_labels( $val_prefix = '', $label_prefix = '', $objects = null ) {
-
-			return SucomUtil::get_post_type_labels( $val_prefix, $label_prefix, $objects );
-		}
-
-		/*
-		 * Deprecated on 2022/03/03.
-		 */
-		public static function get_taxonomies( $output = 'objects', $sort = false, $args = null ) {
-
-			return SucomUtil::get_taxonomies( $output, $sort, $args );
-		}
-
-		/*
-		 * Deprecated on 2022/03/03.
-		 */
-		public static function get_taxonomy_labels( $val_prefix = '', $label_prefix = '', $objects = null ) {
-
-			return SucomUtil::get_taxonomy_labels( $val_prefix, $label_prefix, $objects );
 		}
 	}
 }
