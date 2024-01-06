@@ -76,12 +76,9 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 
 						$can_edit_id = true;
 
-					} else {
+					} elseif ( use_block_editor_for_post( $post_id ) ) {
 
-						if ( use_block_editor_for_post( $post_id ) ) {
-
-							$can_edit_id = true;
-						}
+						$can_edit_id = true;
 					}
 
 				} elseif ( function_exists( 'gutenberg_can_edit_post' ) ) {
