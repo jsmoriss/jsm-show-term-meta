@@ -13,7 +13,7 @@
  * Requires PHP: 7.2.34
  * Requires At Least: 5.8
  * Tested Up To: 6.4.2
- * Version: 3.11.0
+ * Version: 4.0.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -43,8 +43,8 @@ if ( ! class_exists( 'JsmStm' ) ) {
 			$plugin_dir = trailingslashit( dirname( __FILE__ ) );
 
 			require_once $plugin_dir . 'lib/config.php';
-			JsmStmConfig::set_constants( __FILE__ );
 
+			JsmStmConfig::set_constants( __FILE__ );
 			JsmStmConfig::require_libs( __FILE__ );
 
 			add_action( 'init', array( $this, 'init_textdomain' ) );
