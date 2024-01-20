@@ -88,16 +88,18 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-dev.1 (TBD)**
+**Version 4.0.0-dev.1 (2024/01/20)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Allow upper case and accents in metadata keys.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added `$term_obj` argument to `current_user_can()`.
+	* Added new `SucomUtil::sanitize_int()` method.
+	* Added new `SucomUtil::sanitize_meta_key()` method.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
@@ -120,7 +122,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 4.0.0-dev.1 =
 
-(TBD) None.
+(2024/01/20) Allow upper case and accents in metadata keys.
 
 = 3.11.0 =
 
