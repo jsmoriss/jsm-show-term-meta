@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8
 Tested Up To: 6.4.2
-Stable Tag: 3.11.0
+Stable Tag: 4.0.0
 
 Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.
 
@@ -104,27 +104,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* PHP v7.2.34.
 	* WordPress v5.8.
 
-**Version 3.11.0 (2024/01/12)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Update for the `SucomUtil` and `SucomUtilWP` classes.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
 == Upgrade Notice ==
 
 = 4.0.0 =
 
 (2024/01/20) Allow upper case and accents in metadata keys.
-
-= 3.11.0 =
-
-(2024/01/12) Update for the `SucomUtil` and `SucomUtilWP` classes.
 
