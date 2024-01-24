@@ -66,6 +66,13 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 			add_meta_box( $metabox_id, $metabox_title, array( $this, 'show_metabox' ),
 				$metabox_screen, $metabox_context, $metabox_prio, $callback_args );
 
+			/*
+			 * Keep the original 800px width for the form table and allow metaboxes to take the screen width.
+			 */
+			echo '<style type="text/css">';
+			echo 'div.wrap form#edittag { max-width:none; }';
+			echo 'div.wrap form#edittag table.form-table { max-width:800px; }';
+			echo '</style>' . "\n";
 			echo '<div class="metabox-holder">' . "\n";
 
 			do_meta_boxes( $metabox_screen, 'normal', $obj );
