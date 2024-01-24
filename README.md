@@ -24,7 +24,7 @@
 
 <p>The JSM Show Term Metadata plugin can read and display Yoast SEO's term metadata, but it cannot be deleted (as it does not reside in the WordPress term meta table).</p>
 
-<h4>Available Filters</h4>
+<h4>Available Filters for Developers</h4>
 
 <p>Filter the term meta shown in the metabox:</p>
 
