@@ -92,19 +92,19 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 				return;
 			}
 
-			$term_id    = $obj->term_id;
-			$cf         = JsmStmConfig::get_config();
-			$metadata   = get_metadata( 'term', $term_id );
-			$skip_keys  = array();
-			$metabox_id = 'jsmstm';
-			$admin_l10n = $cf[ 'plugin' ][ 'jsmstm' ][ 'admin_l10n' ];
+			$term_id      = $obj->term_id;
+			$cf           = JsmStmConfig::get_config();
+			$metadata     = get_metadata( 'term', $term_id );
+			$exclude_keys = array();
+			$metabox_id   = 'jsmstm';
+			$admin_l10n   = $cf[ 'plugin' ][ 'jsmstm' ][ 'admin_l10n' ];
 
 			$titles = array(
 				'key'   => __( 'Key', 'jsm-show-term-meta' ),
 				'value' => __( 'Value', 'jsm-show-term-meta' ),
 			);
 
-			return SucomUtilMetabox::get_table_metadata( $metadata, $skip_keys, $obj, $term_id, $metabox_id, $admin_l10n, $titles );
+			return SucomUtilMetabox::get_table_metadata( $metadata, $exclude_keys, $obj, $term_id, $metabox_id, $admin_l10n, $titles );
 		}
 
 		public function ajax_delete_meta() {
