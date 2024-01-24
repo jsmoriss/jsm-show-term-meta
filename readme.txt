@@ -35,7 +35,7 @@ Filter the term meta shown in the metabox:
 
 Array of regular expressions to exclude meta keys:
 
-<pre><code>'jsmstm_metabox_table_skip_keys' ( array $skip_keys, $term_obj )</code></pre>
+<pre><code>'jsmstm_metabox_table_exclude_keys' ( array $exclude_keys, $term_obj )</code></pre>
 
 Capability required to show term meta:
 
