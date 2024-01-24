@@ -32,7 +32,7 @@
 
 <p>Array of regular expressions to exclude meta keys:</p>
 
-<pre><code>'jsmstm_metabox_table_skip_keys' ( array $skip_keys, $term_obj )</code></pre>
+<pre><code>'jsmstm_metabox_table_exclude_keys' ( array $exclude_keys, $term_obj )</code></pre>
 
 <p>Capability required to show term meta:</p>
 
