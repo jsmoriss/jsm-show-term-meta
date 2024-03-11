@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM Show Term Metadata</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.1.0</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.2.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2.34 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.8 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.4.3</td></tr>
