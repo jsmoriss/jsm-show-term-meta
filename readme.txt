@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
-Tags: taxonomy, terms, meta, metadata, categories, tags, delete, debug, inspector
+Tags: taxonomy, terms, metadata, categories, tags
 Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8
