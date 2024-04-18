@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the JSM Show Term Metadata package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM Show Term Metadata 4.3.0-dev.1\n"
+"Project-Id-Version: JSM Show Term Metadata 4.3.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-term-"
 "meta\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
