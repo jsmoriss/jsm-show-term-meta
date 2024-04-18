@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.3.0-dev.2 (2024/04/17)**
+**Version 4.3.0 (2024/04/18)**
 
 * **New Features**
 	* None.
@@ -149,9 +149,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.3.0-dev.2 =
+= 4.3.0 =
 
-(2024/04/17) Updated the `SucomUtil` class.
+(2024/04/18) Updated the `SucomUtil` class.
 
 = 4.2.0 =
 
