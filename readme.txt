@@ -10,7 +10,7 @@ Tags: taxonomy, terms, metadata, categories, tags
 Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8
-Tested Up To: 6.5.3
+Tested Up To: 6.5.4
 Stable Tag: 4.3.0
 
 Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.
