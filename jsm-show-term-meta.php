@@ -12,7 +12,7 @@
  * Description: Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.
  * Requires PHP: 7.2.34
  * Requires At Least: 5.8
- * Tested Up To: 6.5.5
+ * Tested Up To: 6.6
  * Version: 4.3.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
