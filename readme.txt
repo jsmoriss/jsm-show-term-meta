@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8
 Tested Up To: 6.6.1
-Stable Tag: 4.3.0
+Stable Tag: 4.4.0
 
 Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.
 
@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.4.0-rc.1 (2024/08/12)**
+**Version 4.4.0 (2024/08/12)**
 
 * **New Features**
 	* None.
@@ -163,7 +163,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.4.0-rc.1 =
+= 4.4.0 =
 
 (2024/08/12) Updated the jquery-admin-page.js functions (version 20240810).
 
