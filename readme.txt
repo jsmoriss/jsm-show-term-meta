@@ -88,6 +88,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.4.0-rc.1 (2024/08/12)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Updated the jquery-admin-page.js functions (version 20240810).
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+
 **Version 4.3.0 (2024/04/18)**
 
 * **New Features**
@@ -148,6 +162,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.8.
 
 == Upgrade Notice ==
+
+= 4.4.0-rc.1 =
+
+(2024/08/12) Updated the jquery-admin-page.js functions (version 20240810).
 
 = 4.3.0 =
 
