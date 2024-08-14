@@ -56,7 +56,7 @@ Icon for the delete term meta button:
 = Related Plugins =
 
 * [JSM Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
-* [JSM Show Order Metadata for WooCommerce](https://wordpress.org/plugins/jsm-show-order-meta/)
+* [JSM Show Order Metadata for WooCommerce HPOS](https://wordpress.org/plugins/jsm-show-order-meta/)
 * [JSM Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
 * [JSM Show Term Metadata](https://wordpress.org/plugins/jsm-show-term-meta/)
 * [JSM Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
