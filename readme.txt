@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8
 Tested Up To: 6.6.1
-Stable Tag: 4.4.0
+Stable Tag: 4.5.0
 
 Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.
 
