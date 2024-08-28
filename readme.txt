@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.0-dev.4 (2024/08/28)**
+**Version 4.6.0-rc.1 (2024/08/28)**
 
 * **New Features**
 	* None.
@@ -97,7 +97,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Updated the `SucomUtil` and `SucomUtilWP` classed.
+	* Updated the `SucomUtil` and `SucomUtilWP` classes.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
@@ -191,9 +191,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.6.0-dev.4 =
+= 4.6.0-rc.1 =
 
-(2024/08/28) Updated the `SucomUtil` and `SucomUtilWP` classed.
+(2024/08/28) Updated the `SucomUtil` and `SucomUtilWP` classes.
 
 = 4.5.0 =
 
