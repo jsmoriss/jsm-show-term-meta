@@ -8,8 +8,8 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-term-meta/assets/
 Tags: taxonomy, terms, metadata, categories, tags
 Contributors: jsmoriss
-Requires PHP: 7.2.34
-Requires At Least: 5.8
+Requires PHP: 7.4.33
+Requires At Least: 5.9
 Tested Up To: 6.6.2
 Stable Tag: 4.6.0
 
@@ -99,123 +99,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Updated the `SucomUtil` and `SucomUtilWP` classes.
 * **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
-**Version 4.5.0 (2024/08/16)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Removed deprecated methods from the `SucomUtil` class.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
-**Version 4.4.0 (2024/08/12)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the jquery-admin-page.js functions (version 20240810).
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
-**Version 4.3.0 (2024/04/18)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `SucomUtil` class.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
-**Version 4.2.0 (2024/03/10)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added extra sanitation for method arguments in `SucomUtilMetabox::get_table_metadata()`.
-	* Added extra sanitation for 'post_ID' and 'action' values in `SucomUtilWP::doing_block_editor()`.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
-**Version 4.1.0 (2024/02/03)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a new `SucomUtilWP::doing_dev()` method.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
-**Version 4.0.0 (2024/01/20)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Allow upper case and accents in metadata keys.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added `$term_obj` argument to `current_user_can()`.
-	* Added new `SucomUtil::sanitize_int()` method.
-	* Added new `SucomUtil::sanitize_meta_key()` method.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
+	* PHP v7.4.33.
+	* WordPress v5.9.
 
 == Upgrade Notice ==
 
 = 4.6.0 =
 
 (2024/08/29) Updated the `SucomUtil` and `SucomUtilWP` classes.
-
-= 4.5.0 =
-
-(2024/08/16) Removed deprecated methods from the `SucomUtil` class.
-
-= 4.4.0 =
-
-(2024/08/12) Updated the jquery-admin-page.js functions (version 20240810).
-
-= 4.3.0 =
-
-(2024/04/18) Updated the `SucomUtil` class.
-
-= 4.2.0 =
-
-(2024/03/10) Added extra sanitation.
-
-= 4.1.0 =
-
-(2024/02/03) Added a new `SucomUtilWP::doing_dev()` method.
-
-= 4.0.0 =
-
-(2024/01/20) Allow upper case and accents in metadata keys.
 

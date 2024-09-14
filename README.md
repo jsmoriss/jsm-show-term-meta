@@ -4,8 +4,8 @@
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM Show Term Metadata</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.6.0</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2.34 or newer</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.8 or newer</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.4.33 or newer</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.9 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.6.2</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
