@@ -2469,7 +2469,7 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 		/*
 		 * Unfiltered version of home_url() from wordpress/wp-includes/link-template.php
 		 *
-		 * Last synchronized with WordPress v5.8.1 on 2021/10/15.
+		 * Last synchronized with WordPress v6.6.2 on 2024/09/16.
 		 */
 		public static function raw_home_url( $path = '', $scheme = null ) {
 
@@ -2479,36 +2479,46 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 		/*
 		 * Unfiltered version of get_home_url() from wordpress/wp-includes/link-template.php
 		 *
-		 * Last synchronized with WordPress v5.8.1 on 2021/10/15.
+		 * Last synchronized with WordPress v6.6.2 on 2024/09/16.
 		 */
 		public static function raw_get_home_url( $blog_id = null, $path = '', $scheme = null ) {
 
 			$is_multisite = is_multisite();
 
-			if ( empty( $blog_id ) || ! $is_multisite ) {
+			if ( $is_multisite && ! empty( $blog_id ) ) {
 
-				/*
-				 * The WordPress _config_wp_home() function is hooked to the 'option_home' filter in order to
-				 * override the database value. Since we're not using the default filters, check for WP_HOME or
-				 * WP_SITEURL and update the stored database value if necessary.
-				 *
-				 * The homepage of the website:
-				 *
-				 *	WP_HOME
-				 *	home_url()
-				 *	get_home_url()
-				 *	Site Address (URL)
-				 *	http://example.com
-				 *
-				 * The WordPress installation (ie. where you can reach the site by adding /wp-admin):
-				 *
-				 *	WP_SITEURL
-				 *	site_url()
-				 *	get_site_url()
-				 *	WordPress Address (URL)
-				 *	http://example.com/wp/
-				 */
-				if ( ! $is_multisite && defined( 'WP_HOME' ) && WP_HOME ) {
+				switch_to_blog( $blog_id );
+			}
+
+			/*
+			 * The WordPress _config_wp_home() function is hooked to the 'option_home' filter in order to override the
+			 * database value. Since we're not using the default filters, check for WP_HOME or WP_SITEURL and update
+			 * the stored database value if necessary.
+			 *
+			 * The homepage of the website:
+			 *
+			 *	WP_HOME
+			 *	home_url()
+			 *	get_home_url()
+			 *	Site Address (URL)
+			 *	http://example.com
+			 *
+			 * The WordPress installation (ie. where you can reach the site by adding /wp-admin):
+			 *
+			 *	WP_SITEURL
+			 *	site_url()
+			 *	get_site_url()
+			 *	WordPress Address (URL)
+			 *	http://example.com/wp/
+			 *
+			 * The WordPress _config_wp_home() function is unhooked for multisites as WP_HOME and WP_SITEURL are not
+			 * used in a multisite configuration. If this is a multisite, ignore the WP_HOME and WP_SITEURL values.
+			 *
+			 * See wordpress/wp-includes/ms-default-filters.php
+			 */
+			if ( ! $is_multisite ) {
+
+				if ( defined( 'WP_HOME' ) && WP_HOME ) {
 
 					$url = untrailingslashit( WP_HOME );
 
@@ -2518,25 +2528,19 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 
 						self::raw_do_option( $action = 'update', $opt_name = 'home', $url );
 					}
+				}
+			}
 
-				} else $url = self::raw_do_option( $action = 'get', $opt_name = 'home' );
+			$url = self::raw_do_option( $action = 'get', $opt_name = 'home' );
 
-			} else {
-
-				switch_to_blog( $blog_id );
-
-				$url = self::raw_do_option( $action = 'get', $opt_name = 'home' );
+			if ( $is_multisite && ! empty( $blog_id ) ) {
 
 				restore_current_blog();
 			}
 
 			if ( ! in_array( $scheme, array( 'http', 'https', 'relative' ), $strict = true ) ) {
 
-				if ( is_ssl() ) {
-
-					$scheme = 'https';
-
-				} else $scheme = wp_parse_url( $url, PHP_URL_SCHEME );
+				$scheme = is_ssl() ? 'https' : wp_parse_url( $url, PHP_URL_SCHEME );
 			}
 
 			$url = self::raw_set_url_scheme( $url, $scheme );
@@ -2549,10 +2553,11 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 			return $url;
 		}
 
+
 		/*
 		 * Unfiltered version of site_url() from wordpress/wp-includes/link-template.php
 		 *
-		 * Last synchronized with WordPress v5.8.1 on 2021/10/15.
+		 * Last synchronized with WordPress v6.6.2 on 2024/09/16.
 		 */
 		public static function raw_site_url( $path = '', $scheme = null ) {
 
@@ -2562,35 +2567,45 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 		/*
 		 * Unfiltered version of get_site_url() from wordpress/wp-includes/link-template.php
 		 *
-		 * Last synchronized with WordPress v5.8.1 on 2021/10/15.
+		 * Last synchronized with WordPress v6.6.2 on 2024/09/16.
 		 */
 		public static function raw_get_site_url( $blog_id = null, $path = '', $scheme = null ) {
 
 			$is_multisite = is_multisite();
 
-			if ( empty( $blog_id ) || ! $is_multisite ) {
+			if ( $is_multisite && ! empty( $blog_id ) ) {
 
-				/*
-				 * The WordPress _config_wp_home() function is hooked to the 'option_home' filter in order to
-				 * override the database value. Since we're not using the default filters, check for WP_HOME or
-				 * WP_SITEURL and update the stored database value if necessary.
-				 *
-				 * The homepage of the website:
-				 *
-				 *	WP_HOME
-				 *	home_url()
-				 *	get_home_url()
-				 *	Site Address (URL)
-				 *	http://example.com
-				 *
-				 * The WordPress installation (ie. where you can reach the site by adding /wp-admin):
-				 *
-				 *	WP_SITEURL
-				 *	site_url()
-				 *	get_site_url()
-				 *	WordPress Address (URL)
-				 *	http://example.com/wp/
-				 */
+				switch_to_blog( $blog_id );
+			}
+
+			/*
+			 * The WordPress _config_wp_home() function is hooked to the 'option_home' filter in order to override the
+			 * database value. Since we're not using the default filters, check for WP_HOME or WP_SITEURL and update
+			 * the stored database value if necessary.
+			 *
+			 * The homepage of the website:
+			 *
+			 *	WP_HOME
+			 *	home_url()
+			 *	get_home_url()
+			 *	Site Address (URL)
+			 *	http://example.com
+			 *
+			 * The WordPress installation (ie. where you can reach the site by adding /wp-admin):
+			 *
+			 *	WP_SITEURL
+			 *	site_url()
+			 *	get_site_url()
+			 *	WordPress Address (URL)
+			 *	http://example.com/wp/
+			 *
+			 * The WordPress _config_wp_home() function is unhooked for multisites as WP_HOME and WP_SITEURL are not
+			 * used in a multisite configuration. If this is a multisite, ignore the WP_HOME and WP_SITEURL values.
+			 *
+			 * See wordpress/wp-includes/ms-default-filters.php
+			 */
+			if ( ! $is_multisite ) {
+
 				if ( ! $is_multisite && defined( 'WP_SITEURL' ) && WP_SITEURL ) {
 
 					$url = untrailingslashit( WP_SITEURL );
@@ -2601,14 +2616,12 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 
 						self::raw_do_option( $action = 'update', $opt_name = 'siteurl', $url );
 					}
+				}
+			}
 
-				} else $url = self::raw_do_option( $action = 'get', $opt_name = 'siteurl' );
+			$url = self::raw_do_option( $action = 'get', $opt_name = 'siteurl' );
 
-			} else {
-
-				switch_to_blog( $blog_id );
-
-				$url = self::raw_do_option( $action = 'get', $opt_name = 'siteurl' );
+			if ( $is_multisite && ! empty( $blog_id ) ) {
 
 				restore_current_blog();
 			}
@@ -2626,7 +2639,7 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 		/*
 		 * Unfiltered version of set_url_scheme() from wordpress/wp-includes/link-template.php
 		 *
-		 * Last synchronized with WordPress v5.8.1 on 2021/10/15.
+		 * Last synchronized with WordPress v6.6.2 on 2024/09/16.
 		 */
 		private static function raw_set_url_scheme( $url, $scheme = null ) {
 
@@ -2645,7 +2658,7 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 
 			$url = trim( $url );
 
-			if ( substr( $url, 0, 2 ) === '//' ) {
+			if ( str_starts_with( $url, '//' ) ) {
 
 				$url = 'http:' . $url;
 			}
