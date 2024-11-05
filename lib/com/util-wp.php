@@ -285,7 +285,7 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 
 				return $local_cache = get_query_var( AMP_QUERY_VAR, false ) ? true : false;
 			}
-			
+
 			return $local_cache = false;
 		}
 
@@ -2165,10 +2165,7 @@ If ( ! class_exists( 'SucomUtilWP' ) ) {
 
 			$obj_id = absint( $obj_id );
 
-			if ( ! $obj_id ) {
-
-				return array();
-			}
+			if ( ! $obj_id ) return array();
 
 			/*
 			 * WordPress stores data using a post, term, or user ID, along with a group string.
