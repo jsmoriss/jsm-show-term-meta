@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.0 (2024/08/29)**
+**Version 4.6.1-dev.1 (2024/11/25)**
 
 * **New Features**
 	* None.
@@ -104,7 +104,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.6.0 =
+= 4.6.1-dev.1 =
 
-(2024/08/29) Updated the `SucomUtil` and `SucomUtilWP` classes.
+(2024/11/25) Updated the `SucomUtil` and `SucomUtilWP` classes.
 
