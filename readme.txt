@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.2-dev.1 (TBD)**
+**Version 4.6.2-dev.1 (2024/12/25)**
 
 * **New Features**
 	* None.
@@ -120,7 +120,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 4.6.2-dev.1 =
 
-(TBD) Fixed PHP v8.2 warning: Using `${var}` in strings is deprecated in lib/com/util.php.
+(2024/12/25) Fixed PHP v8.2 warning: Using `${var}` in strings is deprecated in lib/com/util.php.
 
 = 4.6.1 =
 
