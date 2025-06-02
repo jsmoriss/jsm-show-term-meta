@@ -88,6 +88,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.6.3-rc.1 (2025/06/02)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Added a call to `clean_post_cache()` in `SucomUtilWP::raw_update_post()`.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+
 **Version 4.6.2 (2024/12/26)**
 
 * **New Features**
@@ -117,6 +131,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.9.
 
 == Upgrade Notice ==
+
+= 4.6.3-rc.1 =
+
+(2025/06/02) Added a call to `clean_post_cache()` in `SucomUtilWP::raw_update_post()`.
 
 = 4.6.2 =
 
