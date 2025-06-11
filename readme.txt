@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.3-rc.1 (2025/06/02)**
+**Version 4.6.3 (2025/06/11)**
 
 * **New Features**
 	* None.
@@ -132,9 +132,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.6.3-rc.1 =
+= 4.6.3 =
 
-(2025/06/02) Added a call to `clean_post_cache()` in `SucomUtilWP::raw_update_post()`.
+(2025/06/11) Added a call to `clean_post_cache()` in `SucomUtilWP::raw_update_post()`.
 
 = 4.6.2 =
 
