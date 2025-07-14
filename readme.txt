@@ -17,7 +17,7 @@ Show term metadata in a metabox when editing terms - a great tool for debugging 
 
 == Description ==
 
-The JSM Show Term Metadata plugin displays term (ie. categories, tags, and custom taxonomies) meta keys and their unserialized values in a metabox at the bottom of the term editing page.
+The JSM Show Term Metadata plugin displays term (ie. categories, tags, and custom taxonomies) meta keys and unserialized values in a metabox at the bottom of the term editing page.
 
 There are no plugin settings - simply install and activate the plugin.
 
@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.7.0 (2025/06/18)**
+**Version 4.8.0 (2025/07/14)**
 
 * **New Features**
 	* None.
@@ -102,63 +102,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* PHP v7.4.33.
 	* WordPress v5.9.
 
-**Version 4.6.3 (2025/06/11)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Added a call to `clean_post_cache()` in `SucomUtilWP::raw_update_post()`.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-
-**Version 4.6.2 (2024/12/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Fixed PHP v8.2 warning: Using `${var}` in strings is deprecated in lib/com/util.php.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-
-**Version 4.6.1 (2024/11/25)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `SucomUtil` and `SucomUtilWP` classes.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-
 == Upgrade Notice ==
 
 = 4.7.0 =
 
-(2025/06/18) Updated the `SucomUtil` class.
-
-= 4.6.3 =
-
-(2025/06/11) Added a call to `clean_post_cache()` in `SucomUtilWP::raw_update_post()`.
-
-= 4.6.2 =
-
-(2024/12/26) Fixed PHP v8.2 warning: Using `${var}` in strings is deprecated in lib/com/util.php.
-
-= 4.6.1 =
-
-(2024/11/25) Updated the `SucomUtil` and `SucomUtilWP` classes.
+(2025/07/14) Updated the `SucomUtil` class.
 
