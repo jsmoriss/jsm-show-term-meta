@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.4.33
 Requires At Least: 5.9
 Tested Up To: 6.8.1
-Stable Tag: 4.7.0
+Stable Tag: 4.8.0
 
 Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.
 
@@ -104,7 +104,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.7.0 =
+= 4.8.0 =
 
 (2025/07/14) Updated the `SucomUtil` class.
 
