@@ -11,7 +11,7 @@
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata.
  * Requires PHP: 7.4.33
- * Requires At Least: 5.9
+ * Requires At Least: 6.0
  * Tested Up To: 6.9
  * Version: 4.8.0
  *
