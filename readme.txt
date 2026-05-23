@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.9.0-rc.1 (2026/05/23)**
+**Version 4.9.0 (2026/05/23)**
 
 * **New Features**
 	* None.
@@ -104,7 +104,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.9.0-rc.1 =
+= 4.9.0 =
 
 (2026/05/23) Updated the `SucomUtil` class.
 
