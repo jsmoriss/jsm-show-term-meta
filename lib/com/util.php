@@ -718,7 +718,7 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 */
 		public static function get_multi_values( array &$opts, $opt_prefix ) {
 
-			$values = SucomUtil::preg_grep_keys( '/^' . $opt_prefix . '_([0-9]+)$/', $opts, $invert = false, $replace = '$1' );
+			$values = self::preg_grep_keys( '/^' . $opt_prefix . '_([0-9]+)$/', $opts, $invert = false, $replace = '$1' );
 
 			foreach ( $values as $num => $val ) {
 
@@ -810,11 +810,11 @@ if ( ! class_exists( 'SucomUtil' ) ) {
 		 *
 		 * $replace can be a string or an associative array of 'pattern' => 'replacement'.
 		 */
-		public static function preg_grep_keys( $keys_preg, array $in_array, $invert = false, $replace = false ) {
+		public static function preg_grep_keys( $keys_preg, $in_array, $invert = false, $replace = false ) {
 
-			if ( empty( $in_array ) ) {	// Nothing to do.
+			if ( ! is_array( $in_array ) || empty( $in_array ) ) {	// Just in case.
 
-				return $in_array;
+				return array();
 			}
 
 			$in_array_keys = array_keys( $in_array );
