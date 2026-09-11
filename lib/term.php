@@ -122,8 +122,8 @@ if ( ! class_exists( 'JsmStmTerm' ) ) {
 			 * so that jQuery can hide the table row after a successful delete.
 			 */
 			$metabox_id   = 'jsmstm';
-			$obj_id       = SucomUtil::sanitize_int( $_POST[ 'obj_id' ] );	// Returns integer or null.
-			$meta_key     = SucomUtil::sanitize_meta_key( $_POST[ 'meta_key' ] );
+			$obj_id       = SucomUtil::sanitize_int( $_POST[ 'obj_id' ] );		// Returns integer or null.
+			$meta_key     = SucomUtil::sanitize_meta_key( $_POST[ 'meta_key' ] );	// Decode/remove html/js/css and quotes.
 			$table_row_id = SucomUtil::sanitize_key( $metabox_id . '_' . $obj_id . '_' . $meta_key );
 			$term_obj     = get_term( $obj_id );
 			$delete_cap   = apply_filters( 'jsmstm_delete_meta_capability', 'manage_options', $term_obj );
