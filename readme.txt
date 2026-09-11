@@ -88,6 +88,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.9.1-dev.1 (2026/09/11)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed removal of quote characters from meta key names (props Pervin Zahidli).
+* **Developer Notes**
+	* Updated the `SucomUtil::sanitize_meta_key()` method to remove single and double quotes.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v6.0.
+
 **Version 4.9.0 (2026/05/23)**
 
 * **New Features**
@@ -103,6 +117,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v6.0.
 
 == Upgrade Notice ==
+
+= 4.9.1-dev.1 =
+
+(2026/09/11) Fixed removal of quote characters from meta key names.
 
 = 4.9.0 =
 
