@@ -88,7 +88,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.9.1-dev.1 (2026/09/11)**
+**Version 4.9.1-rc.1 (2026/09/12)**
 
 * **New Features**
 	* None.
@@ -118,9 +118,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.9.1-dev.1 =
+= 4.9.1-rc.1 =
 
-(2026/09/11) Fixed removal of quote characters from meta key names.
+(2026/09/12) Fixed removal of quote characters from meta key names.
 
 = 4.9.0 =
 
