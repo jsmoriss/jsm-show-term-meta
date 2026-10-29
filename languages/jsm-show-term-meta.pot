@@ -3,8 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JSM Show Term Metadata 4.9.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-term-"
-"meta\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-term-meta\n"
 "POT-Creation-Date: 2026-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +27,6 @@ msgstr ""
 #: lib/term.php:104
 msgid "Value"
 msgstr ""
-
 #. Plugin Name of the plugin/theme
 msgid "JSM Show Term Metadata"
 msgstr ""
@@ -38,9 +36,7 @@ msgid "https://surniaulula.com/extend/plugins/jsm-show-term-meta/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"Show term metadata in a metabox when editing terms - a great tool for "
-"debugging issues with term metadata."
+msgid "Show term metadata in a metabox when editing terms - a great tool for debugging issues with term metadata."
 msgstr ""
 
 #. Author of the plugin/theme
