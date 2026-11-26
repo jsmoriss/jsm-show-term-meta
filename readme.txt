@@ -88,6 +88,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.9.2 (2026/11/25)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed `SucomUtil::get_multi_values()` to include non-suffixed (ie. non-multi) option keys.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v6.0.
+
 **Version 4.9.1 (2026/09/12)**
 
 * **New Features**
@@ -117,6 +131,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v6.0.
 
 == Upgrade Notice ==
+
+= 4.9.2 =
+
+(2026/11/25) Fixed `SucomUtil::get_multi_values()` to include non-suffixed (ie. non-multi) option keys.
 
 = 4.9.1 =
 
